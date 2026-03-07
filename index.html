@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- ─── SEO & Social ─────────────────────────────────────────── -->
+    <meta
+      name="description"
+      content="WHYAWEEYE — handmade art: thread art, word art, and gallery."
+    />
+    <meta property="og:title" content="WHYAWEEYE" />
+    <meta property="og:description" content="Bringing imagination to life." />
+    <meta property="og:type" content="website" />
+
+    <title>WHYAWEEYE</title>
+
+    <!-- ───  local CSS   ─── -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="Assets/fx/naticker.css" />
+
+    <!-- <link rel="stylesheet" href="style.min.css"> -->
+
+    <!-- ─── Google Fonts — async load (no render block) ─────────── -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Jacquard+24&family=Cormorant:ital,wght@0,300..700;1,300..700&family=Ballet:opsz@16..72&family=Bebas+Neue&display=swap"
+      media="print"
+      onload="this.media = 'all'"
+    />
+
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Jacquard+24&family=Cormorant:ital,wght@0,300..700;1,300..700&family=Ballet:opsz@16..72&family=Bebas+Neue&display=swap"
+      />
+    </noscript>
+    <!-- ─── Favicon ───────────────────────────────── -->
+    <!-- Standard favicon -->
+    <link
+      rel="icon"
+      href="/Assets/Favicon/favicon_io/favicon.ico"
+      sizes="any"
+    />
+    <!-- PNG fallbacks -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/Assets/Favicon/favicon_io/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/Assets/Favicon/favicon_io/favicon-16x16.png"
+    />
+    <!-- Android -->
+    <link rel="manifest" href="/Assets/Favicon/favicon_io/site.webmanifest" />
+
+    <!-- Apple Touch Icon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/Assets/Favicon/favicon_io/apple-touch-icon.png"
+    />
+
+    <!-- ─── Scripts: deferred so they never block parsing ────────── -->
+    <script src="/Assets/fx/curcus.js" defer></script>
+    <script src="/Assets/fx/transition.js" defer></script>
+    <script src="/Assets/fx/enter.js" defer></script>
+    <script src="/Assets/Favicon/icon-ani.js" defer></script>
+    <script src="/Assets/footer/footer.js" defer></script>
+    <script src="/script.js" defer></script>
+  </head>
+
+  <body>
+    <!-- ─── Loading Screen ───────────────────────────────────────── -->
+    <div id="loading-screen">
+      <span class="loader"></span>
+      <div id="percentage">[0%]</div>
+    </div>
+
+    <noscript>
+      <style>
+        #loading-screen {
+          display: none;
+        }
+        #content {
+          display: block !important;
+        }
+      </style>
+    </noscript>
+
+    <!-- ══════════════════════════════════════════════
+           HOME SECTION
+    ════════════════════════════════════════════ -->
+    <!-- <main class="scroll-container" id="content" style="display: none"> -->
+    <main id="content" style="display: none">
+      <!-- ═══════════════════════════════════════ -->
+      <!--  HOME SECTION                           -->
+      <!-- ═══════════════════════════════════════ -->
+      <section id="home" aria-label="Home">
+        <div class="container">
+          <!-- Left: tagline + logo -->
+          <div class="left">
+            <div class="phrase">
+              <h6>
+                <div data-content="Bringing"><span>Bringing</span></div>
+                <div data-content="imagination"><span>imagination</span></div>
+                <div data-content="to"><span>to</span></div>
+                <div data-content="life."><span>life.</span></div>
+              </h6>
+            </div>
+
+            <div class="logo">
+              <!--
+                srcset + sizes: browser picks the best size.
+                loading="eager" because this is above the fold.
+                fetchpriority="high" signals it's LCP-critical.
+              -->
+              <img
+                src="/images/webp/y-logo-green-trans-96.webp"
+                srcset="
+                  /images/webp/y-logo-green-trans-48.webp 48w,
+                  /images/webp/y-logo-green-trans-60.webp 60w,
+                  /images/webp/y-logo-green-trans-96.webp 96w
+                "
+                sizes="(max-width: 600px) 48px, (max-width: 900px) 60px, 96px"
+                alt="WHYAWEEYE logo"
+                width="96"
+                height="96"
+                loading="eager"
+                fetchpriority="high"
+              />
+            </div>
+          </div>
+          <!-- Right: main title + abstract -->
+          <div class="main-content">
+            <h1 data-content="why a we eye">
+              <span class="word">why</span>
+              <span class="word">a</span>
+              <span class="word">we</span>
+              <span class="word" style="text-decoration: underline">eye</span>
+            </h1>
+
+            <div class="abstract" aria-hidden="true"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════ -->
+      <!-- NAME TICKER                             -->
+      <!-- ═══════════════════════════════════════ -->
+      <script src="/Assets/fx/naticker.js"></script>
+
+      <!-- ═══════════════════════════════════════ -->
+      <!-- ART CHOICE SECTION                      -->
+      <!-- ═══════════════════════════════════════ -->
+      <section id="art" aria-labelledby="art-heading">
+        <div class="section-container">
+          <h1 class="changing autoShow" data-text="Art Choice.">Art Choice.</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
+          <!-- ═══════════════════════════════════════ -->
+          <!-- EDITORIAL                    -->
+          <!-- ═══════════════════════════════════════ -->
+
+          <div class="editorial autoShow">
+            <!-- Card 1 -->
+            <a href="/THREADART/threadart.html" class="editorial-card">
+              <div class="editorial-card-text">
+                <h2 class="editorial-card-title">Thread<br />Art</h2>
+                <span class="editorial-card-sub">
+                  A body of work defined by stillness and intent.
+                </span>
+              </div>
+
+              <div class="editorial-card-image">
+                <!--  image -->
+                <img
+                  src="images/TA-editorial-card-2.jpg"
+                  alt="Thread Art — a close-up of intricate thread work"
+                  width="600"
+                  height="800"
+                  loading="lazy"
+                />
+              </div>
+
+              <span class="editorial-card-number" aria-hidden="true">I</span>
+            </a>
+
+            <!-- Card 2 -->
+            <a href="/WORDART/wordart.html" class="editorial-card">
+              <div class="editorial-card-text">
+                <h2 class="editorial-card-title">Word<br />Art</h2>
+              </div>
+
+              <div class="editorial-card-image">
+                <img
+                  src="images/WA-editorial-card.jpg"
+                  alt="Word Art — typographic art piece"
+                  width="600"
+                  height="800"
+                  loading="lazy"
+                />
+              </div>
+
+              <span class="editorial-card-sub">
+                Where history folds into the present moment.
+              </span>
+              <span class="editorial-card-number">II</span>
+            </a>
+          </div>
+          <!-- /.editorial -->
+        </div>
+      </section>
+      <!-- /#art -->
+
+      <!-- ═══════════════════════════════════════ -->
+      <!-- FANCY HERO / PARALLAX BLOCK                   -->
+      <!-- ═══════════════════════════════════════ -->
+      <div class="section-container">
+        <div class="page-section fancy">
+          <div class="fancy-hero">
+            <!-- ← wrap them together -->
+            <h2><em>Exploring</em> the world<br />of <em>my&nbsp;</em> art</h2>
+            <div class="image-wrapper">
+              <img
+                src="/images/abstract-vibrant-bg.webp"
+                alt="Abstract vibrant bg"
+                aria-hidden="true"
+                width="1300"
+                height="867"
+                loading="lazy"
+              />
+              <div class="overlay"></div>
+            </div>
+          </div>
+          <p>
+            Transform your space with bespoke handmade art pieces that reflect
+            your unique style.
+          </p>
+          <p>↓ Scroll down ↓</p>
+          <p>Continue your page ↑</p>
+        </div>
+      </div>
+
+      <!-- <div class="scroll-hint" id="scrollHint">
+          Scroll to explore
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+          >
+            <path d="M5 12h14M13 6l6 6-6 6" />
+          </svg>
+        </div> -->
+
+      <!-- ═══════════════════════════════════════ -->
+      <!-- LATEST & FEATURED SECTION                      -->
+      <!-- ═══════════════════════════════════════ -->
+      <section id="latest" aria-labelledby="latest-heading">
+        <div class="section-container">
+          <div>
+            <h1 class="changing autoShow" data-text="Why Gala.">Why Gala.</h1>
+
+            <div class="para-link">
+              <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
+              <a
+                href="https://whyaweeye.medium.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><span class="see-more">[ Explore Gallery ↗]</span></a
+              >
+            </div>
+            <div>
+              <section class="name-slider-body-bottom cursor-no">
+                <div
+                  class="slider-bottom"
+                  style="
+                    --width: 200px;
+                    --height: 250px;
+                    --time: 20s;
+                    --quantity: 9;
+                  "
+                >
+                  <div class="list-bottom">
+                    <div class="item-bottom" style="--index: 1">
+                      <img
+                        src="/images/arash-ZnssDSmy9Ho-unsplash.jpg"
+                        alt=""
+                        loading="lazy"
+                        width="200"
+                        height="250"
+                      />
+                    </div>
+                    <div class="item-bottom" style="--index: 2">
+                      <img
+                        src="/images/court-uJ4twg_-7gA-unsplash.jpg"
+                        alt=""
+                        loading="lazy"
+                        width="200"
+                        height="250"
+                      />
+                    </div>
+                    <div class="item-bottom" style="--index: 3">
+                      <img
+                        src="/images/sneakerz-sx-bebop01.jpg"
+                        alt=""
+                        loading="lazy"
+                        width="200"
+                        height="250"
+                      />
+                    </div>
+                    <div class="item-bottom" style="--index: 4">
+                      <img
+                        src="/images/Layer 1.png"
+                        alt=""
+                        loading="lazy"
+                        width="200"
+                        height="250"
+                      />
+                    </div>
+                    <div class="item-bottom" style="--index: 5">
+                      <img
+                        src="/images/victor-volkov-xZSuLxiqXUo-unsplash.jpg"
+                        alt=""
+                        loading="lazy"
+                        width="200"
+                        height="250"
+                      />
+                    </div>
+                    <div class="item-bottom" style="--index: 6">
+                      <img
+                        src="/images/truong-tuyet-ly-JVEiit-Jde4-unsplash.jpg"
+                        alt=""
+                        loading="lazy"
+                        width="200"
+                        height="250"
+                      />
+                    </div>
+                    <div class="item-bottom" style="--index: 7">
+                      <img
+                        src="/images/paul-hanaoka-4nabmlliGdU-unsplash.jpg"
+                        alt=""
+                        loading="lazy"
+                        width="200"
+                        height="250"
+                      />
+                    </div>
+                    <div class="item-bottom" style="--index: 8">
+                      <img
+                        src="/images/Stylized Portrait with Blue Theme.jpeg"
+                        alt=""
+                        loading="lazy"
+                        width="200"
+                        height="250"
+                      />
+                    </div>
+                    <div class="item-bottom" style="--index: 9">
+                      <img
+                        src="/images/TA-editorial-card-1.jpg"
+                        alt=""
+                        loading="lazy"
+                        width="200"
+                        height="250"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /#latest -->
+
+      <!-- ═══════════════════════════════════════ -->
+      <!-- IMAGE TICKER (bottom)                    -->
+      <!-- ═══════════════════════════════════════ -->
+
+      <!-- ═══════════════════════════════════════════════════════════
+           CUSTOM PROJECT SLIDER
+           ══════════════════════════════════════════════════════════ -->
+      <div class="custom-slider" aria-label="Featured project slider">
+        <div class="custom-left">
+          <div class="title-wrap">
+            <h3 id="custom-title">Pastel Paradigm</h3>
+            <span id="custom-description">(Feb 26)</span>
+          </div>
+
+          <div class="custom-controls">
+            <button id="prevBtn" aria-label="Previous project">←</button>
+            <button id="nextBtn" aria-label="Next project">→</button>
+          </div>
+        </div>
+        <div class="custom-right">
+          <img
+            id="custom-slide-image"
+            src="/images/slider-image-2.png"
+            alt="Pastel Paradigm project image"
+            width="450"
+            height="550"
+            loading="lazy"
+          />
+        </div>
+      </div>
+
+      <!-- ═══════════════════════════════════════ -->
+      <!-- FOOTER NAV                              -->
+      <!-- ═══════════════════════════════════════ -->
+      <footer></footer>
+
+      <nav class="site-nav" aria-label="Site navigation">
+        <a href="#home" data-content="HOME" class="active" aria-current="page"
+          ><span>HOME</span></a
+        >
+        <a href="#art" data-content="ART"><span>ART</span></a>
+        <a href="/GALLERY/gallery.html" data-content="GALLERY"
+          ><span>GALLERY</span></a
+        >
+        <a href="/ABOUT/about.html" data-content="ABOUT"><span>ABOUT</span></a>
+        <!-- <a
+            href="https://whyaweeyesocials.vercel.app/"
+            data-content="SOCIALS"
+            target="_blank"
+            ><span>SOCIALS</span></a
+          > -->
+      </nav>
+    </main>
+    <!-- /#content -->
+
+    <!-- Page-transition overlay (must be last in body) -->
+    <div class="page-transition" id="page-transition" aria-hidden="true"></div>
+  </body>
+</html>

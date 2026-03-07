@@ -1,0 +1,370 @@
+/* ============================================= */
+/* MODAL                                         */
+/* ============================================= */
+.modal {
+  display: none;
+  position: fixed;
+  flex-direction: column;
+  /* backdrop-filter: blur(15px); */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  inset: 0;
+  background: var(--pr-black);
+}
+.modal.closing {
+  opacity: 0;
+}
+
+.modal-content {
+  display: flex;
+  position: relative;
+  align-items: stretch;
+  animation: fadeInScale 0.3s ease forwards;
+  border: 1px solid var(--pr-gray-22-trans);
+  /* box-shadow: 0 20px 50px rgba(65, 65, 65, 0.3); */
+  /* border-radius: 12px; */
+  background: var(--pr-black);
+  padding: 0;
+  width: 85%;
+  max-width: 1000px;
+  max-height: 70vh;
+  overflow: hidden;
+  user-select: none;
+}
+
+/* LEFT SIDE */
+.modal-left {
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  background: var(--pr-black);
+  padding: 10px;
+  aspect-ratio: 1 / 1;
+  width: 50%;
+  overflow: hidden;
+}
+.modal-left img,
+.modal-main {
+  display: block;
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  object-fit: scale-down;
+}
+.modal-date {
+  flex: none;
+  opacity: 0.6;
+  padding-block-start: var(--space-3xs);
+  color: var(--pr-gray-2);
+  font-size: var(--text-fine);
+  font-family: var(--font-mono);
+  letter-spacing: var(--tracking-tight);
+  text-align: left;
+}
+
+/* RIGHT SIDE */
+.modal-right {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 20px;
+  max-height: 80vh;
+  overflow-y: auto;
+  scrollbar-color: var(--pr-gray-22-trans) transparent; /* Firefox — thumb track */
+  scrollbar-width: thin; /* Firefox — thin bar */
+}
+
+.modal-right::-webkit-scrollbar {
+  width: 2px; /* Chrome/Safari — very thin */
+}
+
+.modal-right::-webkit-scrollbar-track {
+  background: transparent; /* invisible track */
+}
+
+.modal-right::-webkit-scrollbar-thumb {
+  border-radius: var(--radius-full);
+  background: var(--pr-gray-22-trans); /* matches your gray */
+}
+
+.modal-right::-webkit-scrollbar-thumb:hover {
+  background: rgb(71, 71, 71); /* brightens on hover */
+}
+
+.modal-right h2 {
+  margin-block-start: var(--space-sm);
+  color: var(--pr-gray);
+  font-size: var(--text-h4);
+}
+
+.modal-subtitle {
+  margin-block-start: var(--space-2xs);
+  margin-block-end: var(--space-xs);
+  color: var(--pr-gray-2);
+  font-size: var(--text-tag);
+  line-height: var(--leading-normal);
+  user-select: text;
+}
+
+.modal-description {
+  margin-block-start: var(--space-xs);
+  margin-block-end: var(--space-md);
+  color: var(--pr-gray);
+  font-size: var(--text-eyebrow);
+  line-height: var(--leading-normal);
+  text-align: justify;
+}
+.modal-color-notice {
+  margin-block-start: 0;
+  margin-block-end: var(--space-md);
+  color: var(--pr-gray-2);
+  font-style: italic;
+  font-size: var(--text-fine);
+  line-height: var(--leading-normal);
+  letter-spacing: var(--tracking-relaxed);
+}
+
+.modal-links {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.modal-links-1,
+.modal-links-2 {
+  transition: color 0.15s ease;
+  margin-block-end: var(--space-md);
+  color: var(--pr-gray-2);
+  font-weight: var(--weight-medium);
+  font-size: var(--text-tag);
+  line-height: var(--leading-normal);
+  font-family: var(--font-main);
+  letter-spacing: var(--tracking-relaxed);
+  text-decoration: none;
+  text-transform: uppercase;
+}
+@media (hover: hover) and (pointer: fine) {
+  .modal-links-1:hover,
+  .modal-links-2:hover {
+    color: var(--pr-green);
+    /* removed stray opacity: 1 — it was doing nothing */
+  }
+}
+
+.modal-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-block-end: var(--space-md);
+}
+
+.modal-tags span {
+  border: 1px solid var(--pr-black-2);
+  border-radius: var(--radius-xl);
+  background: var(--pr-black-2);
+  padding-inline: var(--space-xs);
+  padding-block: var(--space-3xs);
+  color: var(--pr-gray);
+  font-size: var(--text-fine);
+}
+
+.share-btn {
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.15s ease;
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 0;
+  color: var(--pr-green);
+  font-weight: var(--weight-light);
+  font-size: var(--text-tag);
+  font-family: var(--font-main);
+  letter-spacing: var(--tracking-relaxed);
+  text-transform: uppercase;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .share-btn:hover {
+    color: var(--pr-green);
+  }
+}
+
+/* Thumbnails */
+.thumbnails {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 5px;
+  cursor: pointer;
+  margin-top: auto;
+}
+
+.thumbnails img {
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+  cursor: pointer;
+  /* border-radius: 6px; */
+  width: 55px;
+  height: 60px;
+  object-fit: cover;
+  pointer-events: auto;
+}
+
+.thumbnails img:hover,
+.thumbnails img.active {
+  opacity: 1;
+}
+
+/* Close button as circle */
+.close {
+  display: flex;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  justify-content: center;
+  z-index: 10;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+  cursor: pointer;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--pr-black-2);
+  width: 25px;
+  height: 25px;
+  color: var(--pr-green);
+  font-weight: var(--weight-thin);
+  font-size: var(--text-h4);
+  user-select: none;
+}
+
+/* Hover effect */
+.close:hover {
+  background-color: whitesmoke;
+  color: var(--pr-black);
+  /* white × on hover */
+}
+@media (hover: hover) and (pointer: fine) {
+  .close:hover {
+    background-color: whitesmoke;
+    color: var(--pr-black);
+  }
+}
+
+/* Animation */
+@keyframes fadeInScale {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* ============================================= */
+/* RESPONSIVE                                    */
+/* ============================================= */
+
+@media (max-width: 900px) {
+  .modal-content {
+    flex-direction: column;
+    width: 90%;
+    height: auto;
+    max-height: 92vh;
+    overflow-y: auto;
+    scrollbar-width: none;
+  }
+  .close {
+    align-items: center;
+  }
+
+  .modal-left {
+    position: relative;
+    flex: none;
+    aspect-ratio: unset;
+    width: 100%;
+    overflow: hidden;
+  }
+  .modal-left img,
+  .modal-main {
+    width: 100%;
+    height: auto; /* key: auto height shows full image, no crop */
+    object-fit: cover;
+    flex: none; /* remove flex sizing — let natural size drive */
+  }
+
+  .modal-right {
+    flex: 1;
+    padding: var(--space-md);
+    width: 100%;
+    overflow-y: unset;
+  }
+
+  .thumbnails {
+    justify-content: flex-start;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 500px) {
+  .modal-content {
+    height: auto;
+    max-height: 90dvh;
+  }
+  .close {
+    align-items: center;
+  }
+  .modal-left {
+    width: 100%;
+    aspect-ratio: unset; /* removed: natural image dimensions */
+    max-height: unset; /* removed: was cropping tall images */
+  }
+
+  .modal-left img,
+  .modal-main {
+    width: 100%;
+    height: auto; /* shows full image at natural proportions */
+    object-fit: cover;
+  }
+  .modal-right {
+    padding: var(--space-sm);
+  }
+  .thumbnails img {
+    width: 45px; /* added: slightly smaller thumbs on mobile */
+    height: 50px;
+  }
+}
+
+/* ── Touch devices regardless of width ── */
+@media (hover: none), (pointer: coarse) {
+  .modal-content {
+    animation: none; /* added: scale animation can feel laggy on low-end phones */
+  }
+}
+
+/* ── Small mobile (≤ 380px) ── */
+@media (max-width: 380px) {
+  .modal-left {
+    max-height: 40dvh; /* less image height on tiny screens */
+  }
+
+  .thumbnails img {
+    width: 38px;
+    height: 42px;
+  }
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  .modal-content,
+  .modal {
+    animation: none;
+    transition: none;
+  }
+}

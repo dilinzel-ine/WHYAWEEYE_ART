@@ -1,0 +1,352 @@
+/* Imports */
+@import url("/Assets/fx/variables.css");
+@import url("/Assets/fx/curcus.css");
+@import url("/Assets/fx/transition.css");
+@import url("/Assets/fx/enter.css");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+  /* hide scrollbar cross-browser */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+html::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  background-image: url("/images/noise.svg");
+  background-repeat: repeat;
+  background-color: var(--pr-black);
+  background-blend-mode: overlay;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  font-family: var(--font-main);
+  /* Prevent font-size inflation on mobile */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+img {
+  -webkit-user-drag: none;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* ============================================= */
+/* ── full viewport container ── */
+/* ============================================= */
+
+.about {
+  display: flex;
+  position: relative;
+  align-items: flex-end;
+  width: 100%;
+  --nav-height: 58.6px;
+  height: calc(100dvh - var(--nav-height));
+  overflow: hidden;
+}
+
+/* ── background images ── */
+.bg {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+}
+
+.bg-img {
+  position: absolute;
+  filter: brightness(0.4);
+  transition: opacity 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  inset: 0;
+  background-position: center;
+  background-size: cover;
+}
+
+.bg-img--default {
+  opacity: 1;
+  filter: grayscale(100%);
+  filter: brightness(0.2);
+  background-image: url("/images/me-normal-1.webp");
+}
+
+.bg-img--hover {
+  opacity: 0;
+}
+
+/* gradient so text stays legible */
+.bg-overlay {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(10, 9, 8, 0.9) 0%,
+    rgba(10, 9, 8, 0.48) 45%,
+    rgba(10, 9, 8, 0.18) 100%
+  );
+  pointer-events: none;
+}
+
+/* ── main content ── */
+.about-content {
+  display: grid;
+  position: relative;
+  grid-template-columns: 1fr 1fr;
+  align-items: end;
+  gap: 90px;
+  z-index: 2;
+  border-bottom: 1px solid var(--pr-gray-22-trans);
+  padding: 80px 64px 40px;
+  /* margin-bottom: 30px; */
+  width: 100%;
+  color: var(--pr-gray);
+}
+
+/* left — name & role */
+.about-tag {
+  opacity: 0.5;
+  margin-bottom: 20px;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+.about-name span {
+  font-weight: 800;
+  font-size: clamp(52px, 7vw, 100px);
+  line-height: 0.95;
+  font-family: var(--font-mono);
+  letter-spacing: -0.05em;
+  display: inline-block;
+  cursor: default;
+  transition: opacity 0.3s ease;
+}
+/* Hover — mouse only */
+@media (hover: hover) and (pointer: fine) {
+  .about-name span:hover {
+    color: var(--pr-green);
+    opacity: 0.7;
+  }
+}
+
+.about-role {
+  opacity: 0.5;
+  margin-top: 24px;
+  font-weight: 300;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* right — bio blocks */
+.about-right {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.about-block {
+  /* border-top: 1px solid rgba(240, 235, 226, 0.14); */
+  padding-top: 20px;
+  text-align: right;
+}
+
+.about-block-label {
+  opacity: 0.6;
+  margin-bottom: 10px;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.about-block-text {
+  display: inline-block;
+  position: relative;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+  font-weight: 400;
+  font-size: clamp(17px, 1.8vw, 24px);
+  line-height: 1.45;
+  font-family: var(--font-mono);
+  color: var(--pr-gray);
+  text-decoration: none;
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+.about-block-text:focus-visible {
+  outline: 2px solid var(--pr-green);
+}
+
+/* ─── Animated brackets ─── */
+.about-block-text::before {
+  content: "[";
+  margin-right: -5px;
+  display: inline;
+  transition:
+    margin-right 0.4s var(--ease-out-expo),
+    opacity 0.3s ease;
+  opacity: 0.5;
+}
+
+.about-block-text::after {
+  content: "]";
+  margin-left: -5px;
+  display: inline;
+  transition:
+    margin-left 0.4s var(--ease-out-expo),
+    opacity 0.3s ease;
+  opacity: 0.5;
+}
+/* ─── Hover effects — mouse only ─── */
+@media (hover: hover) and (pointer: fine) {
+  .about-block {
+    cursor: default;
+  }
+  .about-block-text {
+    cursor: default;
+  }
+
+  .about-block-text:hover {
+    color: var(--pr-green);
+    opacity: 1;
+  }
+  .about-block-text:hover::before {
+    margin-right: 5px;
+    opacity: 1;
+  }
+  .about-block-text:hover::after {
+    margin-left: 5px;
+    opacity: 1;
+  }
+
+  /*
+    Dim siblings when any block-text is hovered.
+    :has() is well-supported (Chrome 105+, Safari 15.4+, Firefox 121+).
+  */
+  .about-right:has(.about-block-text:hover)
+    .about-block
+    .about-block-text:not(:hover) {
+    opacity: 0.28;
+  }
+}
+
+/* On touch: always full opacity — no hover state to reveal it */
+@media (hover: none), (pointer: coarse) {
+  .about-block-text {
+    opacity: 1;
+  }
+  .about-block-text::before,
+  .about-block-text::after {
+    opacity: 0.7;
+  }
+}
+
+/* ── bottom strip ── */
+.about-strip {
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 3;
+  border-bottom: 1px solid var(--pr-gray-22-trans);
+  padding: 18px 64px;
+  width: 100%;
+  color: var(--pr-gray);
+}
+
+.about-strip-loc {
+  opacity: 0.7;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.about-strip-links {
+  display: flex;
+  gap: 28px;
+  font-weight: 500;
+}
+
+.about-strip-links a {
+  display: inline-block;
+  position: relative;
+  opacity: 0.7;
+  transition: opacity 0.25s ease;
+  overflow: hidden;
+  color: var(--pr-gray);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.about-strip-links a span {
+  display: block;
+  transform: translateY(0);
+  transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.about-strip-links a::after {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1);
+  width: 100%;
+  content: attr(data-content);
+  color: var(--pr-gray);
+}
+@media (hover: hover) and (pointer: fine) {
+  .about-strip-links a:hover {
+    opacity: 1;
+  }
+  .about-strip-links a:hover span {
+    transform: translateY(-100%);
+  }
+  .about-strip-links a:hover::after {
+    transform: translateY(-100%);
+  }
+}
+
+/* ============================================
+   RESPONSIVE OVERRIDES
+   =========================================== */
+
+/* ── Tablet (≤ 900px) ── */
+@media (max-width: 900px) {
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 60px 36px 28px;
+    overflow-y: auto;
+    /* Leave room for the strip if it's active */
+    max-height: calc(100dvh - 56px);
+  }
+  .about-strip {
+    padding: 14px 36px;
+  }
+}
+
+/* ── Mobile (≤ 600px) ── */
+@media (max-width: 600px) {
+  .about-content {
+    padding: 48px 24px 20px;
+    gap: 18px;
+  }
+  .about-strip {
+    padding: 20px 24px;
+  }
+  /* Right column: left-align on small screens for readability */
+  .about-block {
+    text-align: left;
+  }
+}

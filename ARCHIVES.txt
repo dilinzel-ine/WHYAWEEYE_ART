@@ -1,0 +1,359 @@
+
+==========
+index.html
+==========
+
+SUMMARY ART SECTION
+<!-- Section 1 -->
+            <details class="art-section" close>
+              <summary>thread art</summary>
+              <section class="gallery">
+                <!-- Card 1 -->
+                <div
+                  class="card cards-item"
+                  role="listitem"
+                  tabindex="0"
+                  data-subtitle="#05262H7"
+                  data-description="Saskia Rodríguez (Las Palmas de Gran Canaria, Gran Canaria, 1993) is an artist and graphic designer. She graduated in Fine Arts from the University of Salamanca (2015), specialising in painting and printmaking. She later completed a Master’s degree in Artistic Production at the Polytechnic University of Valencia (2015–2016), followed by training in screen printing and lithography at Fundación CIEC in Betanzos (2017). Her career includes artist residencies at AIR – Artist in Residence (Krems, Austria, 2021), Fundación BilbaoArte (2017), CAAM (2018) and the Slade School of Fine Arts (2018)."
+                  data-links="email"
+                  data-images='[ "/images/Colorful Abstract Bag.jpeg",
+          "https://placehold.co/600x400?text=Hello\nWorld+Alpha+Top",
+          "https://placehold.co/600x400?text=Hello\nWorld+Alpha+Side", 
+          "https://placehold.co/600x400?text=Hello\nWorld+Alpha+Side" ]'
+                >
+                  <img
+                    src="/images/Colorful Abstract Bag.jpeg"
+                    alt="Model Alpha"
+                    class="card2-image"
+                  />
+                  <div class="card-text">Model Alpha</div>
+
+                  <div class="card2-content">
+                    <h2 class="card2-title">
+                      <a href="#" class="card2-title-link">Model Alpha</a>
+                    </h2>
+                    <ul class="card2-tags card-tags-grid" role="list">
+                      <li class="card2-tag" role="listitem">3D Printed</li>
+                      <li class="card2-tag" role="listitem">PLA</li>
+                      <li class="card2-tag" role="listitem">Matte Finish</li>
+                      <li class="card2-tag" role="listitem">2026</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div
+                  class="card cards-item"
+                  role="listitem"
+                  tabindex="0"
+                  data-images='[
+    "images/Layer 1.png",
+    "https://placehold.co/600x400?text=Hello\nWorld+Beta+Top",
+    "https://placehold.co/600x400?text=Hello\nWorld+Beta+Packed"
+  ]'
+                >
+                  <img
+                    src="images/Layer 1.png"
+                    alt="Model Beta"
+                    class="card2-image"
+                  />
+                  <div class="card-text">Model Beta</div>
+
+                  <div class="card2-content">
+                    <h2 class="card2-title">
+                      <a href="#" class="card2-title-link">Model Beta</a>
+                    </h2>
+                    <ul class="card2-tags card-tags-grid" role="list">
+                      <li class="card2-tag" role="listitem">Scenery</li>
+                      <li class="card2-tag" role="listitem">7 inch</li>
+                      <li class="card2-tag" role="listitem">Limited Edition</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div
+                  class="card cards-item"
+                  role="listitem"
+                  tabindex="0"
+                  data-images='[
+    "https://placehold.co/600x400?text=Hello\nWorld+Beta+Main",
+    "https://placehold.co/600x400?text=Hello\nWorld+Beta+Top",
+    "https://placehold.co/600x400?text=Hello\nWorld+Beta+Packed"
+  ]'
+                >
+                  <img
+                    src="images/sneakerz-sx-bebop01.jpg"
+                    alt="Model Beta"
+                    class="card2-image"
+                  />
+                  <div class="card-text">Model Beta</div>
+
+                  <div class="card2-content">
+                    <h2 class="card2-title">
+                      <a href="#" class="card2-title-link">Model Beta</a>
+                    </h2>
+                    <ul class="card2-tags card-tags-grid" role="list">
+                      <li class="card2-tag" role="listitem">3D Printed</li>
+                      <li class="card2-tag" role="listitem">ABS</li>
+                      <li class="card2-tag" role="listitem">Glossy</li>
+                      <li class="card2-tag" role="listitem">Limited Edition</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div
+                  class="card cards-item"
+                  role="listitem"
+                  tabindex="0"
+                  data-images='[
+    "https://placehold.co/600x400?text=Hello\nWorld+Beta+Main",
+    "https://placehold.co/600x400?text=Hello\nWorld+Beta+Top",
+    "https://placehold.co/600x400?text=Hello\nWorld+Beta+Packed"
+  ]'
+                >
+                  <img
+                    src="images/Stylized Portrait with Blue Theme.jpeg"
+                    alt="Model Beta"
+                    class="card2-image"
+                  />
+                  <div class="card-text">Model Beta</div>
+
+                  <div class="card2-content">
+                    <h2 class="card2-title">
+                      <a href="#" class="card2-title-link">Model Beta</a>
+                    </h2>
+                    <ul class="card2-tags card-tags-grid" role="list">
+                      <li class="card2-tag" role="listitem">3D Printed</li>
+                      <li class="card2-tag" role="listitem">ABS</li>
+                      <li class="card2-tag" role="listitem">Glossy</li>
+                      <li class="card2-tag" role="listitem">Limited Edition</li>
+                    </ul>
+                  </div>
+                </div>
+              </section>
+            </details>
+            <!-- Section 2 -->
+            <details class="art-section" close>
+              <summary>words art</summary>
+              <a href="/WORDART/wordart.html">
+                <p>
+                  Exploring art in words is a deeply personal journey. Each
+                  individual interacts with art in a way.
+                  <br />Medium Posts
+                </p>
+              </a>
+            </details>
+
+SUMMARY class
+
+.art-section summary {
+  transform: translateX(0rem) translateY(0px);
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+  padding: 15px 10px;
+  color: var(--pr-gray);
+  font-weight: 700;
+  font-size: clamp(1rem, 3rem, 2rem);
+  list-style: none;
+  text-transform: uppercase;
+}
+.art-section summary:hover {
+  transform: translateX(1rem) translateY(0px);
+}
+.art-section summary::-webkit-details-marker {
+  display: none; /* removes default arrow */
+}
+.art-section summary::after {
+  float: right;
+  content: " ↗";
+  font-weight: 400;
+}
+.art-section[open] summary::after {
+  content: " −";
+}
+
+/* ============================================= */
+/* Media Queries ART SECTION */
+/* ============================================= */
+/* 📱 Tablet */
+@media (max-width: 1024px) {
+  .art-section {
+    margin: 0;
+  }
+  .art-section summary {
+    padding: 20px 0;
+  }
+}
+
+/* 📱 Small tablet */
+@media (max-width: 768px) {
+  .art-section {
+    margin: 0;
+  }
+  .art-section summary {
+    padding: 20px 0;
+  }
+}
+
+/* 📱 Mobile */
+@media (max-width: 480px) {
+  .art-section {
+    margin: 0;
+  }
+  .art-section summary {
+    transform: none !important; /* cancel any movement */
+    transition: none !important;
+    padding: 20px 0;
+  }
+}
+
+------------------------------------
+
+==========
+WA.html
+===========
+
+<!-- ═══════════════════════════════════════ -->
+    <!-- WORD ART FEATURES SECTION                      -->
+    <!-- ═══════════════════════════════════════ -->
+    <section id="wordart">
+      <div class="section-container">
+        <h1
+          class="changing reveal"
+          style="--delay: 0.3s"
+          data-text="featured words."
+        >
+          featured words.
+        </h1>
+        <p class="reveal" style="--delay: 0.4s">
+          Lorem ipsum dolor sit amet consectetur adipiscing elit.
+        </p>
+        <section class="services reveal" style="--delay: 0.5s">
+          <!-- Row 01 -->
+          <a
+            href="https://medium.com/weeds-wildflowers/acrostic-ode-to-march-0e7223e053f3"
+            class="service-item"
+          >
+            <div class="arrow-overlay">
+              <div class="arrow-circle">
+                <svg viewBox="0 0 24 24">
+                  <line x1="5" y1="19" x2="19" y2="5" />
+                  <polyline points="5 5 19 5 19 19" />
+                </svg>
+              </div>
+            </div>
+            <div class="col-num">[01]</div>
+            <div class="col-tag">Acrostic Odes:<br />All 12 Months.</div>
+            <div class="col-text">
+              <h2>
+                Acrostic Ode to March<br /><i
+                  >What joy awaits as this new season unfolds?</i
+                >
+              </h2>
+              <div class="dot"></div>
+            </div>
+            <div class="col-image">
+              <!-- replace src with your own image -->
+              <img
+                src="https://miro.medium.com/v2/resize:fit:640/format:webp/0*t47r0NLnIJSFlVac"
+                alt="Identity"
+              />
+            </div>
+          </a>
+
+          <!-- Row 02 -->
+          <a
+            href="https://medium.com/weeds-wildflowers/electric-eyes-0392bd2a9225"
+            target="_blank"
+            class="service-item"
+          >
+            <div class="arrow-overlay">
+              <div class="arrow-circle">
+                <svg viewBox="0 0 24 24">
+                  <line x1="5" y1="19" x2="19" y2="5" />
+                  <polyline points="5 5 19 5 19 19" />
+                </svg>
+              </div>
+            </div>
+            <div class="col-num">[02]</div>
+            <div class="col-tag">Hope at<br />the Horizon.</div>
+            <div class="col-text">
+              <h2>Electric Eyes.</h2>
+              <div class="dot"></div>
+            </div>
+            <div class="col-image">
+              <img
+                src="https://miro.medium.com/v2/resize:fit:640/format:webp/0*Oa1te0f93Y6W7OIx"
+                alt="Positioning"
+              />
+            </div>
+          </a>
+
+          <!-- Row 03 -->
+          <a
+            href="https://medium.com/@whyaweeye/sorrow-serenity-and-sorrow-720f55ccaefc"
+            target="_blank"
+            class="service-item"
+          >
+            <div class="arrow-overlay">
+              <div class="arrow-circle">
+                <svg viewBox="0 0 24 24">
+                  <line x1="5" y1="19" x2="19" y2="5" />
+                  <polyline points="5 5 19 5 19 19" />
+                </svg>
+              </div>
+            </div>
+            <div class="col-num">[03]</div>
+            <div class="col-tag">Echoes<br />of<br />Longing.</div>
+            <div class="col-text">
+              <h2>
+                Sorrow, Serenity, and Sorrow<br /><i
+                  >Melodies of love & loss.</i
+                >
+              </h2>
+              <div class="dot"></div>
+            </div>
+            <div class="col-image">
+              <img
+                src="https://miro.medium.com/v2/resize:fit:1100/format:webp/1*jn4gzrD6AG65_tPbjpCnEw.png"
+                alt="Aesthetics"
+              />
+            </div>
+          </a>
+
+          <!-- Row 04 -->
+          <a
+            href="https://medium.com/@whyaweeye/a-new-days-promise-504f1034cc44"
+            target="_blank"
+            class="service-item"
+          >
+            <div class="arrow-overlay">
+              <div class="arrow-circle">
+                <svg viewBox="0 0 24 24">
+                  <line x1="5" y1="19" x2="19" y2="5" />
+                  <polyline points="5 5 19 5 19 19" />
+                </svg>
+              </div>
+            </div>
+            <div class="col-num">[04]</div>
+            <div class="col-tag">Hope at<br />the Horizon.</div>
+            <div class="col-text">
+              <h2>
+                A New Day’s Promise<br /><i
+                  >holding onto the belief in love’s enduring power</i
+                >
+              </h2>
+              <div class="dot"></div>
+            </div>
+            <div class="col-image">
+              <img
+                src="https://miro.medium.com/v2/resize:fit:640/format:webp/1*a13AjJygfcLx4npVKs5MXw.png"
+                alt="Aesthetics"
+              />
+            </div>
+          </a>
+        </section>
+      </div>
+    </section>

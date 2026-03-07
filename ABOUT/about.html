@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- ─── SEO & Social ─────────────────────────────────────────── -->
+    <meta
+      name="description"
+      content="About WHYAWEEYE — designer and developer, Est. 2025."
+    />
+    <meta property="og:title" content="About — WHYAWEEYE" />
+    <meta
+      property="og:description"
+      content="Designer & Developer, bringing imagination to life."
+    />
+    <meta property="og:type" content="website" />
+
+    <title>About — WHYAWEEYE</title>
+
+    <!-- ─── Local CSS ────────────────────────────────────────────── -->
+    <link rel="stylesheet" href="/ABOUT/about-style.css" />
+    <link rel="stylesheet" href="/Assets/footer/site-nav.css" />
+
+    <!-- ─── Google Fonts ─────────────────────────────────────────── -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Jacquard+24&family=Cormorant:ital,wght@0,300..700;1,300..700&family=Ballet:opsz@16..72&family=Bebas+Neue&display=swap"
+      media="print"
+      onload="this.media = 'all'"
+    />
+
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Jacquard+24&family=Cormorant:ital,wght@0,300..700;1,300..700&family=Ballet:opsz@16..72&family=Bebas+Neue&display=swap"
+      />
+    </noscript>
+
+    <!-- ─── Favicon ───────────────────────────────── -->
+    <!-- Standard favicon -->
+    <link
+      rel="icon"
+      href="/Assets/Favicon/favicon_io/favicon.ico"
+      sizes="any"
+    />
+    <!-- PNG fallbacks -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/Assets/Favicon/favicon_io/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/Assets/Favicon/favicon_io/favicon-16x16.png"
+    />
+    <!-- Android -->
+    <link rel="manifest" href="/Assets/Favicon/favicon_io/site.webmanifest" />
+    <!-- Apple Touch Icon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/Assets/Favicon/favicon_io/apple-touch-icon.png"
+    />
+
+    <!-- ─── Scripts: deferred so they never block parsing ────────── -->
+    <script src="/Assets/fx/curcus.js" defer></script>
+    <script src="/Assets/fx/transition.js" defer></script>
+    <script src="/Assets/fx/enter.js" defer></script>
+    <script src="/Assets/Favicon/icon-ani.js" defer></script>
+    <!-- <script src="/Assets/footer/footer.js" defer></script> -->
+    <script src="/ABOUT/about-script.js" defer></script>
+  </head>
+  <body>
+    <!--  -->
+    <!--  -->
+    <section class="about" aria-label="About WHYAWEEYE">
+      <!-- backgrounds -->
+      <div class="bg" aria-hidden="true">
+        <div class="bg-img bg-img--default"></div>
+
+        <!-- one per block, matched by data-bg = data-trigger -->
+        <div
+          class="bg-img bg-img--hover"
+          data-bg="craft"
+          style="background-image: url(&quot;/images/me-hover.webp&quot;)"
+        ></div>
+        <div
+          class="bg-img bg-img--hover"
+          data-bg="work"
+          style="background-image: url(&quot;/images/me-hover.webp&quot;)"
+        ></div>
+        <div
+          class="bg-img bg-img--hover"
+          data-bg="values"
+          style="background-image: url(&quot;/images/me-hover.webp&quot;)"
+        ></div>
+        <div
+          class="bg-img bg-img--hover"
+          data-bg="default"
+          style="background-image: url(&quot;/images/me-hover.webp&quot;)"
+        ></div>
+      </div>
+
+      <div class="bg-overlay" aria-hidden="true"></div>
+
+      <!-- bottom strip -->
+      <!-- <div class="about-strip">
+        <span class="about-strip-loc">Based in — Asia</span>
+        <div class="about-strip-links">
+          <a href="#" data-content="INSTAGRAM"><span>INSTAGRAM</span></a>
+          <a href="#">LinkedIn</a> 
+          <a href="#" data-content="EMAIL"><span>EMAIL</span></a>
+        </div>
+      </div> -->
+
+      <!-- content -->
+      <div class="about-content">
+        <!-- left -->
+        <div class="about-left">
+          <p class="about-tag reveal" style="--delay: 0.2s">About me</p>
+          <h1 class="about-name" aria-label="WHYAWEEYE">
+            <span data-trigger="craft" class="reveal" style="--delay: 0.3s"
+              >why</span
+            ><br />
+            <span data-trigger="work" class="reveal" style="--delay: 0.32s"
+              >a</span
+            ><br />
+            <span data-trigger="values" class="reveal" style="--delay: 0.34s"
+              >we</span
+            ><br />
+            <span data-trigger="default" class="reveal" style="--delay: 0.36s"
+              >eye</span
+            >
+          </h1>
+          <p class="about-role reveal" style="--delay: 0.38s">
+            Designer &amp; Developer — Est.&nbsp;2025
+          </p>
+        </div>
+
+        <!-- right: hoverable blocks -->
+        <div class="about-right">
+          <div class="about-block">
+            <p class="about-block-label reveal" style="--delay: 0.32s">Links</p>
+            <a
+              class="about-block-text reveal"
+              style="--delay: 0.34s"
+              data-trigger="craft"
+              href="https://whyaweeyesocials.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              SOCIALS
+            </a>
+          </div>
+
+          <div class="about-block">
+            <!-- <p class="about-block-label">The work</p> -->
+            <a
+              class="about-block-text reveal"
+              style="--delay: 0.36s"
+              data-trigger="work"
+              href="mailto:hello@whyaweeye.com"
+            >
+              EMAIL
+            </a>
+          </div>
+
+          <div class="about-block">
+            <p class="about-block-label reveal" style="--delay: 0.38s">
+              The values
+            </p>
+            <a
+              class="about-block-text reveal"
+              style="--delay: 0.4s"
+              data-trigger="values"
+              href="mailto:hello@whyaweeye.com"
+            >
+              GET IN TOUCH
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ═══════════════════════════════════════ -->
+    <!-- FOOTER NAV                              -->
+    <!-- ═══════════════════════════════════════ -->
+    <footer></footer>
+
+    <nav class="site-nav" aria-label="Site navigation">
+      <a href="../index.html" data-content="HOME"><span>HOME</span></a>
+      <a href="../index.html#art" data-content="ART"><span>ART</span></a>
+      <a href="../GALLERY/gallery.html" data-content="GALLERY"
+        ><span>GALLERY</span></a
+      >
+      <a href="../ABOUT/about.html" data-content="ABOUT" aria-current="page"
+        ><span>ABOUT</span></a
+      >
+    </nav>
+    <!-- at the very end of body -->
+    <div class="page-transition" id="page-transition" aria-hidden="true"></div>
+  </body>
+</html>

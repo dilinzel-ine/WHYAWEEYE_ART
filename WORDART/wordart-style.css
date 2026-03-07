@@ -1,0 +1,52 @@
+/* Imports */
+@import url("/Assets/fx/variables.css");
+@import url("/Assets/fx/curcus.css");
+@import url("/Assets/sections/changing.css");
+@import url("/Assets/sections/artpage.css");
+@import url("/Assets/fx/transition.css");
+@import url("/Assets/fx/enter.css");
+@import url("/Assets/footer/site-nav.css");
+@import url("/Assets/footer/footer.css");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  background-image: url("/images/noise.svg");
+  background-repeat: repeat;
+  background-color: var(--pr-black);
+  background-blend-mode: overlay;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  font-family: var(--font-main);
+  /* Prevent font-size inflation on mobile */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+img {
+  -webkit-user-drag: none;
+  pointer-events: none;
+  user-select: none;
+}
+
+button {
+  border: none;
+  background: none;
+}

@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- ─── SEO & Social ─────────────────────────────────────────── -->
+    <meta
+      name="description"
+      content="WHYAWEEYE Word Art — featured poems, odes, and soft narratives."
+    />
+    <meta property="og:title" content="Word Art — WHYAWEEYE" />
+    <meta
+      property="og:description"
+      content="Featured words: acrostic odes, hope at the horizon, echoes of longing, and soft narratives."
+    />
+    <meta property="og:type" content="website" />
+
+    <title>Word Art — WHYAWEEYE</title>
+
+    <!-- ─── Local CSS ────────────────────────────────────────────── -->
+    <link rel="stylesheet" href="/WORDART/wordart-style.css" />
+    <link rel="stylesheet" href="/Assets/fx/naticker.css" />
+
+    <!-- <link rel="stylesheet" href="gallery-style.min.css"> -->
+
+    <!-- ─── Google Fonts — async (non-render-blocking) ──────────── -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Jacquard+24&family=Cormorant:ital,wght@0,300..700;1,300..700&family=Ballet:opsz@16..72&family=Bebas+Neue&display=swap"
+      media="print"
+      onload="this.media = 'all'"
+    />
+
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Jacquard+24&family=Cormorant:ital,wght@0,300..700;1,300..700&family=Ballet:opsz@16..72&family=Bebas+Neue&display=swap"
+      />
+    </noscript>
+
+    <!-- ─── Favicon ───────────────────────────────── -->
+    <!-- Standard favicon -->
+    <link
+      rel="icon"
+      href="/Assets/Favicon/favicon_io/favicon.ico"
+      sizes="any"
+    />
+    <!-- PNG fallbacks -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/Assets/Favicon/favicon_io/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/Assets/Favicon/favicon_io/favicon-16x16.png"
+    />
+    <!-- Android -->
+    <link rel="manifest" href="/Assets/Favicon/favicon_io/site.webmanifest" />
+    <!-- Apple Touch Icon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/Assets/Favicon/favicon_io/apple-touch-icon.png"
+    />
+
+    <!-- ─── Scripts: deferred so they never block parsing ────────── -->
+    <script src="/Assets/fx/curcus.js" defer></script>
+    <script src="/Assets/fx/transition.js" defer></script>
+    <script src="/Assets/fx/enter.js" defer></script>
+    <script src="/Assets/Favicon/icon-ani.js" defer></script>
+    <script src="/Assets/footer/footer.js" defer></script>
+    <script src="/WORDART/wordart-script.js" defer></script>
+    <!-- <script src="wordart-script.js" defer></script> -->
+  </head>
+  <body id="top">
+    <!-- ═══════════════════════════════════════ -->
+    <!-- NAME TICKER                             -->
+    <!-- ═══════════════════════════════════════ -->
+    <script src="/Assets/fx/naticker.js"></script>
+
+    <!-- ═══════════════════════════════════════ -->
+    <!-- WORD ART FEATURES SECTION                      -->
+    <!-- ═══════════════════════════════════════ -->
+    <main id="artpage" aria-label="Word Art — Featured writings">
+      <div class="section-container">
+        <div class="artpage-section">
+          <!-- HEADER -->
+          <div class="artpage-header">
+            <h1
+              class="changing artpage-title reveal"
+              style="--delay: 0.3s"
+              data-text="Featured Words."
+            >
+              Featured<br />Words.
+            </h1>
+            <!-- NAV -->
+            <!-- Filter nav -->
+            <nav class="artpage-nav" aria-label="Filter writings by category">
+              <div class="artpage-nav-section">
+                <span class="artpage-nav-label reveal" style="--delay: 0.3s"
+                  >[Lists]</span
+                >
+
+                <button
+                  class="artpage-nav-link active reveal"
+                  style="--delay: 0.31s"
+                  data-filter="all"
+                  aria-pressed="true"
+                >
+                  All
+                </button>
+
+                <button
+                  class="artpage-nav-link reveal"
+                  style="--delay: 0.32s"
+                  data-filter="ode"
+                  aria-pressed="false"
+                >
+                  Acrostic Odes
+                </button>
+
+                <button
+                  class="artpage-nav-link reveal"
+                  style="--delay: 0.33s"
+                  data-filter="horizon"
+                  aria-pressed="false"
+                >
+                  Hope at the Horizon
+                </button>
+
+                <button
+                  class="artpage-nav-link reveal"
+                  style="--delay: 0.34s"
+                  data-filter="longing"
+                  aria-pressed="false"
+                >
+                  Echoes of Longing
+                </button>
+
+                <button
+                  class="artpage-nav-link reveal"
+                  style="--delay: 0.35s"
+                  data-filter="narr"
+                  aria-pressed="false"
+                >
+                  Soft Narratives
+                </button>
+              </div>
+            </nav>
+            <a
+              href="https://whyaweeye.medium.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="See more on Medium (opens in new tab)"
+              class="scroll-hint reveal"
+              style="--delay: 0.3s"
+              >[See More ↗]</a
+            >
+          </div>
+          <!-- /.artpage-header -->
+
+          <!-- GRID -->
+          <div
+            class="artpage-grid reveal"
+            style="--delay: 0.4s"
+            id="grid"
+            aria-live="polite"
+            aria-label="Article cards"
+          >
+            <!-- 1 -->
+            <a
+              href="https://medium.com/weeds-wildflowers/acrostic-ode-to-march-0e7223e053f3"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="article-card"
+              data-tags="ode"
+              aria-label="Acrostic Ode to March — An Ode 3 of 12 (opens in new tab)"
+            >
+              <div class="card-number" aria-hidden="true">[01]</div>
+              <div class="card-image word">
+                <img
+                  src="https://miro.medium.com/v2/resize:fit:640/format:webp/0*t47r0NLnIJSFlVac"
+                  alt="Acrostic Ode to March"
+                  width="640"
+                  height="435"
+                  loading="eager"
+                  fetchpriority="high"
+                />
+              </div>
+              <div class="card-info">
+                <div class="card-text">
+                  <div class="card-tag">An Ode 3 of 12</div>
+                  <div class="card-title">Acrostic Ode to March</div>
+                </div>
+                <div class="arrow-overlay" aria-hidden="true">
+                  <div class="arrow-circle">
+                    <svg
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <line x1="5" y1="19" x2="19" y2="5" />
+                      <polyline points="5 5 19 5 19 19" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <!-- ── Card 2 ── -->
+            <a
+              href="https://whyaweeye.medium.com/tales-of-love-through-time-12fb50fb238d"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="article-card"
+              data-tags="horizon"
+              aria-label="Tales of Love Through Time — Hope at the Horizon (opens in new tab)"
+            >
+              <div class="card-number" aria-hidden="true">[02]</div>
+              <div class="card-image word">
+                <img
+                  src="https://miro.medium.com/v2/resize:fit:1100/format:webp/1*9TXNlwJPqaFwJOL5ge-YMw.png"
+                  alt="Tales of Love Through Time"
+                  width="1100"
+                  height="619"
+                  loading="eager"
+                  fetchpriority="high"
+                />
+              </div>
+              <div class="card-info">
+                <div class="card-text">
+                  <div class="card-tag">Hope at the Horizon</div>
+                  <div class="card-title">Tales of<br />Love Through Time</div>
+                </div>
+                <div class="arrow-overlay" aria-hidden="true">
+                  <div class="arrow-circle">
+                    <svg
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <line x1="5" y1="19" x2="19" y2="5" />
+                      <polyline points="5 5 19 5 19 19" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <!-- ── Card 3 ── -->
+            <a
+              href="https://whyaweeye.medium.com/shes-all-that-ccb398631c87"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="article-card"
+              data-tags="horizon"
+              aria-label="She's All That — Hope at the Horizon (opens in new tab)"
+            >
+              <div class="card-number" aria-hidden="true">[03]</div>
+              <div class="card-image long">
+                <img
+                  src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*NH9iv6yByPT81v4H2E_-NQ.png"
+                  alt="She's All That"
+                  width="720"
+                  height="864"
+                  loading="lazy"
+                />
+              </div>
+              <div class="card-info">
+                <div class="card-text">
+                  <div class="card-tag">Hope at the Horizon</div>
+                  <div class="card-title">She's All That</div>
+                </div>
+                <div class="arrow-overlay" aria-hidden="true">
+                  <div class="arrow-circle">
+                    <svg
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <line x1="5" y1="19" x2="19" y2="5" />
+                      <polyline points="5 5 19 5 19 19" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <!-- ── Card 4 ── -->
+            <a
+              href="https://whyaweeye.medium.com/sorrow-serenity-and-sorrow-720f55ccaefc"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="article-card"
+              data-tags="longing"
+              aria-label="Sorrow, Serenity, and Sorrow — Echoes of Longing (opens in new tab)"
+            >
+              <div class="card-number" aria-hidden="true">[04]</div>
+              <div class="card-image word">
+                <img
+                  src="https://miro.medium.com/v2/resize:fit:1100/format:webp/1*jn4gzrD6AG65_tPbjpCnEw.png"
+                  alt="Sorrow, Serenity, and Sorrow"
+                  width="1100"
+                  height="619"
+                  loading="lazy"
+                />
+              </div>
+              <div class="card-info">
+                <div class="card-text">
+                  <div class="card-tag">Echoes of Longing</div>
+                  <div class="card-title">Sorrow, Serenity, and Sorrow</div>
+                </div>
+                <div class="arrow-overlay" aria-hidden="true">
+                  <div class="arrow-circle">
+                    <svg
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <line x1="5" y1="19" x2="19" y2="5" />
+                      <polyline points="5 5 19 5 19 19" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <!-- ── Card 5 ── -->
+            <a
+              href="https://medium.com/know-thyself-heal-thyself/could-it-be-that-we-heal-when-we-dont-do-it-alone-215889d2aa03"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="article-card"
+              data-tags="narr"
+              aria-label="Could It Be That We Heal When We Don't Do It Alone? — Soft Narratives (opens in new tab)"
+            >
+              <div class="card-number" aria-hidden="true">[05]</div>
+              <div class="card-image word">
+                <img
+                  src="https://miro.medium.com/v2/resize:fit:1100/format:webp/1*_5bJpgnBhCXf4L4k9OJHgA.png"
+                  alt="Could It Be That We Heal When We Don't Do It Alone?"
+                  width="1100"
+                  height="619"
+                  loading="lazy"
+                />
+              </div>
+              <div class="card-info">
+                <div class="card-text">
+                  <div class="card-tag">Soft Narratives</div>
+                  <div class="card-tag">Short-Story</div>
+                  <div class="card-title">
+                    Could It Be That We Heal When We Don't Do It Alone?
+                  </div>
+                </div>
+                <div class="arrow-overlay" aria-hidden="true">
+                  <div class="arrow-circle">
+                    <svg
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <line x1="5" y1="19" x2="19" y2="5" />
+                      <polyline points="5 5 19 5 19 19" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <!-- Empty state — shown by JS when filter has no results -->
+            <div
+              class="no-results"
+              id="noResults"
+              role="status"
+              aria-live="polite"
+              hidden
+            >
+              No articles in this category
+            </div>
+          </div>
+          <!-- /#grid -->
+          <div class="end" aria-hidden="true">
+            <a href="#top" class="scroll-hint" aria-label="Back to top"
+              >[ Back to Top ↑ ]</a
+            >
+          </div>
+          <div class="end" aria-hidden="true">
+            <a
+              href="/THREADART/threadart.html"
+              class="go-to-page"
+              aria-label="Link to go to ThreadArt Page"
+              >[ Go to ThreadArt ↗ ]</a
+            >
+          </div>
+        </div>
+        <!-- /.artpage-section -->
+      </div>
+      <!-- /.section-container -->
+    </main>
+    <!-- /#wordart -->
+
+    <!-- ═══════════════════════════════════════ -->
+    <!-- FOOTER NAV                              -->
+    <!-- ═══════════════════════════════════════ -->
+    <footer></footer>
+
+    <nav class="site-nav" aria-label="Site navigation">
+      <a href="../index.html" data-content="HOME"><span>HOME</span></a>
+      <a href="../index.html#art" data-content="ART"><span>ART</span></a>
+      <a href="../GALLERY/gallery.html" data-content="GALLERY"
+        ><span>GALLERY</span></a
+      >
+      <a href="../ABOUT/about.html" data-content="ABOUT"><span>ABOUT</span></a>
+    </nav>
+    <!-- Page-transition overlay — must stay last -->
+    <div class="page-transition" id="page-transition" aria-hidden="true"></div>
+  </body>
+</html>

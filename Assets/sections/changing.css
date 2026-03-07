@@ -1,0 +1,52 @@
+/* ============================================= */
+/* CHANGING HEADING                              */
+/* ============================================= */
+.changing {
+  position: relative;
+  padding-left: min(2rem, 1px);
+  color: var(--pr-gray);
+  line-height: 1.1;
+  text-transform: uppercase;
+  transition: color 0.2s ease;
+}
+
+.changing::before {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  content: attr(data-text);
+  color: var(--pr-gray);
+  font-weight: 100;
+  font-size: 5rem;
+  font-family: var(--font-alt);
+  line-height: 1.1;
+  letter-spacing: 1px;
+  white-space: nowrap;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+@media (hover: hover) and (pointer: fine) and (min-width: 1025px) {
+  .changing:hover {
+    color: transparent;
+  }
+  .changing:hover::before {
+    opacity: 1;
+  }
+}
+
+@media (hover: none), (max-width: 1024px) {
+  .changing::before {
+    display: none;
+    content: none;
+  }
+  .changing,
+  .changing:hover,
+  .changing:active {
+    color: var(--pr-gray);
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

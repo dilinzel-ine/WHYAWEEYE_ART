@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- ─── SEO & Social ─────────────────────────────────────────── -->
+    <meta
+      name="description"
+      content="WHYAWEEYE Art Gallery — a sanctuary of divergent art and modern creativity."
+    />
+    <meta property="og:title" content="Gallery — WHYAWEEYE" />
+    <meta
+      property="og:description"
+      content="A sanctuary for the soul where timeless collections converge with modern creativity."
+    />
+    <meta property="og:type" content="website" />
+
+    <title>Gallery — WHYAWEEYE</title>
+
+    <!-- ─── Local CSS ────────────────────────────────────────────── -->
+    <link rel="stylesheet" href="/GALLERY/gallery-style.css" />
+    <link rel="stylesheet" href="/Assets/fx/naticker.css" />
+
+    <!-- ─── Google Fonts ─────────────────────────────────────────── -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Jacquard+24&family=Cormorant:ital,wght@0,300..700;1,300..700&family=Ballet:opsz@16..72&family=Bebas+Neue&display=swap"
+      media="print"
+      onload="this.media = 'all'"
+    />
+
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Jacquard+24&family=Cormorant:ital,wght@0,300..700;1,300..700&family=Ballet:opsz@16..72&family=Bebas+Neue&display=swap"
+      />
+    </noscript>
+
+    <!-- ─── Favicon ───────────────────────────────── -->
+    <!-- Standard favicon -->
+    <link
+      rel="icon"
+      href="../Assets/Favicon/favicon_io/favicon.ico"
+      sizes="any"
+    />
+    <!-- PNG fallbacks -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../Assets/Favicon/favicon_io/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../Assets/Favicon/favicon_io/favicon-16x16.png"
+    />
+    <!-- Android -->
+    <link rel="manifest" href="../Assets/Favicon/favicon_io/site.webmanifest" />
+    <link
+      rel="icon"
+      sizes="192x192"
+      href="../Assets/Favicon/favicon_io/android-chrome-192x192.png"
+    />
+    <!-- Apple Touch Icon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../Assets/Favicon/favicon_io/apple-touch-icon.png"
+    />
+
+    <!-- ─── Scripts: deferred so they never block parsing ────────── -->
+    <script src="/Assets/fx/curcus.js" defer></script>
+    <script src="/Assets/sections/modal.js" defer></script>
+    <script src="/Assets/fx/transition.js" defer></script>
+    <script src="/Assets/fx/enter.js" defer></script>
+    <script src="/Assets/Favicon/icon-ani.js" defer></script>
+    <script src="/Assets/footer/footer.js" defer></script>
+    <script src="/GALLERY/gallery-script.js" defer></script>
+  </head>
+
+  <body id="top">
+    <main>
+      <!-- ═══════════════════════════════════════ -->
+      <!-- NAME TICKER                             -->
+      <!-- ═══════════════════════════════════════ -->
+      <script src="/Assets/fx/naticker.js"></script>
+
+      <!-- ═══════════════════════════════════════ -->
+      <!-- FULL GALLERY                           -->
+      <!-- ═══════════════════════════════════════ -->
+      <div class="gallery-container" id="gallery-main">
+        <!-- GALLERY GRID -->
+        <h1
+          class="changing reveal"
+          data-text="Art gallery."
+          style="--delay: 0.3s"
+        >
+          ART GALLERY.
+        </h1>
+        <p class="reveal" style="--delay: 0.4s">
+          This gallery is a sanctuary for the soul, a place where my timeless
+          collections of divergent art converges with the vibrancy of modern
+          creativity.
+        </p>
+
+        <div class="tag-index-wrapper">
+          <a class="tag-index" href="/TAG_INDEX/tag-index.html">Tag Index</a>
+        </div>
+
+        <div class="gallery-search-wrapper">
+          <div class="search-tags-row" id="searchTagsRow"></div>
+          <div class="search-input-wrap">
+            <input
+              type="search"
+              id="searchInput"
+              class="gallery-search-input"
+              placeholder="SEARCH TITLE, TAGS..."
+              autocomplete="off"
+              spellcheck="false"
+              aria-label="Search projects"
+            />
+            <button
+              class="search-clear"
+              id="searchClear"
+              aria-label="Clear search"
+            >
+              ✕
+            </button>
+          </div>
+        </div>
+
+        <div class="gallery-count" id="galleryCount">
+          Active Works: <span id="countNumber">0</span>
+        </div>
+
+        <!-- Section 1 -->
+        <!-- <details class="art-section" close>
+        <summary>thread art</summary>
+      </details> -->
+        <ul
+          class="gallery reveal"
+          style="--delay: 0.5s"
+          aria-label="Art gallery items"
+        >
+          <!-- Card 1 -->
+          <li
+            class="card cards-item article-card"
+            data-date="04-03-2026"
+            data-id="model-alpha"
+            role="listitem"
+            tabindex="0"
+            data-subtitle="#05262H7"
+            data-description="Saskia Rodríguez (Las Palmas de Gran Canaria, Gran Canaria, 1993) is an artist and graphic designer. She graduated in Fine Arts from the University of Salamanca (2015), specialising in painting and printmaking. She later completed a Master's degree in Artistic Production at the Polytechnic University of Valencia (2015–2016), followed by training in screen printing and lithography at Fundación CIEC in Betanzos (2017). Her career includes artist residencies at AIR – Artist in Residence (Krems, Austria, 2021), Fundación BilbaoArte (2017), CAAM (2018) and the Slade School of Fine Arts (2018)."
+            data-links-1="#"
+            data-links-1-label="⤷ EMAIL"
+            data-links-2="#"
+            data-links-2-label="⤷ PDF"
+            data-images='["/images/Colorful Abstract Bag.jpeg","https://placehold.co/600x400?text=Alpha+Top","https://placehold.co/600x400?text=Alpha+Side"]'
+            aria-label="Model Alpha — open for details"
+          >
+            <img
+              src="/images/Colorful Abstract Bag.jpeg"
+              alt="Model Alpha"
+              class="card2-image"
+              width="600"
+              height="350"
+              loading="eager"
+              fetchpriority="high"
+            />
+            <div class="card-text" aria-hidden="true">Model Alpha</div>
+            <div class="card2-content">
+              <h2 class="card2-title">
+                <a href="#" class="card2-title-link">Model Alpha</a>
+              </h2>
+              <ul
+                class="card2-tags card-tags-grid"
+                role="list"
+                aria-label="Tags"
+              >
+                <li class="card2-tag" role="listitem">3D Printed</li>
+                <li class="card2-tag" role="listitem">PLA</li>
+                <li class="card2-tag" role="listitem">Matte Finish</li>
+                <li class="card2-tag" role="listitem">2026</li>
+              </ul>
+            </div>
+          </li>
+
+          <!-- Card 2 -->
+          <li
+            class="card cards-item article-card"
+            data-date="04-03-2026"
+            data-id="model-beta"
+            tabindex="0"
+            data-subtitle="— Elena Holmes"
+            data-description="Living well isn't about perfection — it's about awareness. From the way we arrange our space to how we move through each day, small choices quietly shape our sense of calm and clarity."
+            data-links-1="#"
+            data-links-1-label="⤷ EMAIL"
+            data-images='["/images/slider-image-2.webp","/images/placeholder-top.webp","/images/placeholder-packed.webp"]'
+            aria-label="Model Beta — open for details"
+          >
+            <img
+              src="/images/slider-image-1.png"
+              alt="Model Beta"
+              class="card2-image"
+              width="600"
+              height="350"
+              loading="eager"
+              fetchpriority="high"
+            />
+            <div class="card-text" aria-hidden="true">Model Beta</div>
+            <div class="card2-content">
+              <h2 class="card2-title">Model Beta</h2>
+              <ul class="card2-tags card-tags-grid" aria-label="Tags">
+                <li class="card2-tag">Scenery</li>
+                <li class="card2-tag">7 inch</li>
+                <li class="card2-tag">Limited Edition</li>
+              </ul>
+            </div>
+          </li>
+
+          <!-- Card 3 -->
+          <li
+            class="card cards-item article-card"
+            data-date="04-03-2026"
+            data-id="model-gamma"
+            tabindex="0"
+            data-subtitle="— Collection 2026"
+            data-description="A striking piece from the 2026 collection."
+            data-images='["/images/slider-image-3.webp","/images/placeholder-top.webp","/images/placeholder-packed.webp"]'
+            aria-label="Model Gamma — open for details"
+          >
+            <img
+              src="/images/slider-image-3.png"
+              alt="Model Gamma"
+              class="card2-image"
+              width="600"
+              height="350"
+              loading="lazy"
+            />
+            <div class="card-text" aria-hidden="true">Model Gamma</div>
+            <div class="card2-content">
+              <h2 class="card2-title">Model Gamma</h2>
+              <ul class="card2-tags card-tags-grid" aria-label="Tags">
+                <li class="card2-tag">3D Printed</li>
+                <li class="card2-tag">ABS</li>
+                <li class="card2-tag">Glossy</li>
+                <li class="card2-tag">Limited Edition</li>
+              </ul>
+            </div>
+          </li>
+
+          <!-- Card 4 -->
+          <li
+            class="card cards-item article-card"
+            data-date="04-03-2026"
+            data-id="model-delta"
+            tabindex="0"
+            data-subtitle="— Collection 2026"
+            data-description="A piece from the 2026 collection."
+            data-images='["/images/slider-image-4.png","/images/placeholder-top.webp","/images/placeholder-packed.webp"]'
+            aria-label="Model Delta — open for details"
+          >
+            <img
+              src="/images/slider-image-4.png"
+              alt="Model Delta"
+              class="card2-image"
+              width="600"
+              height="350"
+              loading="lazy"
+            />
+            <div class="card-text" aria-hidden="true">Model Delta</div>
+            <div class="card2-content">
+              <h2 class="card2-title">Model Delta</h2>
+              <ul class="card2-tags card-tags-grid" aria-label="Tags">
+                <li class="card2-tag">3D Printed</li>
+                <li class="card2-tag">ABS</li>
+                <li class="card2-tag">Glossy</li>
+                <li class="card2-tag">Limited Edition</li>
+              </ul>
+            </div>
+          </li>
+
+          <!-- Card 5 -->
+          <li
+            class="card cards-item article-card"
+            data-date="04-03-2026"
+            data-id="model-alpha-ii"
+            tabindex="0"
+            data-subtitle="#05262H7"
+            data-description="Saskia Rodríguez (Las Palmas de Gran Canaria, Gran Canaria, 1993) is an artist and graphic designer."
+            data-links-1="#"
+            data-links-1-label="⤷ EMAIL"
+            data-links-2="#"
+            data-links-2-label="⤷ PDF"
+            data-images='["/images/Colorful Abstract Bag.webp","/images/placeholder-top.webp","/images/placeholder-side.webp"]'
+            aria-label="Model Alpha II — open for details"
+          >
+            <img
+              src="/images/slider-image-6.png"
+              alt="Model Alpha II"
+              class="card2-image"
+              width="600"
+              height="350"
+              loading="lazy"
+            />
+            <div class="card-text" aria-hidden="true">Model Alpha II</div>
+            <div class="card2-content">
+              <h2 class="card2-title">Model Alpha II</h2>
+              <ul class="card2-tags card-tags-grid" aria-label="Tags">
+                <li class="card2-tag">3D Printed</li>
+                <li class="card2-tag">PLA</li>
+                <li class="card2-tag">Matte Finish</li>
+                <li class="card2-tag">2026</li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+
+        <div
+          class="no-results"
+          id="noResults"
+          role="status"
+          aria-live="polite"
+          hidden
+        >
+          No art-works in this category
+        </div>
+
+        <div class="end">
+          <a
+            href="#top"
+            class="scroll-hint"
+            aria-label="Scroll back up to the header"
+            >[ Back to Top ↑ ]</a
+          >
+        </div>
+      </div>
+
+      <!-- MODAL -->
+      <div
+        class="modal"
+        id="modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modalTitle"
+        tabindex="-1"
+        hidden
+      >
+        <div class="modal-content">
+          <button class="close" id="closeBtn" aria-label="Close modal">
+            &times;
+          </button>
+
+          <div class="modal-left">
+            <img id="mainImage" class="modal-main" src="" alt="Detailed View" />
+            <p class="modal-date" id="modalDate"></p>
+          </div>
+
+          <div class="modal-right">
+            <h2 id="modalTitle"></h2>
+            <h5 id="modalSubtitle" class="modal-subtitle"></h5>
+            <button class="share-btn" id="shareBtn" aria-label="Copy link">
+              [ ↗ SHARE ]
+            </button>
+            <span id="modalDescription" class="modal-description"></span>
+            <div class="modal-links">
+              <a
+                href="#"
+                id="modalLinks-1"
+                class="modal-links-1"
+                target="_blank"
+                rel="noopener noreferrer"
+              ></a>
+              <a
+                href="#"
+                id="modalLinks-2"
+                class="modal-links-2"
+                target="_blank"
+                rel="noopener noreferrer"
+              ></a>
+            </div>
+            <div id="modalTags" class="modal-tags" aria-label="Tags"></div>
+            <div
+              class="thumbnails"
+              id="thumbnails"
+              role="list"
+              aria-label="More images"
+            ></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══════════════════════════════════════ -->
+      <!-- FOOTER NAV                              -->
+      <!-- ═══════════════════════════════════════ -->
+      <footer></footer>
+      <nav class="site-nav" aria-label="Site navigation">
+        <a href="../index.html" data-content="HOME"><span>HOME</span></a>
+        <a href="../index.html#art" data-content="ART"><span>ART</span></a>
+        <a
+          href="../GALLERY/gallery.html"
+          data-content="GALLERY"
+          aria-current="page"
+          ><span>GALLERY</span></a
+        >
+        <a href="../ABOUT/about.html" data-content="ABOUT"
+          ><span>ABOUT</span></a
+        >
+      </nav>
+    </main>
+    <!-- scripts -->
+    <div class="page-transition" id="page-transition" aria-hidden="true"></div>
+  </body>
+</html>

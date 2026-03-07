@@ -1,0 +1,628 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- ─── SEO & Social ─────────────────────────────────────────── -->
+    <meta
+      name="description"
+      content="WHYAWEEYE Thread Art — intricate handmade thread and textile works."
+    />
+    <meta property="og:title" content="Thread Art — WHYAWEEYE" />
+    <meta
+      property="og:description"
+      content="Intricate handmade thread art: nature, animals, figures, and more."
+    />
+    <meta property="og:type" content="website" />
+
+    <title>Thread Art — WHYAWEEYE</title>
+
+    <!-- ───  local CSS   ─── -->
+    <link rel="stylesheet" href="/THREADART/thread-style.css" />
+    <link rel="stylesheet" href="/Assets/fx/naticker.css" />
+    <!-- <link rel="stylesheet" href="style.min.css"> -->
+
+    <!-- ─── Google Fonts — async (non-render-blocking) ──────────── -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Jacquard+24&family=Cormorant:ital,wght@0,300..700;1,300..700&family=Ballet:opsz@16..72&family=Bebas+Neue&display=swap"
+      media="print"
+      onload="this.media = 'all'"
+    />
+
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Jacquard+24&family=Cormorant:ital,wght@0,300..700;1,300..700&family=Ballet:opsz@16..72&family=Bebas+Neue&display=swap"
+      />
+    </noscript>
+
+    <!-- ─── Favicon ───────────────────────────────── -->
+    <!-- Standard favicon -->
+    <link
+      rel="icon"
+      href="/Assets/Favicon/favicon_io/favicon.ico"
+      sizes="any"
+    />
+    <!-- PNG fallbacks -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/Assets/Favicon/favicon_io/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/Assets/Favicon/favicon_io/favicon-16x16.png"
+    />
+    <!-- Android -->
+    <link rel="manifest" href="/Assets/Favicon/favicon_io/site.webmanifest" />
+
+    <!-- Apple Touch Icon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/Assets/Favicon/favicon_io/apple-touch-icon.png"
+    />
+
+    <!-- ─── Scripts: deferred so they never block parsing ────────── -->
+    <script src="/Assets/fx/curcus.js" defer></script>
+    <script src="/Assets/sections/modal.js" defer></script>
+    <script src="/Assets/fx/transition.js" defer></script>
+    <script src="/Assets/fx/enter.js" defer></script>
+    <script src="/Assets/Favicon/icon-ani.js" defer></script>
+    <script src="/Assets/footer/footer.js" defer></script>
+    <script src="/THREADART/threadart-script.js" defer></script>
+  </head>
+  <body id="top">
+    <!-- ═══════════════════════════════════════ -->
+    <!-- NAME TICKER                             -->
+    <!-- ═══════════════════════════════════════ -->
+    <script src="../Assets/fx/naticker.js"></script>
+
+    <!-- ═══════════════════════════════════════ -->
+    <!-- WORD ART FEATURES SECTION               -->
+    <!-- ═══════════════════════════════════════ -->
+    <main id="artpage" aria-label="Thread Art — Threads Finesse">
+      <div class="section-container">
+        <div class="artpage-section">
+          <!-- HEADER -->
+          <div class="artpage-header">
+            <h1
+              class="changing artpage-title reveal"
+              style="--delay: 0.3s"
+              data-text="Threads Finesse."
+            >
+              Threads<br />Finesse.
+            </h1>
+            <!-- NAV -->
+            <!-- Filter nav -->
+            <nav class="artpage-nav" aria-label="Filter thread art by category">
+              <div class="artpage-nav-section">
+                <span class="artpage-nav-label reveal" style="--delay: 0.3s"
+                  >[Lists]</span
+                >
+
+                <button
+                  class="artpage-nav-link active reveal"
+                  style="--delay: 0.31s"
+                  data-filter="all"
+                  aria-pressed="true"
+                >
+                  All
+                </button>
+
+                <button
+                  class="artpage-nav-link reveal"
+                  style="--delay: 0.32s"
+                  data-filter="featured"
+                  aria-pressed="false"
+                >
+                  Featured
+                </button>
+
+                <button
+                  class="artpage-nav-link reveal"
+                  style="--delay: 0.33s"
+                  data-filter="ode"
+                  aria-pressed="false"
+                >
+                  Nature Pool
+                </button>
+
+                <button
+                  class="artpage-nav-link reveal"
+                  style="--delay: 0.34s"
+                  data-filter="horizon"
+                  aria-pressed="false"
+                >
+                  Animals &amp; Creatures
+                </button>
+
+                <button
+                  class="artpage-nav-link reveal"
+                  style="--delay: 0.35s"
+                  data-filter="longing"
+                  aria-pressed="false"
+                >
+                  People &amp; Figures
+                </button>
+
+                <button
+                  class="artpage-nav-link reveal"
+                  style="--delay: 0.36s"
+                  data-filter="narr"
+                  aria-pressed="false"
+                >
+                  Style-Based
+                </button>
+              </div>
+
+              <div class="artpage-nav-section">
+                <span class="artpage-nav-label reveal" style="--delay: 0.37s"
+                  >[More]</span
+                >
+
+                <button
+                  class="artpage-nav-link reveal"
+                  style="--delay: 0.38s"
+                  data-filter="animals"
+                  aria-pressed="false"
+                >
+                  Pattern &amp; Decorative
+                </button>
+
+                <button
+                  class="artpage-nav-link reveal"
+                  style="--delay: 0.39s"
+                  data-filter="objects"
+                  aria-pressed="false"
+                >
+                  Typography
+                </button>
+
+                <button
+                  class="artpage-nav-link reveal"
+                  style="--delay: 0.4s"
+                  data-filter="interior"
+                  aria-pressed="false"
+                >
+                  Abstract &amp; Conceptual
+                </button>
+
+                <button
+                  class="artpage-nav-link reveal"
+                  style="--delay: 0.41s"
+                  data-filter="patterns"
+                  aria-pressed="false"
+                >
+                  Technique-Based
+                </button>
+              </div>
+            </nav>
+
+            <a
+              href="#grid"
+              class="scroll-hint reveal"
+              style="--delay: 0.3s"
+              aria-label="Scroll down to the gallery grid"
+              >[Scroll<br />Down ↓]</a
+            >
+          </div>
+          <div class="search-wrapper">
+            <input
+              type="search"
+              id="searchInput"
+              class="search-input"
+              placeholder="SEARCH by Title, HashCode, Tags, Date..."
+              autocomplete="off"
+              spellcheck="false"
+              aria-label="Search projects"
+            />
+            <button
+              class="search-clear"
+              id="searchClear"
+              aria-label="Clear search"
+            >
+              ✕
+            </button>
+          </div>
+
+          <div class="gallery-count" id="galleryCount">
+            Active Works: <span id="countNumber">0</span>
+          </div>
+
+          <!-- ═══════════════════════════════════════ -->
+          <!-- GRID -->
+          <!-- ═══════════════════════════════════════ -->
+          <div
+            class="artpage-grid reveal"
+            style="--delay: 0.4s"
+            id="grid"
+            aria-live="polite"
+            aria-label="Thread art cards"
+          >
+            <!-- 1 -->
+            <!-- data-id= for shareable link -->
+            <!-- data-tags= for nav filter -->
+            <li
+              class="article-card"
+              data-date="05-03-2026"
+              data-id="image-title-here"
+              data-tags="tag-one tag-two"
+              role="listitem"
+              tabindex="0"
+              data-subtitle="#HASHCODE"
+              data-description="Image description goes here."
+              data-links-1=""
+              data-links-2=""
+              data-links-1-label="⤷ EMAIL"
+              data-links-2-label="⤷ PDF"
+              data-images='["/images/coming-soon.webp","/images/coming-soon.webp"]'
+              aria-label="Image Title — press Enter to view details."
+            >
+              <div class="card-number">[01]</div>
+
+              <div class="card-image thread">
+                <div class="card-image-placeholder">
+                  <img
+                    src="/images/coming-soon.webp"
+                    alt="Brief description of image"
+                    width="600"
+                    height="350"
+                    loading="eager"
+                    fetchpriority="high"
+                  />
+                </div>
+              </div>
+
+              <div class="card-info">
+                <div class="card-text">
+                  <div class="card-tag">CATEGORY TAG</div>
+                  <!-- shown above title in grid -->
+                  <div class="card-title">Image Title</div>
+                </div>
+
+                <div class="arrow-overlay">
+                  <div class="arrow-circle">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <line x1="5" y1="19" x2="19" y2="5" />
+                      <polyline points="5 5 19 5 19 19" />
+                    </svg>
+                  </div>
+                </div>
+
+                <!-- hidden tags for search/filter — must match data-tags above -->
+                <div class="card2-tag" hidden>tag-one</div>
+                <div class="card2-tag" hidden>tag-two</div>
+              </div>
+            </li>
+            <!-- 2 -->
+            <li
+              class="article-card"
+              data-date="05-03-2026"
+              data-id="image-title-here"
+              data-tags="tag-one tag-two"
+              role="listitem"
+              tabindex="0"
+              data-subtitle="#HASHCODE"
+              data-description="Image description goes here."
+              data-links-1=""
+              data-links-2=""
+              data-links-1-label="⤷ EMAIL"
+              data-links-2-label="⤷ PDF"
+              data-images='["/images/coming-soon.webp","/images/coming-soon.webp"]'
+              aria-label="Image Title — press Enter to view details."
+            >
+              <div class="card-number">[02]</div>
+
+              <div class="card-image thread">
+                <div class="card-image-placeholder">
+                  <img
+                    src="/images/coming-soon.webp"
+                    alt="Brief description of image"
+                    width="600"
+                    height="350"
+                    loading="eager"
+                    fetchpriority="high"
+                  />
+                </div>
+              </div>
+
+              <div class="card-info">
+                <div class="card-text">
+                  <div class="card-tag">CATEGORY TAG</div>
+                  <!-- shown above title in grid -->
+                  <div class="card-title">Image Title</div>
+                </div>
+
+                <div class="arrow-overlay">
+                  <div class="arrow-circle">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <line x1="5" y1="19" x2="19" y2="5" />
+                      <polyline points="5 5 19 5 19 19" />
+                    </svg>
+                  </div>
+                </div>
+
+                <!-- hidden tags for search/filter — must match data-tags above -->
+                <div class="card2-tag" hidden>tag-one</div>
+                <div class="card2-tag" hidden>tag-two</div>
+              </div>
+            </li>
+            <!-- 3 -->
+            <li
+              class="article-card"
+              data-date="05-03-2026"
+              data-id="image-title-here"
+              data-tags="tag-one tag-two"
+              role="listitem"
+              tabindex="0"
+              data-subtitle="#HASHCODE"
+              data-description="Image description goes here."
+              data-links-1=""
+              data-links-2=""
+              data-links-1-label="⤷ EMAIL"
+              data-links-2-label="⤷ PDF"
+              data-images='["/images/coming-soon.webp","/images/coming-soon.webp"]'
+              aria-label="Image Title — press Enter to view details."
+            >
+              <div class="card-number">[03]</div>
+
+              <div class="card-image thread">
+                <div class="card-image-placeholder">
+                  <img
+                    src="/images/coming-soon.webp"
+                    alt="Brief description of image"
+                    width="600"
+                    height="350"
+                    loading="eager"
+                    fetchpriority="high"
+                  />
+                </div>
+              </div>
+
+              <div class="card-info">
+                <div class="card-text">
+                  <div class="card-tag">CATEGORY TAG</div>
+                  <!-- shown above title in grid -->
+                  <div class="card-title">Image Title</div>
+                </div>
+
+                <div class="arrow-overlay">
+                  <div class="arrow-circle">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <line x1="5" y1="19" x2="19" y2="5" />
+                      <polyline points="5 5 19 5 19 19" />
+                    </svg>
+                  </div>
+                </div>
+
+                <!-- hidden tags for search/filter — must match data-tags above -->
+                <div class="card2-tag" hidden>tag-one</div>
+                <div class="card2-tag" hidden>tag-two</div>
+              </div>
+            </li>
+            <!-- 4 -->
+            <li
+              class="article-card"
+              data-date="05-03-2026"
+              data-id="image-title-here"
+              data-tags="tag-one tag-two"
+              role="listitem"
+              tabindex="0"
+              data-subtitle="#HASHCODE"
+              data-description="Image description goes here."
+              data-links-1=""
+              data-links-2=""
+              data-links-1-label="⤷ EMAIL"
+              data-links-2-label="⤷ PDF"
+              data-images='["/images/coming-soon.webp","/images/coming-soon.webp"]'
+              aria-label="Image Title — press Enter to view details."
+            >
+              <div class="card-number">[04]</div>
+
+              <div class="card-image thread">
+                <div class="card-image-placeholder">
+                  <img
+                    src="/images/coming-soon.webp"
+                    alt="Brief description of image"
+                    width="600"
+                    height="350"
+                    loading="eager"
+                    fetchpriority="high"
+                  />
+                </div>
+              </div>
+
+              <div class="card-info">
+                <div class="card-text">
+                  <div class="card-tag">CATEGORY TAG</div>
+                  <!-- shown above title in grid -->
+                  <div class="card-title">Image Title</div>
+                </div>
+
+                <div class="arrow-overlay">
+                  <div class="arrow-circle">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <line x1="5" y1="19" x2="19" y2="5" />
+                      <polyline points="5 5 19 5 19 19" />
+                    </svg>
+                  </div>
+                </div>
+
+                <!-- hidden tags for search/filter — must match data-tags above -->
+                <div class="card2-tag" hidden>tag-one</div>
+                <div class="card2-tag" hidden>tag-two</div>
+              </div>
+            </li>
+            <!-- 5 -->
+            <li
+              class="article-card"
+              data-date="05-03-2026"
+              data-id="image-title-here"
+              data-tags="tag-one tag-two"
+              role="listitem"
+              tabindex="0"
+              data-subtitle="#HASHCODE"
+              data-description="Image description goes here."
+              data-links-1=""
+              data-links-2=""
+              data-links-1-label="⤷ EMAIL"
+              data-links-2-label="⤷ PDF"
+              data-images='["/images/coming-soon.webp","/images/coming-soon.webp"]'
+              aria-label="Image Title — press Enter to view details."
+            >
+              <div class="card-number">[05]</div>
+
+              <div class="card-image thread">
+                <div class="card-image-placeholder">
+                  <img
+                    src="/images/coming-soon.webp"
+                    alt="Brief description of image"
+                    width="600"
+                    height="350"
+                    loading="eager"
+                    fetchpriority="high"
+                  />
+                </div>
+              </div>
+
+              <div class="card-info">
+                <div class="card-text">
+                  <div class="card-tag">CATEGORY TAG</div>
+                  <!-- shown above title in grid -->
+                  <div class="card-title">Image Title</div>
+                </div>
+
+                <div class="arrow-overlay">
+                  <div class="arrow-circle">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <line x1="5" y1="19" x2="19" y2="5" />
+                      <polyline points="5 5 19 5 19 19" />
+                    </svg>
+                  </div>
+                </div>
+
+                <!-- hidden tags for search/filter — must match data-tags above -->
+                <div class="card2-tag" hidden>tag-one</div>
+                <div class="card2-tag" hidden>tag-two</div>
+              </div>
+            </li>
+
+            <!-- ═══════════════════════════════════════ -->
+            <!-- Empty state -->
+            <!-- ═══════════════════════════════════════ -->
+            <div
+              class="no-results"
+              id="noResults"
+              role="status"
+              aria-live="polite"
+              hidden
+            >
+              No thread-works in this category
+            </div>
+          </div>
+
+          <div class="end" aria-hidden="true">
+            <a href="#top" class="scroll-hint" aria-label="Back to top"
+              >[ Back to Top ↑ ]</a
+            >
+          </div>
+          <div class="end" aria-hidden="true">
+            <a
+              href="/WORDART/wordart.html"
+              class="go-to-page"
+              aria-label="Link to go to WordArt Page"
+              >[ Go to Wordart ↗ ]</a
+            >
+          </div>
+        </div>
+        <!-- /.artpage-section -->
+      </div>
+      <!-- /.section-container -->
+    </main>
+    <!-- /#threadart -->
+
+    <!-- ═══════════════════════════════════════ -->
+    <!-- MODAL -->
+    <!-- ═══════════════════════════════════════ -->
+    <div
+      class="modal"
+      id="modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modalTitle"
+      tabindex="-1"
+      hidden
+    >
+      <div class="modal-content">
+        <button class="close" id="closeBtn" aria-label="Close modal">
+          &times;
+        </button>
+
+        <div class="modal-left">
+          <img id="mainImage" class="modal-main" src="" alt="Detailed View" />
+          <p class="modal-date" id="modalDate"></p>
+        </div>
+
+        <div class="modal-right">
+          <h2 id="modalTitle"></h2>
+          <h5 id="modalSubtitle" class="modal-subtitle"></h5>
+          <button class="share-btn" id="shareBtn" aria-label="Copy link">
+            [ ↗ SHARE ]
+          </button>
+          <span id="modalDescription" class="modal-description"></span>
+          <p class="modal-color-notice">
+            Avoid direct sunlight on the picture.<br />
+            Please remember, color settings on your monitor or phone may differ
+            slightly from the real color of the pictures.
+          </p>
+          <div class="modal-links">
+            <a
+              class="modal-links-1"
+              id="modalLinks-1"
+              target="_blank"
+              rel="noopener noreferrer"
+            ></a>
+            <a
+              class="modal-links-2"
+              id="modalLinks-2"
+              target="_blank"
+              rel="noopener noreferrer"
+            ></a>
+          </div>
+          <div id="modalTags" class="modal-tags" aria-label="Tags"></div>
+
+          <div
+            class="thumbnails"
+            id="thumbnails"
+            role="list"
+            aria-label="More images"
+          ></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════ -->
+    <!-- FOOTER NAV                              -->
+    <!-- ═══════════════════════════════════════ -->
+    <footer></footer>
+    <nav class="site-nav" aria-label="Site navigation">
+      <a href="../index.html" data-content="HOME"><span>HOME</span></a>
+      <a href="../index.html#art" data-content="ART"><span>ART</span></a>
+      <a href="../GALLERY/gallery.html" data-content="GALLERY"
+        ><span>GALLERY</span></a
+      >
+      <a href="../ABOUT/about.html" data-content="ABOUT"><span>ABOUT</span></a>
+    </nav>
+
+    <!-- Page-transition overlay — must stay last -->
+    <div class="page-transition" id="page-transition" aria-hidden="true"></div>
+  </body>
+</html>

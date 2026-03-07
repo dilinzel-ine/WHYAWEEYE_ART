@@ -1,0 +1,1013 @@
+<section class="gallery">
+              <!-- Card 1 -->
+              <div
+                class="card cards-item"
+                role="listitem"
+                tabindex="0"
+                data-subtitle="#5262H7"
+                data-description="Saskia Rodríguez (Las Palmas de Gran Canaria, Gran Canaria, 1993) is an artist and graphic designer. She graduated in Fine Arts from the University of Salamanca (2015), specialising in painting and printmaking. She later completed a Master’s degree in Artistic Production at the Polytechnic University of Valencia (2015–2016), followed by training in screen printing and lithography at Fundación CIEC in Betanzos (2017). Her career includes artist residencies at AIR – Artist in Residence (Krems, Austria, 2021), Fundación BilbaoArte (2017), CAAM (2018) and the Slade School of Fine Arts (2018)."
+                data-links="email"
+                data-images='[ "/images/Colorful Abstract Bag.jpeg",
+                "https://placehold.co/600x400?text=Hello\nWorld+Alpha+Top",
+                "https://placehold.co/600x400?text=Hello\nWorld+Alpha+Side", 
+                "https://placehold.co/600x400?text=Hello\nWorld+Alpha+Side" ]'
+              >
+                <img
+                  src="/images/Colorful Abstract Bag.jpeg"
+                  alt="Model Alpha"
+                  class="card2-image"
+                />
+                <div class="card-text">Model Alpha</div>
+
+                <div class="card2-content">
+                  <h2 class="card2-title">
+                    <a href="#" class="card2-title-link">Model Alpha</a>
+                  </h2>
+                  <ul class="card2-tags card-tags-grid" role="list">
+                    <li class="card2-tag" role="listitem">3D Printed</li>
+                    <li class="card2-tag" role="listitem">PLA</li>
+                    <li class="card2-tag" role="listitem">Matte Finish</li>
+                    <li class="card2-tag" role="listitem">2026</li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Card 2 -->
+              <div
+                class="card cards-item"
+                role="listitem"
+                tabindex="0"
+                data-images='[
+          "https://placehold.co/600x400?text=Hello\nWorld+Beta+Main",
+          "https://placehold.co/600x400?text=Hello\nWorld+Beta+Top",
+          "https://placehold.co/600x400?text=Hello\nWorld+Beta+Packed"
+        ]'
+              >
+                <img
+                  src="images/Layer 1.png"
+                  alt="Model Beta"
+                  class="card2-image"
+                />
+                <div class="card-text">Model Beta</div>
+
+                <div class="card2-content">
+                  <h2 class="card2-title">
+                    <a href="#" class="card2-title-link">Model Beta</a>
+                  </h2>
+                  <ul class="card2-tags card-tags-grid" role="list">
+                    <li class="card2-tag" role="listitem">Scenery</li>
+                    <li class="card2-tag" role="listitem">7 inch</li>
+                    <li class="card2-tag" role="listitem">Limited Edition</li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Card 3 -->
+              <div
+                class="card cards-item"
+                role="listitem"
+                tabindex="0"
+                data-images='[
+          "https://placehold.co/600x400?text=Hello\nWorld+Beta+Main",
+          "https://placehold.co/600x400?text=Hello\nWorld+Beta+Top",
+          "https://placehold.co/600x400?text=Hello\nWorld+Beta+Packed"
+        ]'
+              >
+                <img
+                  src="images/sneakerz-sx-bebop01.jpg"
+                  alt="Model Beta"
+                  class="card2-image"
+                />
+                <div class="card-text">Model Beta</div>
+
+                <div class="card2-content">
+                  <h2 class="card2-title">
+                    <a href="#" class="card2-title-link">Model Beta</a>
+                  </h2>
+                  <ul class="card2-tags card-tags-grid" role="list">
+                    <li class="card2-tag" role="listitem">3D Printed</li>
+                    <li class="card2-tag" role="listitem">ABS</li>
+                    <li class="card2-tag" role="listitem">Glossy</li>
+                    <li class="card2-tag" role="listitem">Limited Edition</li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Card 4 -->
+              <div
+                class="card cards-item"
+                role="listitem"
+                tabindex="0"
+                data-images='[
+          "https://placehold.co/600x400?text=Hello\nWorld+Beta+Main",
+          "https://placehold.co/600x400?text=Hello\nWorld+Beta+Top",
+          "https://placehold.co/600x400?text=Hello\nWorld+Beta+Packed"
+        ]'
+              >
+                <img
+                  src="images/Stylized Portrait with Blue Theme.jpeg"
+                  alt="Model Beta"
+                  class="card2-image"
+                />
+                <div class="card-text">Model Beta</div>
+
+                <div class="card2-content">
+                  <h2 class="card2-title">
+                    <a href="#" class="card2-title-link">Model Beta</a>
+                  </h2>
+                  <ul class="card2-tags card-tags-grid" role="list">
+                    <li class="card2-tag" role="listitem">3D Printed</li>
+                    <li class="card2-tag" role="listitem">ABS</li>
+                    <li class="card2-tag" role="listitem">Glossy</li>
+                    <li class="card2-tag" role="listitem">Limited Edition</li>
+                  </ul>
+                </div>
+              </div>
+              <!-- Card 4 -->
+              <div
+                class="card cards-item"
+                role="listitem"
+                tabindex="0"
+                data-images='[
+          "https://placehold.co/600x400?text=Hello\nWorld+Beta+Main",
+          "https://placehold.co/600x400?text=Hello\nWorld+Beta+Top",
+          "https://placehold.co/600x400?text=Hello\nWorld+Beta+Packed"
+        ]'
+              >
+                <img
+                  src="images/Stylized Portrait with Blue Theme.jpeg"
+                  alt="Model Beta"
+                  class="card2-image"
+                />
+                <div class="card-text">Model Beta</div>
+
+                <div class="card2-content">
+                  <h2 class="card2-title">
+                    <a href="#" class="card2-title-link">Model Beta</a>
+                  </h2>
+                  <ul class="card2-tags card-tags-grid" role="list">
+                    <li class="card2-tag" role="listitem">3D Printed</li>
+                    <li class="card2-tag" role="listitem">ABS</li>
+                    <li class="card2-tag" role="listitem">Glossy</li>
+                    <li class="card2-tag" role="listitem">Limited Edition</li>
+                  </ul>
+                </div>
+              </div>
+              <!-- Card 4 -->
+              <div
+                class="card cards-item"
+                role="listitem"
+                tabindex="0"
+                data-images='[
+          "https://placehold.co/600x400?text=Hello\nWorld+Beta+Main",
+          "https://placehold.co/600x400?text=Hello\nWorld+Beta+Top",
+          "https://placehold.co/600x400?text=Hello\nWorld+Beta+Packed"
+        ]'
+              >
+                <img
+                  src="images/Stylized Portrait with Blue Theme.jpeg"
+                  alt="Model Beta"
+                  class="card2-image"
+                />
+                <div class="card-text">Model Beta</div>
+
+                <div class="card2-content">
+                  <h2 class="card2-title">
+                    <a href="#" class="card2-title-link">Model Beta</a>
+                  </h2>
+                  <ul class="card2-tags card-tags-grid" role="list">
+                    <li class="card2-tag" role="listitem">3D Printed</li>
+                    <li class="card2-tag" role="listitem">ABS</li>
+                    <li class="card2-tag" role="listitem">Glossy</li>
+                    <li class="card2-tag" role="listitem">Limited Edition</li>
+                  </ul>
+                </div>
+              </div>
+              <!-- Card 4 -->
+              <div
+                class="card cards-item"
+                role="listitem"
+                tabindex="0"
+                data-images='[
+          "https://placehold.co/600x400?text=Hello\nWorld+Beta+Main",
+          "https://placehold.co/600x400?text=Hello\nWorld+Beta+Top",
+          "https://placehold.co/600x400?text=Hello\nWorld+Beta+Packed"
+        ]'
+              >
+                <img
+                  src="images/Stylized Portrait with Blue Theme.jpeg"
+                  alt="Model Beta"
+                  class="card2-image"
+                />
+                <div class="card-text">Model Beta</div>
+
+                <div class="card2-content">
+                  <h2 class="card2-title">
+                    <a href="#" class="card2-title-link">Model Beta</a>
+                  </h2>
+                  <ul class="card2-tags card-tags-grid" role="list">
+                    <li class="card2-tag" role="listitem">3D Printed</li>
+                    <li class="card2-tag" role="listitem">ABS</li>
+                    <li class="card2-tag" role="listitem">Glossy</li>
+                    <li class="card2-tag" role="listitem">Limited Edition</li>
+                  </ul>
+                </div>
+              </div>
+              <!-- Card 4 -->
+              <div
+                class="card cards-item"
+                role="listitem"
+                tabindex="0"
+                data-images='[
+          "https://placehold.co/600x400?text=Hello\nWorld+Beta+Main",
+          "https://placehold.co/600x400?text=Hello\nWorld+Beta+Top",
+          "https://placehold.co/600x400?text=Hello\nWorld+Beta+Packed"
+        ]'
+              >
+                <img
+                  src="images/Stylized Portrait with Blue Theme.jpeg"
+                  alt="Model Beta"
+                  class="card2-image"
+                />
+                <div class="card-text">Model Beta</div>
+
+                <div class="card2-content">
+                  <h2 class="card2-title">
+                    <a href="#" class="card2-title-link">Model Beta</a>
+                  </h2>
+                  <ul class="card2-tags card-tags-grid" role="list">
+                    <li class="card2-tag" role="listitem">3D Printed</li>
+                    <li class="card2-tag" role="listitem">ABS</li>
+                    <li class="card2-tag" role="listitem">Glossy</li>
+                    <li class="card2-tag" role="listitem">Limited Edition</li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+
+
+
+
+
+
+            JAVASCRIPT
+
+            
+// document.addEventListener("DOMContentLoaded", () => {
+//   /* ================= LOADER ================= */
+//   const loader = document.getElementById("loading-screen");
+//   const content = document.getElementById("content");
+//   const percentageText = document.getElementById("percentage");
+
+//   let count = 0;
+//   const interval = setInterval(() => {
+//     if (count <= 100) {
+//       percentageText.textContent = `[${count}%]`;
+//       count++;
+//     } else {
+//       clearInterval(interval);
+//       loader.style.display = "none";
+//       content.style.display = "block";
+//     }
+//   }, 10);
+
+//   /* ================= MODAL ================= */
+//   const cards = document.querySelectorAll(".card");
+//   const modal = document.getElementById("modal");
+//   const mainImage = document.getElementById("mainImage");
+//   const thumbnailsContainer = document.getElementById("thumbnails");
+//   const closeBtn = document.getElementById("closeBtn");
+//   const modalTitle = document.getElementById("modalTitle");
+//   const modalTags = document.getElementById("modalTags");
+//   const modalSubtitle = document.getElementById("modalSubtitle");
+//   const modalDescription = document.getElementById("modalDescription");
+//   const modalLinks = document.getElementById("modalLinks");
+
+//   let currentActiveThumb = null;
+
+//   function closeModal() {
+//     modal.style.display = "none";
+//     mainImage.src = "";
+//     thumbnailsContainer.innerHTML = "";
+//     currentActiveThumb = null;
+//   }
+
+//   cards.forEach((card) => {
+//     card.addEventListener("click", () => {
+//       if (!modal) return;
+
+//       const images = JSON.parse(card.getAttribute("data-images") || "[]");
+//       if (!images.length) return;
+
+//       modalTitle.textContent =
+//         card.querySelector(".card-text")?.textContent || "";
+
+//       modalSubtitle.textContent = card.getAttribute("data-subtitle") || "";
+
+//       modalDescription.textContent =
+//         card.getAttribute("data-description") || "";
+
+//       modalLinks.textContent = card.getAttribute("data-links") || "";
+
+//       modalTags.innerHTML = "";
+//       card.querySelectorAll(".card2-tag").forEach((tag) => {
+//         const span = document.createElement("span");
+//         span.textContent = tag.textContent;
+//         modalTags.appendChild(span);
+//       });
+
+//       modal.style.display = "flex";
+
+//       mainImage.src = images[0];
+//       mainImage.alt = `${modalTitle.textContent} - main view`;
+
+//       thumbnailsContainer.innerHTML = "";
+
+//       images.forEach((src, i) => {
+//         const thumb = document.createElement("img");
+//         thumb.src = src;
+//         thumb.alt = `${modalTitle.textContent} - view ${i + 1}`;
+
+//         if (i === 0) {
+//           thumb.classList.add("active");
+//           currentActiveThumb = thumb;
+//         }
+
+//         thumb.addEventListener("click", (e) => {
+//           e.stopPropagation();
+//           mainImage.src = src;
+//           mainImage.alt = thumb.alt;
+
+//           if (currentActiveThumb) currentActiveThumb.classList.remove("active");
+
+//           thumb.classList.add("active");
+//           currentActiveThumb = thumb;
+//         });
+
+//         thumbnailsContainer.appendChild(thumb);
+//       });
+//     });
+//   });
+
+//   if (closeBtn) {
+//     closeBtn.addEventListener("click", closeModal);
+//   }
+
+//   window.addEventListener("click", (e) => {
+//     if (e.target === modal) closeModal();
+//   });
+
+//   window.addEventListener("keydown", (e) => {
+//     if (e.key === "Escape" && modal?.style.display === "flex") {
+//       closeModal();
+//     }
+//   });
+
+//   /* ================= RANDOM ABSTRACT IMAGE ================= */
+//   const abstractEl = document.querySelector(".abstract");
+//   const allImages = [
+//     "images/webp/why-a-we-eye1.webp",
+//     "images/webp/3d-ren-1.webp",
+//     "images/webp/3d-ren-2.webp",
+//     "images/webp/3d-ren-3.webp",
+//     "images/webp/3d-ren-4.webp",
+//     "images/webp/3d-ren-5.webp",
+//     "images/webp/3d-ren-6.webp",
+//     "images/webp/3d-ren-7.webp",
+//     "images/webp/3d-ren-8.webp",
+//     "images/webp/3d-ren-9.webp",
+//     "images/webp/3d-ren-10.webp",
+//     "images/webp/3d-ren-11.webp",
+//     "images/webp/3d-ren-12.webp",
+//     "images/webp/3d-ren-15.webp",
+//     "images/webp/3d-ren-16.webp",
+//     "images/webp/3d-ren-17.webp",
+//     "images/webp/3d-ren-18.webp",
+//     "images/webp/3d-ren-21.webp",
+//     "images/webp/3d-ren-22.webp",
+//     "images/webp/3d-ren-24.webp",
+//     "images/webp/3d-ren-25.webp",
+//     "images/webp/3d-ren-26.webp",
+//     "images/webp/3d-ren-27.webp",
+//     "images/webp/3d-ren-28.webp",
+//     "images/webp/3d-ren-29.webp",
+//     "images/webp/3d-ren-30.webp",
+//     "images/webp/3d-ren-31.webp",
+//     "images/webp/3d-ren-32.webp",
+//     "images/webp/3d-ren-33.webp",
+//     "images/webp/3d-ren-34.webp",
+//     "images/webp/3d-ren-35.webp",
+//     "images/webp/3d-ren-36.webp",
+//     "images/webp/3d-ren-37.webp",
+//     "images/webp/3d-ren-38.webp",
+//     "images/webp/3d-ren-39.webp",
+//     "images/webp/3d-ren-40.webp",
+//     "images/webp/3d-ren-41.webp",
+//     "images/webp/3d-ren-42.webp",
+//     "images/webp/3d-ren-43.webp",
+//     "images/webp/3d-ren-44.webp",
+//     "images/webp/3d-ren-46.webp",
+//     "images/webp/3d-ren-47.webp",
+//     "images/webp/3d-ren-48.webp",
+//     "images/webp/3d-ren-49.webp",
+//     "images/webp/3d-ren-50.webp",
+//     "images/webp/3d-ren-51.webp",
+//     "images/webp/3d-ren-52.webp",
+//     "images/webp/3d-ren-53.webp",
+//   ];
+
+//   if (abstractEl) {
+//     const randomImage = allImages[Math.floor(Math.random() * allImages.length)];
+//     abstractEl.style.backgroundImage = `url('${randomImage}')`;
+//   }
+
+//   /* ================= NAV SCROLL ================= */
+//   const sections = document.querySelectorAll("section");
+//   const navLinks = document.querySelectorAll("nav a");
+//   const scrollContainer = document.querySelector(".scroll-container");
+
+//   if (scrollContainer) {
+//     scrollContainer.addEventListener("scroll", () => {
+//       let currentSectionId = "";
+
+//       sections.forEach((section) => {
+//         if (scrollContainer.scrollTop >= section.offsetTop - 150) {
+//           currentSectionId = section.getAttribute("id");
+//         }
+//       });
+
+//       navLinks.forEach((link) => {
+//         link.classList.remove("active");
+//         if (link.getAttribute("href") === `#${currentSectionId}`) {
+//           link.classList.add("active");
+//         }
+//       });
+//     });
+//   }
+
+//   /* ================= CURSOR FOLLOW ================= */
+//   const cursor = document.querySelector(".cursor-letter");
+//   if (cursor) {
+//     let mouseX = 0,
+//       mouseY = 0;
+//     let x = 0,
+//       y = 0;
+
+//     document.addEventListener("mousemove", (e) => {
+//       mouseX = e.clientX;
+//       mouseY = e.clientY;
+//     });
+
+//     function animate() {
+//       x += (mouseX - x) * 0.3;
+//       y += (mouseY - y) * 0.3;
+//       cursor.style.transform = `translate(${x}px, ${y}px) translate(-0%, -70%)`;
+//       requestAnimationFrame(animate);
+//     }
+
+//     animate();
+//   }
+
+//   document.addEventListener("DOMContentLoaded", () => {
+//     const projectSection = document.querySelector(".projects");
+//     const projectTitle = document.querySelector(".projects-title");
+
+//     if (!projectSection || !projectTitle) return;
+
+//     // 1. Set your speed multiplier here
+//     // Lower than 1 = drifts slower than scroll
+//     // Higher than 1 = moves faster than scroll
+//     const speed = 0.7;
+
+//     window.addEventListener("scroll", () => {
+//       const rect = projectSection.getBoundingClientRect();
+//       const windowHeight = window.innerHeight;
+
+//       // Calculate progress (0 when enters bottom, 1 when leaves top)
+//       let progress = (windowHeight - rect.top) / (windowHeight + rect.height);
+//       progress = Math.max(0, Math.min(1, progress));
+
+//       const sectionHeight = rect.height;
+//       const titleHeight = projectTitle.offsetHeight;
+
+//       // 2. Apply the multiplier to the total travel distance
+//       const maxTravel = (sectionHeight - titleHeight) * speed;
+
+//       // 3. Offset the start point if using a speed multiplier
+//       // to keep it centered or starting at the top correctly
+//       const moveAmount = progress * maxTravel;
+
+//       projectTitle.style.transform = `translateY(${moveAmount}px)`;
+//     });
+//   });
+// });
+
+// ---------------------------------------------------------------------
+
+// document.addEventListener("DOMContentLoaded", () => {
+//   //
+//   //  Loader
+//   const loader = document.getElementById("loading-screen");
+//   const content = document.getElementById("content");
+//   const percentageText = document.getElementById("percentage");
+
+//   const cards = document.querySelectorAll(".card");
+//   const modal = document.getElementById("modal");
+//   const mainImage = document.getElementById("mainImage");
+//   const thumbnailsContainer = document.getElementById("thumbnails");
+//   const closeBtn = document.getElementById("closeBtn");
+//   const modalTitle = document.getElementById("modalTitle");
+//   const modalTags = document.getElementById("modalTags");
+//   const modalSubtitle = document.getElementById("modalSubtitle");
+//   const modalDescription = document.getElementById("modalDescription");
+//   const modalLinks = document.getElementById("modalLinks");
+
+//   let count = 0;
+//   const interval = setInterval(() => {
+//     if (count <= 100) {
+//       percentageText.textContent = `[${count}%]`;
+//       count++;
+//     } else {
+//       clearInterval(interval);
+//       loader.style.display = "none";
+//       content.style.display = "block";
+//     }
+//   }, 10);
+
+//   // All possible images
+//   const images = [
+//     "images/webp/why-a-we-eye1.webp",
+//     "images/webp/3d-ren-1.webp",
+//     "images/webp/3d-ren-2.webp",
+//     "images/webp/3d-ren-3.webp",
+//     "images/webp/3d-ren-4.webp",
+//     "images/webp/3d-ren-5.webp",
+//     "images/webp/3d-ren-6.webp",
+//     "images/webp/3d-ren-7.webp",
+//     "images/webp/3d-ren-8.webp",
+//     "images/webp/3d-ren-9.webp",
+//     "images/webp/3d-ren-10.webp",
+//     "images/webp/3d-ren-11.webp",
+//     "images/webp/3d-ren-12.webp",
+//     "images/webp/3d-ren-15.webp",
+//     "images/webp/3d-ren-16.webp",
+//     "images/webp/3d-ren-17.webp",
+//     "images/webp/3d-ren-18.webp",
+//     "images/webp/3d-ren-21.webp",
+//     "images/webp/3d-ren-22.webp",
+//     "images/webp/3d-ren-24.webp",
+//     "images/webp/3d-ren-25.webp",
+//     "images/webp/3d-ren-26.webp",
+//     "images/webp/3d-ren-27.webp",
+//     "images/webp/3d-ren-28.webp",
+//     "images/webp/3d-ren-29.webp",
+//     "images/webp/3d-ren-30.webp",
+//     "images/webp/3d-ren-31.webp",
+//     "images/webp/3d-ren-32.webp",
+//     "images/webp/3d-ren-33.webp",
+//     "images/webp/3d-ren-34.webp",
+//     "images/webp/3d-ren-35.webp",
+//     "images/webp/3d-ren-36.webp",
+//     "images/webp/3d-ren-37.webp",
+//     "images/webp/3d-ren-38.webp",
+//     "images/webp/3d-ren-39.webp",
+//     "images/webp/3d-ren-40.webp",
+//     "images/webp/3d-ren-41.webp",
+//     "images/webp/3d-ren-42.webp",
+//     "images/webp/3d-ren-43.webp",
+//     "images/webp/3d-ren-44.webp",
+//     "images/webp/3d-ren-46.webp",
+//     "images/webp/3d-ren-47.webp",
+//     "images/webp/3d-ren-48.webp",
+//     "images/webp/3d-ren-49.webp",
+//     "images/webp/3d-ren-50.webp",
+//     "images/webp/3d-ren-51.webp",
+//     "images/webp/3d-ren-52.webp",
+//     "images/webp/3d-ren-53.webp",
+//   ];
+
+//   let currentActiveThumb = null;
+
+//   cards.forEach((card) => {
+//     card.addEventListener("click", () => {
+//       const images = JSON.parse(card.getAttribute("data-images"));
+
+//       // Set title from card
+//       modalTitle.textContent = card.querySelector(".card-text").textContent;
+//       // Set subtitle
+//       modalSubtitle.textContent = card.getAttribute("data-subtitle") || "";
+
+//       // Set description
+//       modalDescription.textContent =
+//         card.getAttribute("data-description") || "";
+//       // Set links
+//       modalLinks.textContent = card.getAttribute("data-links") || "";
+//       // Set tags from card
+//       modalTags.innerHTML = "";
+//       card.querySelectorAll(".card2-tag").forEach((tag) => {
+//         const span = document.createElement("span");
+//         span.textContent = tag.textContent;
+//         modalTags.appendChild(span);
+//       });
+
+//       // Show modal
+//       modal.style.display = "flex";
+//       modal.focus();
+
+//       // Set main image to first image
+//       mainImage.src = images[0];
+//       mainImage.alt =
+//         card.querySelector(".card-text").textContent + " - main view";
+
+//       // Clear thumbnails
+//       thumbnailsContainer.innerHTML = "";
+
+//       // inside your existing click event for card
+//       thumbnailsContainer.innerHTML = ""; // clear first
+
+//       // append thumbnails at the **bottom**
+//       images.forEach((src, i) => {
+//         const thumb = document.createElement("img");
+//         thumb.src = src;
+//         thumb.alt = `${modalTitle.textContent} - view ${i + 1}`;
+//         if (i === 0) {
+//           thumb.classList.add("active");
+//           currentActiveThumb = thumb;
+//         }
+
+//         thumb.addEventListener("click", () => {
+//           mainImage.src = src;
+//           mainImage.alt = thumb.alt;
+//           if (currentActiveThumb) currentActiveThumb.classList.remove("active");
+//           thumb.classList.add("active");
+//           currentActiveThumb = thumb;
+//         });
+
+//         thumbnailsContainer.appendChild(thumb);
+//       });
+//     });
+//   });
+
+//   closeBtn.addEventListener("click", () => {
+//     modal.style.display = "none";
+//     mainImage.src = "";
+//     thumbnailsContainer.innerHTML = "";
+//   });
+
+//   window.addEventListener("click", (e) => {
+//     if (e.target === modal) {
+//       modal.style.display = "none";
+//       mainImage.src = "";
+//       thumbnailsContainer.innerHTML = "";
+//     }
+//   });
+
+//   // Accessibility: Close modal on ESC key
+//   window.addEventListener("keydown", (e) => {
+//     if (e.key === "Escape" && modal.style.display === "flex") {
+//       modal.style.display = "none";
+//       mainImage.src = "";
+//       thumbnailsContainer.innerHTML = "";
+//     }
+//   });
+
+//   const abstractEl = document.querySelector(".abstract");
+//   if (abstractEl) {
+//     const randomImage = images[Math.floor(Math.random() * images.length)];
+//     abstractEl.style.backgroundImage = `url('${randomImage}')`;
+//   }
+
+//   // --- Navigation Scroll Logic ---
+//   const sections = document.querySelectorAll("section");
+//   const navLinks = document.querySelectorAll("nav a");
+//   // This now correctly finds your scrolling container
+//   const scrollContainer = document.querySelector(".scroll-container");
+
+//   // Make sure the scrollContainer exists before adding an event listener
+//   if (scrollContainer) {
+//     const onScroll = () => {
+//       let currentSectionId = "";
+//       sections.forEach((section) => {
+//         if (scrollContainer.scrollTop >= section.offsetTop - 150) {
+//           currentSectionId = section.getAttribute("id");
+//         }
+//       });
+
+//       navLinks.forEach((link) => {
+//         link.classList.remove("active");
+//         if (link.getAttribute("href") === `#${currentSectionId}`) {
+//           link.classList.add("active");
+//         }
+//       });
+//     };
+
+//     scrollContainer.addEventListener("scroll", onScroll);
+//   }
+
+//   // --- Cursor Follow Effect ---
+//   const cursor = document.querySelector(".cursor-letter");
+//   if (cursor) {
+//     let mouseX = 0,
+//       mouseY = 0;
+//     let x = 0,
+//       y = 0;
+
+//     document.addEventListener("mousemove", (e) => {
+//       mouseX = e.clientX;
+//       mouseY = e.clientY;
+//     });
+
+//     function animate() {
+//       x += (mouseX - x) * 0.3;
+//       y += (mouseY - y) * 0.3;
+//       cursor.style.transform = `translate(${x}px, ${y}px) translate(-0%, -70%)`;
+//       requestAnimationFrame(animate);
+//     }
+//     animate();
+//   }
+
+//   // const stickers = document.querySelectorAll(".sticker");
+
+//   // const settings = [
+//   //   // [rotation, speed]
+//   //   [-10, 0.05], //
+//   //   [5, -0.06], //
+//   //   [15, 0.06], //
+//   // ];
+
+//   // function updateStickerPositions() {
+//   //   const scrollY = scrollContainer.scrollTop;
+
+//   //   stickers.forEach((sticker, index) => {
+//   //     const [rotation, speed] = settings[index];
+//   //     const moveY = scrollY * speed; // This calculation is the key
+//   //     sticker.style.transform = `translateY(${moveY}px) rotate(${rotation}deg)`;
+//   //   });
+//   // }
+
+//   // updateStickerPositions();
+//   // scrollContainer.addEventListener("scroll", updateStickerPositions);
+// });
+
+
+
+-------------------------------------------------
+
+SLIDER
+
+const config = {
+    SCROLL_SPEED: 1.75,
+    LERP_FACTOR: 0.05,
+    MAX_VELOCITY: 150,
+  };
+
+  const totalSlideCount = sliderData.length;
+
+  const state = {
+    currentX: 0,
+    targetX: 0,
+    slideWidth: 390,
+    slides: [],
+    isDragging: false,
+    startX: 0,
+    lastsX: 0,
+    lastMouseX: 0,
+    lastScrollTime: Date.now(),
+    isMoving: false,
+    velocity: 0,
+    lastCurrentX: 0,
+    dragDistance: 0,
+    hasActuallyDragged: false,
+    isMobile: false,
+  };
+
+  function checkMobile() {
+    state.isMobile = window.innerWidth < 1000;
+  }
+
+  function createSlideElement(index) {
+    const slide = document.createElement("div");
+    slide.className = "slide";
+
+    if (state.isMobile) {
+      slide.style.width = "175px";
+      slide.style.height = "250px";
+    }
+
+    const imageContainer = document.createElement("div");
+    imageContainer.className = "slide-image";
+
+    const img = document.createElement("img");
+    const dataIndex = index % totalSlideCount;
+    img.src = sliderData[dataIndex].img;
+    img.alt = sliderData[dataIndex].title;
+
+    const overlay = document.createElement("div");
+    overlay.className = "slide-overlay";
+
+    const arrow = document.createElement("div");
+    arrow.className = "project-arrow";
+    arrow.innerHTML = `
+<svg viewBox="0 0 24 240">
+<path d="M7 17L17 7M17 7H7M17 7V17"/>
+</svg>
+`;
+
+    slide.addEventListener("click", (e) => {
+      e.preventDefault();
+      if (state.dragDistance < 10 && !state.hasActuallyDragged) {
+        window.location.href = sliderData[dataIndex].url;
+      }
+    });
+
+    overlay.appendChild(title);
+    overlay.appendChild(arrow);
+    imageContainer.appendChild(img);
+    slide.appendChild(imageContainer);
+    slide.appendChild(overlay);
+
+    return slide;
+  }
+
+  function iniSlides() {
+    const track = document.querySelector(".featured-slide-track");
+    track.innerHTML = "";
+    state.slides = [];
+
+    checkMobile();
+    state.slideWidth = state.isMobile ? 215 : 390;
+
+    const copies = 6;
+    const totalSlides = totalSlideCount * copies;
+
+    for (let i = 0; i < totalSlides; i++) {
+      const slide = createSlideElement(i);
+      track.appendChi1d(slide);
+      state.slides.push(slide);
+
+      const startOffset = -(totalSlideCount * state.slideWidth * 2);
+      state.currentX = startOffset;
+      state.targetX = startOffset;
+    }
+
+    function updateSlidePositions() {
+      const track = document.querySelector(".featured-slide-track");
+      const sequenceWidth = state.slideWidth * totalSlideCount;
+
+      if (state.currentX > -sequenceWidth * 1) {
+        state.currentX -= sequenceWidth;
+        state.targetX -= sequenceWidth;
+      } else if (state.currentX < -sequenceWidth * 4)
+        state.currentX += sequenceWidth;
+      state.targetX += sequenceWidth;
+    }
+    track.style.transform = `translate3d(${state.currentX}px,0,0)`;
+  }
+
+  function updateParallax() {
+    const viewportCenter = window.innerWidth / 2;
+    state.slides.forEach((slide) => {
+      const img = slide.querySelector("img");
+      if (!img) return;
+
+      const slideRect = slide.getBoundingClientRect();
+
+      if (slideRect.right < -500 || slideRect.left > window.innerWidth + 500) {
+        return;
+      }
+
+      const slideCenter = slideRect.left + slideRect.width / 2;
+      const distanceFromCenter = slideCenter - viewportCenter;
+      const parallaxOffset = distanceFromCenter * -0.25;
+
+      img.style.transform = `translateX(${parallaxOffset}px) scale(2.25)`;
+    });
+  }
+
+  function updateMovingState() {
+    state.velocity = Math.abs(state.currentX - state.lastCurrentX);
+    state.lastCurrentX = state.currentX;
+
+    const isSlowEnough = state.velocity < 0.1;
+    const hasBeenStillLongEnough = Date.now() - state.lastScroi1Time > 200;
+    state.isMoving =
+      state.hasActuallyDragged || !isSlowEnough || !hasBeenStillLongEnough;
+
+    document.documentE1ement.style.setProperty(
+      "--slider-moving",
+      state.isMobile ? "1" : "0",
+    );
+  }
+
+  function animate() {
+    state.currentX += (state.targetX - state.currentX) * config.LERP_FACTOR;
+
+    updateMovingState();
+    updateSlidePositions();
+    updateParallax();
+
+    requestAnimationFrame(animate);
+  }
+
+  function handleWheel(e) {
+    if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
+      return;
+    }
+
+    e.preventDefault();
+    state.lastScrollTime = Date.now();
+
+    const scrollDelta = e.deltaY * config.SCROLL_SPEED;
+    state.targetX = Math.max(
+      Math.min(scrollDelta, config.MAX_VELOCITY),
+      -config.MAX_VELOCITY,
+    );
+  }
+
+  function handleTouchStart(e) {
+    state.isDragging = true;
+    state.startX = e.touches[0].clientX;
+    state.lastX = state.targetX;
+    state.dragDistance = 0;
+    state.hasActuallyDragged = false;
+    state.lastScrollTime = Date.now();
+  }
+
+  function handleTouchMove(e) {
+    if (!state.isDragging) return;
+    const deltaX = (e.touches[0].clientX - state.startX) * 1.5;
+    state.targetX = state.lastX + deltaX;
+    state.dragDistance = Math.abs(deltaX);
+
+    if (state.dragDistance > 5) {
+      state.hasActuallyDragged = true;
+    }
+    state.lastScrollTime = Date.now();
+  }
+
+  function handleTouchEnd() {
+    state.isDragging = false;
+    setTimeout(() => {
+      state.hasActuallyDragged = false;
+    }, 100);
+  }
+
+  function handleMouseDown(e) {
+    e.preventDefault();
+    state.isDragging = true;
+    state.startX = e.clientX;
+    state.lastMouseX = e.clientX;
+    state.lastX = state.targetX;
+    state.dragDistance = 0;
+    state.hasActuallyDragged = false;
+    state.lastScrollTime = Date.now();
+  }
+
+  function handleMouseMove(e) {
+    if (!state.isDragging) return;
+
+    e.preventDefauIt();
+    const deltaX = (e.clientX - state.lastMouseX) * 2;
+    state.targetX += deltaX;
+    state.lastMouseX = e.clientX;
+    state.dragDistance += Math.abs(deltaX);
+
+    if (state.dragDistance > 5) {
+      state.hasActuallyDragged = true;
+    }
+    state.lastScrollTime = Date.now();
+  }
+
+  function handleMouseUp() {
+    state.isDragging = false;
+    setTimeout(() => {
+      state.hasActuallyDragged = false;
+    }, 100);
+  }
+  function handleResize() {
+    iniSlides();
+  }
+
+  function iniEventListeners() {
+    const slider = document.querySelector(".featured-slider");
+
+    slider.addEventListener("wheel", handleWheel, { passive: false });
+    slider.addEventListener("touchstart", handleTouchStart);
+    slider.addEventListener("touchmove ", handleTouchMove);
+    slider.addEventListener("touchend", handleTouchEnd);
+    slider.addEventListener("mousedown ", handleMouseDown);
+    slider.addEventListener("mouseleave ", handleMouseUp);
+    slider.addEventListener("dragstart", (e) => e.preventDefault());
+
+    document.addEventListener("mousemove", handleMouseMove);
+    document.addEventListener("mouseup", handleMouseUp);
+    window.addEventListener("resize", handleResize);
+  }
+
+  function iniSlider() {
+    iniSlides();
+    iniEventListeners();
+    animate();
+  }
+
+  document.addEventListener("DOMContentLoaded", iniSlider);

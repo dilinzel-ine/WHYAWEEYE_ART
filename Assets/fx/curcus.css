@@ -1,0 +1,51 @@
+/* ============================================= */
+/* CURSOR */
+/* ============================================= */
+.cursor-letter {
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform-origin: center center;
+  opacity: 0.8;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  transition:
+    font-size 0.3s var(--ease-out-expo),
+    /* smooth size change */ opacity 0.3s ease;
+  will-change: transform;
+  pointer-events: none;
+  color: var(--pr-gray);
+  font-weight: 100;
+  font-size: 80px;
+  line-height: 1;
+  font-family: var(--font-main);
+  user-select: none;
+  text-align: center;
+  white-space: nowrap;
+  /* already handles fade in/out */
+}
+
+.cursor-homepage {
+  display: block;
+}
+
+.cursor-no {
+  display: none;
+}
+
+/* Hide by default on all touch/coarse devices */
+.cursor-letter {
+  display: none;
+}
+
+.cursor-shrink {
+  font-size: 30px;
+  /* adjust to taste — half of your 80px default */
+}
+
+/* Only show when device has a precise pointer (mouse/trackpad) AND wide enough screen */
+@media (pointer: fine) and (min-width: 992px) {
+  .cursor-letter {
+    display: block;
+  }
+}
