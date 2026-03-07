@@ -65,6 +65,10 @@ document.addEventListener("DOMContentLoaded", () => {
       searchTagsRow.appendChild(pill);
     });
 
+    // hide placeholder when pills are active
+    searchInput.placeholder =
+      activeTags.length > 0 ? "" : "SEARCH TITLE, TAGS...";
+
     // show clear button only when there is something to clear
     const hasContent = activeTags.length > 0 || searchInput.value.trim() !== "";
     searchClear.classList.toggle("visible", hasContent);

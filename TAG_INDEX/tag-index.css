@@ -43,12 +43,12 @@ a {
 /* ============================================= */
 .tag-index-header {
   padding-inline: var(--page-padding-x);
-  padding-block: var(--space-md) var(--space-xl);
+  padding-block: var(--space-md);
   border-bottom: 1px solid #222;
 }
 
 .tag-index-header h1 {
-  font-size: clamp(2rem, 10vw, 6rem);
+  font-size: var(--text-h1);
   font-weight: var(--weight-medium);
   color: var(--pr-gray);
   line-height: 1.1;

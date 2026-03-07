@@ -144,12 +144,13 @@ a {
 
 .tag-index {
   transition: color 0.15s ease;
-  padding-inline: var(--space-sm);
+  /* padding-inline: var(--space-sm); */
   padding-block: var(--space-3xs);
   color: var(--pr-gray-2);
   font-size: var(--text-ui);
   letter-spacing: var(--tracking-wide);
   text-transform: uppercase;
+  font-family: var(--font-mono);
 }
 
 .tag-index:hover {
@@ -162,7 +163,8 @@ a {
 .gallery-search-wrapper {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  flex-direction: row;
+  /* align-items: center; */
   gap: var(--space-xs);
   margin-block-end: var(--space-sm);
   padding-block: var(--space-sm);
@@ -170,9 +172,23 @@ a {
 
 .search-input-wrap {
   position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2xs);
   flex: 1;
-  margin-inline: auto;
-  min-width: 90px;
+  min-width: 0;
+  width: 100%;
+  border-bottom: 1px solid var(--pr-gray-22-trans);
+  padding-inline: var(--space-xs);
+  padding-block: var(--space-3xs);
+}
+.search-input-wrap:focus-within {
+  border-bottom-color: var(--pr-green); /* ← border highlights on focus */
+  transition: border-color 0.2s ease;
+}
+.search-tags-row {
+  display: contents; /* ← makes children behave as direct flex children of wrapper */
 }
 
 .search-active-tag {
@@ -206,31 +222,35 @@ a {
 }
 
 .gallery-search-input {
-  flex: unset;
-  transition: border-color 0.2s ease;
+  flex: 1;
+  min-width: 80px;
   outline: none;
-  border: none;
-  border-bottom: 1px solid var(--pr-gray-22-trans);
+  border: none; /* ← remove border, wrapper has it */
   background: none;
-  padding-right: 2.5rem;
-  padding-inline: var(--space-md);
-  padding-block: var(--space-xs);
-  width: 100%;
+  padding: 0; /* ← remove padding, wrapper has it */
+  padding-right: 2rem; /* ← keep right padding for clear button */
   color: var(--pr-gray);
   caret-color: var(--pr-green);
   font-size: var(--text-ui);
   font-family: var(--font-main);
   letter-spacing: var(--tracking-wide);
   text-transform: uppercase;
+  transition: none;
 }
 
 .gallery-search-input:focus {
   border-bottom-color: var(--pr-green);
+  outline: none;
 }
 
 .gallery-search-input::placeholder {
   opacity: 0.8;
   color: var(--pr-gray-2);
+}
+
+.gallery-search-input:focus::placeholder {
+  opacity: 0;
+  transition: opacity 0.2s ease;
 }
 
 .gallery-search-input::-webkit-search-cancel-button {
