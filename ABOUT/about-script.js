@@ -20,46 +20,4 @@ if (window.matchMedia("(hover: hover)").matches) {
       defaultBg.style.opacity = "1";
     });
   });
-
-  /* ═══════════════════════════════════════════════
-     CURSOR FOLLOW
-  ═══════════════════════════════════════════════ */
-  // script.js — cursor only, no click listener
-  const cursor = document.querySelector(".cursor-letter");
-  if (cursor) {
-    let mouseX = 0,
-      mouseY = 0,
-      x = 0,
-      y = 0;
-    let initialized = false;
-    let rafId = null;
-
-    cursor.style.opacity = "0";
-
-    document.addEventListener("mousemove", (e) => {
-      mouseX = e.clientX;
-      mouseY = e.clientY;
-      if (!initialized) {
-        x = mouseX;
-        y = mouseY;
-        initialized = true;
-        cursor.style.opacity = "1";
-      }
-    });
-
-    function animateCursor() {
-      x += (mouseX - x) * 0.3;
-      y += (mouseY - y) * 0.3;
-      cursor.style.transform = `translate(${x}px, ${y}px) translate(-60%, -65%)`;
-      rafId = requestAnimationFrame(animateCursor);
-    }
-
-    window.addEventListener("DOMContentLoaded", () => animateCursor());
-
-    // listen for transition start — exposed by transition.js
-    window.addEventListener("pagetransitionstart", () => {
-      cancelAnimationFrame(rafId);
-      cursor.style.opacity = "0";
-    });
-  }
 }

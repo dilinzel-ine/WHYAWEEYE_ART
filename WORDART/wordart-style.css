@@ -32,12 +32,12 @@ body {
   background-color: var(--pr-black);
   background-blend-mode: overlay;
   width: 100%;
-  min-height: 100vh;
   min-height: 100dvh;
   font-family: var(--font-main);
   /* Prevent font-size inflation on mobile */
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
+  padding-block-start: 60px;
 }
 
 img {
@@ -49,4 +49,5 @@ img {
 button {
   border: none;
   background: none;
+  cursor: pointer;
 }

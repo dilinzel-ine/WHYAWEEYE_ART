@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
         muted
         loop
         playsinline
-        poster="/images/abstract-vibrant-bg.jpg">
+        poster="/images/abstract-vibrant-bg.webp">
         <source src="/images/bgvid-2.mp4" type="video/mp4" />
       </video>
 
@@ -25,7 +25,9 @@ document.addEventListener("DOMContentLoaded", () => {
           <div class="left-top">
             <div class="left-top-content">
               <span class="section-label">[Hello, There]</span>
-              <a href="#" class="small-label">BUYMEABOOK <span>↴</span></a>
+              <a href="https://buymeacoffee.com/whyaweeye25"  target="_blank" 
+  rel="noopener noreferrer"
+  aria-label="Visit my buymeacoffee page (opens in new tab)" class="small-label">BUYMEABOOK <span>↴</span></a>
               <!-- Canvas: @WHY / A25 with live video composited through the letters -->
               <canvas id="heroCanvas"></canvas>
               <!-- element 3 -->

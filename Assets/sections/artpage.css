@@ -15,7 +15,7 @@
 .search-wrapper {
   display: flex;
   align-items: center;
-  border-bottom: 1px solid #222;
+  /* border-bottom: 1px solid #222; */
   padding-inline: var(--page-padding-x);
   padding-block: var(--space-sm);
   position: relative; /* keep this */
@@ -24,9 +24,11 @@
 .search-input {
   transition: border-color 0.2s ease;
   outline: none;
-  border: 1px solid var(--pr-gray-22-trans);
-  background: #181818;
-  border-radius: 9999px;
+  border: none;
+  background: none;
+  border-bottom: 1px solid var(--pr-gray-22-trans);
+  /* background: #181818; */
+  /* border-radius: 9999px; */
   padding-inline: var(--space-md);
   padding-block: var(--space-xs);
   padding-right: 2.5rem;
@@ -40,9 +42,7 @@
 }
 
 .search-input:focus {
-  border-color: var(
-    --pr-green
-  ); /* fixed: was border-bottom-color, pill has full border */
+  border-color: var(--pr-green);
 }
 
 .search-input::placeholder {
@@ -131,6 +131,7 @@
   border-bottom: 1px solid #222;
   padding-inline: var(--page-padding-x);
   padding-block: var(--space-lg);
+  margin-block-start: 0;
 }
 
 .artpage-title {
@@ -175,7 +176,7 @@
 .artpage-nav {
   display: flex;
   align-self: flex-start;
-  gap: 50px;
+
   padding-inline: var(--page-padding-x);
   padding-block-end: var(--space-lg);
 }
@@ -428,6 +429,7 @@
   }
   .artpage-header {
     flex-wrap: wrap;
+    margin-block-start: var(--space-2xl);
     padding-inline: var(--space-md);
     padding-block-start: 0;
   }
@@ -440,10 +442,15 @@
     order: 1;
     padding: var(--space-sm) 0;
     width: 100%;
+    justify-content: space-between;
+  }
+  .artpage-nav-link {
+    color: var(--pr-gray);
   }
   .scroll-hint {
     align-items: center;
     order: 0;
+    display: none;
   }
   .article-card {
     border-right: none !important;

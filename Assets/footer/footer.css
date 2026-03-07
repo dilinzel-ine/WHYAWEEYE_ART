@@ -12,8 +12,9 @@ footer {
   width: 100%;
   min-height: 100vh;
   overflow: hidden;
-  min-height: calc(100vh - var(--bottom-nav-height));
-  margin-bottom: var(--bottom-nav-height);
+  user-select: none;
+  /* min-height: calc(100vh - var(--bottom-nav-height)); */
+  /* margin-bottom: var(--bottom-nav-height); */
 }
 
 /* BG VIDEO — covers full footer */

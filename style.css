@@ -35,6 +35,7 @@ body {
   font-family: var(--font-main);
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
+  padding-block-start: 55px;
 }
 img {
   -webkit-user-drag: none;
@@ -153,7 +154,8 @@ section {
   margin: 0 auto;
   padding: 0 2rem;
   width: 100%;
-  height: 100vh;
+  height: calc(100dvh - 60px);
+  overflow: hidden;
 }
 
 /* Logo */
@@ -165,7 +167,7 @@ section {
   left: 2rem;
   flex-direction: column;
   justify-content: space-between;
-  padding: 6.5rem 0;
+  padding-block: var(--space-xl);
 }
 
 .phrase {
@@ -225,7 +227,7 @@ section {
 /* Main Vertical Title */
 .main-content {
   position: absolute;
-  top: 45%;
+  top: 46%;
   right: 2rem;
   transform: translateY(-50%);
 }
@@ -245,7 +247,7 @@ section {
     filter 1s ease-in-out,
     opacity 1s ease-in-out;
   margin: 0;
-  inset: 0 0 0 0;
+  inset: 0;
   -webkit-text-stroke: 1px var(--pr-gray);
   pointer-events: none;
   content: attr(data-content);
@@ -274,12 +276,13 @@ section {
   right: clamp(1.5rem, 5vw, 5rem);
   bottom: 2rem;
   align-items: center;
+  justify-content: center;
   gap: 0.6rem;
-  color: rgba(240, 236, 228, 0.3);
+  color: var(--pr-gray);
   font-size: 0.68rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  transition: opacity 0.5s;
+  transition: opacity 0.5s ease;
 }
 .scroll-hint svg {
   animation: nudge 1.8s ease-in-out infinite;
@@ -375,7 +378,7 @@ Scroll ANimationas
   justify-content: space-between;
   align-items: center;
   gap: 6px;
-  padding: 60px 0;
+  margin-block-end: var(--space-4xl);
 }
 .custom-left {
   display: flex;
@@ -509,7 +512,7 @@ button:focus-visible {
 /* ART SECTION */
 #art h1,
 #latest h1 {
-  font-size: clamp(4rem, 5vw, 6rem);
+  font-size: var(--text-h1);
 }
 #art a,
 #latest a {
@@ -521,9 +524,8 @@ button:focus-visible {
   margin-bottom: clamp(1rem, 5vw, 2rem);
   color: var(--pr-gray-2);
   font-family: var(--font-sec);
-  font-size: 1.1rem;
+  font-size: var(--text-body);
   font-style: italic;
-  font-weight: 400;
 }
 
 .fancy-hero {
@@ -548,11 +550,11 @@ button:focus-visible {
   z-index: 9;
   mix-blend-mode: difference;
   pointer-events: none;
-  color: #cacaca;
+  color: var(--pr-gray);
   text-align: center;
 }
 .fancy em {
-  font-weight: 100;
+  font-weight: var(--weight-light);
   font-size: clamp(2.5rem, calc(-2rem + 8vw), 6rem);
   font-family: var(--font-fancy);
   text-transform: capitalize;
@@ -850,7 +852,7 @@ button:focus-visible {
     height: auto;
   }
   .main-content h1 {
-    font-size: 25cqw;
+    font-size: 30cqw;
     line-height: 0.77;
     /* 25% of container width */
     letter-spacing: -2cqw;
@@ -926,7 +928,7 @@ button:focus-visible {
     transform: translate(-50%, -50%);
   }
   .main-content h1 {
-    font-size: 40cqw;
+    font-size: 45cqw;
     line-height: 0.77;
     letter-spacing: -3.5cqw;
     text-align: right;

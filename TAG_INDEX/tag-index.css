@@ -1,7 +1,9 @@
 @import url("/Assets/fx/variables.css");
-@import url("/Assets/fx/changing.css");
+@import url("/Assets/fx/curcus.css");
+@import url("/Assets/sections/changing.css");
 @import url("/Assets/fx/naticker.css");
-@import url("/Assets/sections/artpage.css");
+@import url("/Assets/fx/transition.css");
+@import url("/Assets/fx/enter.css");
 @import url("/Assets/footer/site-nav.css");
 @import url("/Assets/footer/footer.css");
 
@@ -30,6 +32,7 @@ body {
   min-height: 100dvh;
   font-family: var(--font-main);
   color: var(--pr-gray);
+  padding-block-start: 55px;
 }
 a {
   text-decoration: none;

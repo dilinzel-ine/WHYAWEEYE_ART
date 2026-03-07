@@ -1,6 +1,7 @@
 /* Imports */
 @import url("/Assets/fx/variables.css");
 @import url("/Assets/fx/curcus.css");
+@import url("/Assets/sections/changing.css");
 @import url("/Assets/sections/artpage.css");
 @import url("/Assets/sections/modal.css");
 @import url("/Assets/fx/transition.css");
@@ -37,6 +38,7 @@ body {
   /* Prevent font-size inflation on mobile */
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
+  padding-block-start: 60px;
 }
 
 img {

@@ -81,16 +81,12 @@
     <script src="/Assets/fx/enter.js" defer></script>
     <script src="/Assets/Favicon/icon-ani.js" defer></script>
     <script src="/Assets/footer/footer.js" defer></script>
+    <script src="/Assets/footer/site-nav.js" defer></script>
     <script src="/GALLERY/gallery-script.js" defer></script>
   </head>
 
   <body id="top">
     <main>
-      <!-- ═══════════════════════════════════════ -->
-      <!-- NAME TICKER                             -->
-      <!-- ═══════════════════════════════════════ -->
-      <script src="/Assets/fx/naticker.js"></script>
-
       <!-- ═══════════════════════════════════════ -->
       <!-- FULL GALLERY                           -->
       <!-- ═══════════════════════════════════════ -->
@@ -108,10 +104,6 @@
           collections of divergent art converges with the vibrancy of modern
           creativity.
         </p>
-
-        <div class="tag-index-wrapper">
-          <a class="tag-index" href="/TAG_INDEX/tag-index.html">Tag Index</a>
-        </div>
 
         <div class="gallery-search-wrapper">
           <div class="search-tags-row" id="searchTagsRow"></div>
@@ -132,6 +124,9 @@
             >
               ✕
             </button>
+          </div>
+          <div class="tag-index-wrapper">
+            <a class="tag-index" href="/TAG_INDEX/tag-index.html">Tag Index</a>
           </div>
         </div>
 
@@ -397,10 +392,15 @@
       </div>
 
       <!-- ═══════════════════════════════════════ -->
+      <!-- NAME TICKER                             -->
+      <!-- ═══════════════════════════════════════ -->
+      <script src="/Assets/fx/naticker.js"></script>
+
+      <!-- ═══════════════════════════════════════ -->
       <!-- FOOTER NAV                              -->
       <!-- ═══════════════════════════════════════ -->
       <footer></footer>
-      <nav class="site-nav" aria-label="Site navigation">
+      <!-- <nav class="site-nav" aria-label="Site navigation">
         <a href="../index.html" data-content="HOME"><span>HOME</span></a>
         <a href="../index.html#art" data-content="ART"><span>ART</span></a>
         <a
@@ -412,8 +412,11 @@
         <a href="../ABOUT/about.html" data-content="ABOUT"
           ><span>ABOUT</span></a
         >
-      </nav>
+      </nav> -->
+
+      <div id="site-nav-placeholder"></div>
     </main>
+
     <!-- scripts -->
     <div class="page-transition" id="page-transition" aria-hidden="true"></div>
   </body>

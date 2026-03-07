@@ -1,83 +1,227 @@
-/* ========================================== */
-/* Bottom Navigation                          */
-/* ========================================== */
 .site-nav {
   display: flex;
   position: fixed;
-  bottom: 0;
-  left: 50%;
-  justify-content: space-evenly;
-  align-items: center;
-  transform: translateX(-50%);
-  z-index: 99;
-  box-sizing: border-box;
-  border-top: 1px solid var(--pr-gray-22-trans);
-  background-image: url("/images/noise.svg");
-  background-repeat: repeat;
-  background-color: var(--pr-black);
-  background-blend-mode: overlay;
-  padding: 1rem 0 1.6rem 0;
-  width: 100%;
-  letter-spacing: 0.1em;
-}
-
-.site-nav a {
-  display: inline-block;
-  position: relative;
-  outline-offset: 4px;
-  border-radius: 2px;
-  height: 1em;
-  overflow: hidden;
-  color: var(--pr-gray);
-  font-weight: 900;
-  font-size: 1rem;
-  font-family: var(--font-main);
-  text-decoration: none;
-}
-
-.site-nav a:focus-visible {
-  outline: 2px solid var(--pr-green);
-}
-
-.site-nav a span {
-  display: block;
-  transform: translateY(0);
-  transition: transform 1s var(--ease-out-expo);
-}
-
-.site-nav a::after {
-  position: absolute;
-  top: 100%;
+  top: 0;
   left: 0;
-  transition: transform 1s var(--ease-out-expo);
-  width: 100%;
-  content: attr(data-content);
+  right: 0;
+  z-index: 99;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: var(--page-padding-x);
+  padding-block: 1.2rem;
+  background: transparent;
+  transition:
+    transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.4s ease;
+}
+
+.site-nav.nav-hidden {
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ── LOGO ── */
+.site-nav-logo {
+  color: var(--pr-gray);
+  font-family: var(--font-main);
+  font-weight: var(--weight-bold);
+  font-size: 1.1rem;
+  letter-spacing: 0.15em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.nav-y {
   color: var(--pr-green);
 }
 
-/* hover animation — only on real pointer devices */
+/* ── DESKTOP LINKS ── */
+.site-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-nav-links a {
+  display: inline-block;
+  position: relative;
+  height: 1em;
+  overflow: hidden;
+  color: var(--pr-gray);
+  font-weight: var(--weight-light);
+  font-size: 0.85rem;
+  font-family: var(--font-main);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  outline-offset: 4px;
+}
+
+.site-nav-links a[aria-current="page"] {
+  color: var(--pr-green);
+}
+
+.site-nav-links a:focus-visible {
+  outline: 2px solid var(--pr-green);
+}
+
+.site-nav-links a span {
+  display: block;
+  transition: transform 1s var(--ease-out-expo);
+}
+
+.site-nav-links a::after {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  content: attr(data-content);
+  color: var(--pr-green);
+  transition: transform 1s var(--ease-out-expo);
+}
+
 @media (hover: hover) and (pointer: fine) {
-  .site-nav a:hover span {
-    transform: translateY(-100%);
-  }
-  .site-nav a:hover::after {
+  .site-nav-links a:hover span,
+  .site-nav-links a:hover::after {
     transform: translateY(-100%);
   }
 }
 
-/* disable hover animation on touch/coarse devices */
-@media (max-width: 992px), (hover: none), (pointer: coarse) {
-  .site-nav a::after {
+.site-nav-burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  align-items: flex-end;
+  justify-content: center;
+  /* align-items: center; */
+}
+
+.site-nav-burger span {
+  display: block;
+  height: 2px;
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.site-nav-burger span:nth-child(1) {
+  width: 22px;
+  background: var(--pr-gray);
+}
+
+.site-nav-burger span:nth-child(2) {
+  width: 14px;
+  background: var(--pr-green);
+}
+
+/* on hover — second bar expands to full width */
+@media (hover: hover) and (pointer: fine) {
+  .site-nav-burger:hover span:nth-child(2) {
+    width: 22px;
+  }
+}
+
+/* ── MOBILE MENU ── */
+.site-nav-mobile {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--pr-black);
+  padding: 1.2rem var(--page-padding-x) 3rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  white-space: nowrap;
+}
+
+.site-nav-mobile.menu-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mobile-menu-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.mobile-menu-close {
+  background: none;
+  border: none;
+  color: var(--pr-gray);
+  font-family: var(--font-main);
+  font-size: 0.65rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.mobile-menu-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mobile-menu-links a {
+  color: var(--pr-gray);
+  font-family: var(--font-main);
+  font-weight: 900;
+  font-size: var(--text-h1);
+  letter-spacing: var(--tracking-snug);
+  text-decoration: none;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+.mobile-menu-links a span {
+  font-size: var(--text-ui);
+  letter-spacing: var(--tracking-wide);
+  font-family: var(--font-mono);
+}
+
+.mobile-menu-links a[aria-current="page"] {
+  color: var(--pr-green);
+}
+
+.mobile-menu-tagline {
+  color: var(--pr-gray-2);
+  font-size: var(--text-ui);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  /* opacity: 0.5; */
+}
+
+@media (max-width: 768px) {
+  .site-nav-links {
     display: none;
   }
-  .site-nav a span {
-    display: block;
-    transform: none;
+  .site-nav-burger {
+    display: flex;
   }
-  .site-nav a:hover span {
-    transform: none;
+  .site-nav-mobile {
+    display: flex;
   }
-  .site-nav a:hover::after {
-    transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-nav,
+  .site-nav-links a span,
+  .site-nav-links a::after,
+  .site-nav-mobile {
+    transition: none;
   }
 }
