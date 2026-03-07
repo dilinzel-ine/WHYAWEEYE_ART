@@ -104,8 +104,9 @@ document.addEventListener("DOMContentLoaded", () => {
     searchInput.addEventListener("input", () => {
       const query = searchInput.value.trim().toLowerCase(); // get search term
 
-      // show/hide clear button
-      if (searchClear) searchClear.classList.toggle("visible", query !== "");
+      // show clear button only if input has real content — not just spaces
+      if (searchClear)
+        searchClear.classList.toggle("visible", searchInput.value.length > 0);
 
       // reset nav filter to "all" when typing
       allLinks.forEach((l) => l.classList.remove("active"));

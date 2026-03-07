@@ -176,7 +176,7 @@
 .artpage-nav {
   display: flex;
   align-self: flex-start;
-
+  gap: 60px;
   padding-inline: var(--page-padding-x);
   padding-block-end: var(--space-lg);
 }

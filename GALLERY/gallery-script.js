@@ -134,7 +134,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* ── TEXT SEARCH INPUT ───────────────────── */
   searchInput.addEventListener("input", () => {
-    const hasContent = activeTags.length > 0 || searchInput.value.trim() !== "";
+    const hasContent = activeTags.length > 0 || searchInput.value.length > 0;
     searchClear.classList.toggle("visible", hasContent); // show/hide clear button
     applyFilters(); // re-filter on every keystroke
   });
