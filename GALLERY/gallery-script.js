@@ -150,6 +150,7 @@ document.addEventListener("DOMContentLoaded", () => {
     activeTags = []; // clear all tag filters
     searchInput.value = ""; // clear text input
     searchTagsRow.innerHTML = ""; // clear pill row
+    searchInput.placeholder = "SEARCH TITLE, TAGS..."; // ← restore placeholder
     e.target.closest("#searchClear").classList.remove("visible"); // hide clear button
     history.replaceState(null, "", window.location.pathname); // remove hash from URL
     applyFilters(); // restore all cards + update count
