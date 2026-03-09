@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <div class="left-top">
             <div class="left-top-content">
               <span class="section-label">[Hello, There]</span>
-              <a href="https://buymeacoffee.com/whyaweeye25"  target="_blank" 
+              <a href="https://buymeacoffee.com/why25"  target="_blank" 
   rel="noopener noreferrer"
   aria-label="Visit my buymeacoffee page (opens in new tab)" class="small-label">BUYMEABOOK <span>↴</span></a>
               <!-- Canvas: @WHY / A25 with live video composited through the letters -->

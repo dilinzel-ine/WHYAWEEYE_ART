@@ -4,17 +4,54 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- ─── SEO & Social ─────────────────────────────────────────── -->
+    <!-- Primary SEO -->
     <meta
       name="description"
       content="WHYAWEEYE Art Gallery — a sanctuary of divergent art and modern creativity."
     />
+    <meta
+      name="keywords"
+      content="whyaweeye25, whyaweeye, why25, why25 arts, whyaweeye art, whyaweeye thread art, whyaweeye embroidery, handmade embroidery india, thread art india"
+    />
+    <meta name="author" content="WHYAWEEYE" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#121212" />
+    <!-- match your site background -->
+
+    <!-- Open Graph -->
     <meta property="og:title" content="Gallery — WHYAWEEYE" />
     <meta
       property="og:description"
       content="A sanctuary for the soul where timeless collections converge with modern creativity."
     />
     <meta property="og:type" content="website" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta
+      property="og:image"
+      content="https://your-actual-vercel-url.vercel.app/images/preview.jpg"
+    />
+    <!-- ← FIX: use full absolute URL -->
+    <meta
+      property="og:url"
+      content="https://your-actual-vercel-url.vercel.app/GALLERY/gallery.html"
+    />
+    <!-- ← FIX: should be THIS page's URL not homepage -->
+    <meta property="og:site_name" content="WHYAWEEYE" />
+    <!-- ← ADD -->
+
+    <!-- Twitter/X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@whyaweeye25" />
+    <!-- ← ADD: your handle -->
+    <meta name="twitter:title" content="Gallery — WHYAWEEYE" />
+    <meta
+      name="twitter:description"
+      content="A sanctuary for the soul where timeless collections converge with modern creativity."
+    />
+    <meta
+      name="twitter:image"
+      content="https://your-actual-vercel-url.vercel.app/images/preview.jpg"
+    />
 
     <title>Gallery — WHYAWEEYE</title>
 
@@ -79,6 +116,7 @@
     <script src="/Assets/sections/modal.js" defer></script>
     <script src="/Assets/fx/transition.js" defer></script>
     <script src="/Assets/fx/enter.js" defer></script>
+    <script src="/GALLERY/gallery-render.js" defer></script>
     <script src="/Assets/Favicon/icon-ani.js" defer></script>
     <script src="/Assets/footer/footer.js" defer></script>
     <script src="/Assets/footer/site-nav.js" defer></script>
@@ -140,18 +178,32 @@
       </details> -->
         <ul
           class="gallery reveal"
+          id="gallery"
           style="--delay: 0.5s"
           aria-label="Art gallery items"
         >
+          <!-- cards injected by JS -->
           <!-- Card 1 -->
-          <li
+          <!-- <li
             class="card cards-item article-card"
             data-date="04-03-2026"
+            data-copyname="why"
             data-id="model-alpha"
             role="listitem"
             tabindex="0"
             data-subtitle="#05262H7"
-            data-description="Saskia Rodríguez (Las Palmas de Gran Canaria, Gran Canaria, 1993) is an artist and graphic designer. She graduated in Fine Arts from the University of Salamanca (2015), specialising in painting and printmaking. She later completed a Master's degree in Artistic Production at the Polytechnic University of Valencia (2015–2016), followed by training in screen printing and lithography at Fundación CIEC in Betanzos (2017). Her career includes artist residencies at AIR – Artist in Residence (Krems, Austria, 2021), Fundación BilbaoArte (2017), CAAM (2018) and the Slade School of Fine Arts (2018)."
+            data-description="Potter ipsum wand elf parchment wingardium. Under mcgonagall polyjuice blood clean full-moon remember venom. Suits mrs golden beasts minerva in us levicorpus nagini. Captivity shrieking tell powder snitch cursed for. Banana wingardium seeker quidditch love.
+Squashy maze owl spew 12 to back thirsty. Banges wizard mischief frisbees blubber sorting niffler other. Professor second pig’s dervish other kittens mimubulus fenrir. Letters venom tears potion nose. Hermione sorting squashy and kiss. Snitch orbs centaur hearing got. 
+
+Holly your aragog kittens scales hearing be powder umbrella sing. 
+
+Unprimed cotton canvas for artists, threads for hand embroidery, and machine sewing.
+-
+Overall frame size: <u>12.2” (31 cm) x 15.1” (38.5 cm)</u> 
+Frame window size: 6.6” (17 cm) x 9” (23 cm) 
+-
+This picture is protected by a custom wooden frame with the museum glass.
+The frame is ready to hang. -Avoid direct sunlight on the picture.-Please, remember the color settings on your monitor or phone may differ slightly from the real color of the pictures. -If you have any questions you can text me at any time.Thank you for your attention to my pictures!"
             data-links-1="#"
             data-links-1-label="⤷ EMAIL"
             data-links-2="#"
@@ -184,19 +236,20 @@
                 <li class="card2-tag" role="listitem">2026</li>
               </ul>
             </div>
-          </li>
+          </li> -->
 
           <!-- Card 2 -->
           <li
             class="card cards-item article-card"
             data-date="04-03-2026"
+            data-copyname="why"
             data-id="model-beta"
             tabindex="0"
             data-subtitle="— Elena Holmes"
             data-description="Living well isn't about perfection — it's about awareness. From the way we arrange our space to how we move through each day, small choices quietly shape our sense of calm and clarity."
             data-links-1="#"
             data-links-1-label="⤷ EMAIL"
-            data-images='["/images/slider-image-2.webp","/images/placeholder-top.webp","/images/placeholder-packed.webp"]'
+            data-images='["/images/slider-image-1.png","/images/slider-image-2.png","/images/slider-image-4.png"]'
             aria-label="Model Beta — open for details"
           >
             <img
@@ -223,6 +276,7 @@
           <li
             class="card cards-item article-card"
             data-date="04-03-2026"
+            data-copyname="why"
             data-id="model-gamma"
             tabindex="0"
             data-subtitle="— Collection 2026"
@@ -254,6 +308,7 @@
           <li
             class="card cards-item article-card"
             data-date="04-03-2026"
+            data-copyname="why"
             data-id="model-delta"
             tabindex="0"
             data-subtitle="— Collection 2026"
@@ -285,6 +340,7 @@
           <li
             class="card cards-item article-card"
             data-date="04-03-2026"
+            data-copyname="why"
             data-id="model-alpha-ii"
             tabindex="0"
             data-subtitle="#05262H7"
@@ -353,12 +409,30 @@
           </button>
 
           <div class="modal-left">
-            <img id="mainImage" class="modal-main" src="" alt="Detailed View" />
-            <p class="modal-date" id="modalDate"></p>
+            <div class="modal-image-wrap">
+              <div id="mainMediaWrap" class="main-media-wrap">
+                <img
+                  id="mainImage"
+                  class="modal-main"
+                  src=""
+                  alt="Detailed View"
+                />
+              </div>
+              <p class="modal-copyname" id="modalCopyName"></p>
+              <p class="modal-date" id="modalDate"></p>
+            </div>
+            <div class="thumbnails-wrap">
+              <div
+                class="thumbnails"
+                id="thumbnails"
+                role="list"
+                aria-label="More images"
+              ></div>
+            </div>
           </div>
 
           <div class="modal-right">
-            <h2 id="modalTitle"></h2>
+            <h2 id="modalTitle" class="modal-title"></h2>
             <h5 id="modalSubtitle" class="modal-subtitle"></h5>
             <button class="share-btn" id="shareBtn" aria-label="Copy link">
               [ ↗ SHARE ]
@@ -380,15 +454,32 @@
                 rel="noopener noreferrer"
               ></a>
             </div>
+            <a
+              id="modalBuyBtn"
+              class="modal-buy-btn"
+              href=""
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              ⤷ BUY NOW
+            </a>
             <div id="modalTags" class="modal-tags" aria-label="Tags"></div>
-            <div
-              class="thumbnails"
-              id="thumbnails"
-              role="list"
-              aria-label="More images"
-            ></div>
           </div>
         </div>
+      </div>
+
+      <!-- ═══════════════════════════════════════ -->
+      <!-- LIGHT BOX                           -->
+      <!-- ═══════════════════════════════════════ -->
+      <div class="lightbox" id="lightbox">
+        <button class="lightbox-arrow lightbox-prev" id="lightboxPrev">
+          ‹
+        </button>
+        <div id="lightboxMedia" class="lightbox-media"></div>
+        <button class="lightbox-arrow lightbox-next" id="lightboxNext">
+          ›
+        </button>
+        <button class="lightbox-close" id="lightboxClose">✕</button>
       </div>
 
       <!-- ═══════════════════════════════════════ -->

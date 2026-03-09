@@ -63,3 +63,310 @@ button {
   text-transform: uppercase;
   opacity: 0.6;
 }
+
+.gallery-search-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--space-xs);
+  padding-inline: var(--page-padding-x);
+  padding-block: var(--space-sm);
+  /* border-bottom: 1px solid var(--pr-gray-22-trans);   */
+}
+
+.search-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex: 1;
+  min-width: 0;
+  border-bottom: 1px solid var(--pr-gray-22-trans);
+  padding-inline: var(--space-md);
+  padding-block: var(--space-xs);
+}
+
+.gallery-search-input {
+  flex: 1;
+  min-width: 80px;
+  border: none;
+  background: none;
+  padding: 0;
+  color: var(--pr-gray);
+  font-size: var(--text-tag);
+  font-family: var(--font-main);
+  letter-spacing: var(--tracking-relaxed);
+  outline: none;
+}
+
+.gallery-search-input::placeholder {
+  color: var(--pr-gray-2);
+}
+
+.thr-search-clear {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--pr-gray);
+  font-size: var(--text-tag);
+  padding: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease;
+}
+
+.thr-search-clear.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+/* hide browser default search clear button */
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  appearance: none;
+  display: none;
+}
+
+input[type="search"]::-ms-clear {
+  display: none;
+}
+
+.search-tags-row {
+  display: contents;
+}
+
+.search-tag-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  border: 1px solid var(--pr-green);
+  border-radius: var(--radius-xl);
+  padding-inline: var(--space-xs);
+  padding-block: var(--space-3xs);
+  color: var(--pr-green);
+  font-size: var(--text-fine);
+  font-family: var(--font-main);
+  letter-spacing: var(--tracking-relaxed);
+  white-space: nowrap;
+}
+
+.search-tag-remove {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--pr-green);
+  font-size: 0.6rem;
+  padding: 0;
+  line-height: 1;
+  pointer-events: auto;
+}
+
+.search-tag-pill,
+.search-tag-remove {
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ── TAG INDEX BUTTON ── */
+.tag-index-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--pr-gray-2);
+  font-size: var(--text-tag);
+  font-family: var(--font-main);
+  letter-spacing: var(--tracking-relaxed);
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: color 0.15s ease;
+  padding: 0;
+}
+@media (hover: hover) and (pointer: fine) {
+  .tag-index-btn:hover {
+    color: var(--pr-green);
+  }
+}
+
+.popular-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: var(--pr-green);
+  color: var(--pr-black);
+  font-size: var(--text-fine);
+  font-family: var(--font-mono);
+  letter-spacing: var(--tracking-relaxed);
+  padding-inline: var(--space-xs);
+  padding-block: var(--space-3xs);
+  text-transform: uppercase;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.quantity-badge {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.6);
+  color: var(--pr-gray);
+  font-size: var(--text-fine);
+  font-family: var(--font-mono);
+  letter-spacing: var(--tracking-relaxed);
+  padding-inline: var(--space-xs);
+  padding-block: var(--space-3xs);
+  text-transform: uppercase;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* ── TAG DRAWER ── */
+.tag-drawer-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.tag-drawer-overlay.open {
+  display: block;
+}
+
+.tag-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 45%;
+  max-width: 480px;
+  background: var(--pr-black);
+  border-left: 1px solid var(--pr-gray-22-trans);
+  z-index: 201;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.tag-drawer.open {
+  transform: translateX(0);
+}
+
+.tag-drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: var(--space-lg);
+  padding-block: var(--space-sm);
+  border-bottom: 1px solid var(--pr-gray-22-trans);
+  color: var(--pr-gray);
+  font-size: var(--text-tag);
+  font-family: var(--font-main);
+  letter-spacing: var(--tracking-relaxed);
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+
+.tag-drawer-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--pr-gray-2);
+  font-size: 1rem;
+  padding: 0;
+  transition: color 0.15s ease;
+}
+@media (hover: hover) and (pointer: fine) {
+  .tag-drawer-close:hover {
+    color: var(--pr-green);
+  }
+}
+
+.tag-drawer-body {
+  flex: 1;
+  overflow-y: auto;
+  padding-inline: var(--space-lg);
+  padding-block: var(--space-md);
+  scrollbar-width: thin;
+  scrollbar-color: var(--pr-gray-22-trans) transparent;
+}
+
+.tag-drawer-section {
+  margin-block-end: var(--space-md);
+}
+
+.tag-drawer-label {
+  color: var(--pr-gray-2);
+  font-size: var(--text-fine);
+  font-family: var(--font-mono);
+  letter-spacing: var(--tracking-relaxed);
+  text-transform: uppercase;
+  margin-block-end: var(--space-xs);
+}
+
+.tag-drawer-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tag-drawer-pill {
+  cursor: pointer;
+  border: 1px solid var(--pr-gray-22-trans);
+  border-radius: var(--radius-xl);
+  background: none;
+  padding-inline: var(--space-xs);
+  padding-block: var(--space-3xs);
+  color: var(--pr-gray-2);
+  font-size: var(--text-fine);
+  font-family: var(--font-main);
+  letter-spacing: var(--tracking-relaxed);
+  transition:
+    color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.tag-drawer-pill:hover,
+.tag-drawer-pill.active {
+  color: var(--pr-green);
+  border-color: var(--pr-green);
+}
+
+/* ── SOLD OUT CARD ── */
+.article-card.sold-out .card-image img {
+  filter: grayscale(100%);
+  transition:
+    filter 0.3s ease,
+    transform 0.4s ease;
+}
+@media (hover: hover) and (pointer: fine) {
+  .article-card:hover .card-image img {
+    transform: scale(1.04);
+  }
+}
+
+.article-card.sold-out .card-image {
+  position: relative;
+}
+
+.sold-out-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: var(--pr-red);
+  color: var(--pr-black);
+  font-size: var(--text-fine);
+  font-family: var(--font-mono);
+  letter-spacing: var(--tracking-relaxed);
+  padding-inline: var(--space-xs);
+  padding-block: var(--space-3xs);
+  text-transform: uppercase;
+  border: 1px solid var(--pr-gray-22-trans);
+  pointer-events: none;
+  z-index: 2;
+}
+
+@media (max-width: 768px) {
+  .tag-drawer {
+    width: 85%;
+  }
+}

@@ -44,6 +44,65 @@
   margin: 0;
   padding: 0;
 }
+/* ── DROPDOWN ── */
+.has-dropdown {
+  position: relative;
+}
+
+.nav-dropdown {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  position: absolute;
+  /* top: calc(100% + 1rem); */
+  left: -20px;
+  list-style: none;
+  padding: 0.75rem 1rem;
+  margin: 0;
+  /* background: var(--pr-black);
+  border: 1px solid var(--pr-gray-22-trans); */
+  min-width: 140px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-6px);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+.has-dropdown::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 1rem; /* ← fills the gap between link and dropdown */
+}
+
+.nav-dropdown a {
+  color: var(--pr-gray-2);
+  font-family: var(--font-main);
+  font-size: 0.75rem;
+  font-weight: var(--weight-light);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  height: auto; /* ← override the 1em height from nav links */
+  overflow: visible; /* ← override overflow: hidden from nav links */
+  display: block;
+  transition: color 0.2s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .has-dropdown:hover .nav-dropdown {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .nav-dropdown a:hover {
+    color: var(--pr-green);
+  }
+}
 
 .site-nav-links a {
   display: inline-block;

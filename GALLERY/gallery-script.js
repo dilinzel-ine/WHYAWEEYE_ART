@@ -101,7 +101,9 @@ document.addEventListener("DOMContentLoaded", () => {
         "";
 
       // read all tag elements — used for both tag filter and text search
-      const tagEls = [...card.querySelectorAll(".card2-tag")];
+      const tagEls = [
+        ...card.querySelectorAll(".card2-tag, .card2-filter-tag"),
+      ];
       const tagTexts = tagEls.map((t) => t.textContent.trim().toLowerCase());
 
       // card must match ALL active tag filters

@@ -1,0 +1,559 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inventory</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background: #0e0e0e;
+        color: #e0e0e0;
+        font-family: monospace;
+        min-height: 100dvh;
+      }
+
+      #passwordScreen {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100dvh;
+        gap: 16px;
+      }
+      #passwordScreen h1 {
+        font-size: 1rem;
+        letter-spacing: 0.2em;
+        color: #9eff00;
+        text-transform: uppercase;
+      }
+      #passwordInput {
+        background: none;
+        border: none;
+        border-bottom: 1px solid #333;
+        color: #e0e0e0;
+        font-family: monospace;
+        font-size: 1rem;
+        padding: 8px 4px;
+        width: 220px;
+        outline: none;
+        text-align: center;
+      }
+      #passwordError {
+        color: #ff4444;
+        font-size: 0.75rem;
+        display: none;
+      }
+
+      #mainScreen {
+        display: none;
+        padding: 24px;
+      }
+
+      .inv-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 24px;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+      .inv-header h1 {
+        font-size: 1rem;
+        letter-spacing: 0.2em;
+        color: #9eff00;
+        text-transform: uppercase;
+      }
+      .inv-count {
+        font-size: 0.75rem;
+        color: #555;
+      }
+
+      .inv-filters {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 20px;
+        align-items: center;
+      }
+      .inv-filters input,
+      .inv-filters select {
+        background: none;
+        border: 1px solid #222;
+        color: #e0e0e0;
+        font-family: monospace;
+        font-size: 0.75rem;
+        padding: 6px 10px;
+        outline: none;
+      }
+      .inv-filters input:focus,
+      .inv-filters select:focus {
+        border-color: #9eff00;
+      }
+      .inv-filters select option {
+        background: #0e0e0e;
+      }
+
+      .inv-table-wrap {
+        overflow-x: auto;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.75rem;
+      }
+      th {
+        text-align: left;
+        padding: 10px 12px;
+        border-bottom: 1px solid #222;
+        color: #555;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        white-space: nowrap;
+        cursor: pointer;
+        user-select: none;
+      }
+      th:hover {
+        color: #9eff00;
+      }
+      th.sort-asc::after {
+        content: " ↑";
+        color: #9eff00;
+      }
+      th.sort-desc::after {
+        content: " ↓";
+        color: #9eff00;
+      }
+      td {
+        padding: 10px 12px;
+        border-bottom: 1px solid #111;
+        vertical-align: middle;
+      }
+      tr:hover td {
+        background: #111;
+      }
+
+      .inv-img {
+        width: 48px;
+        height: 64px;
+        object-fit: cover;
+        display: block;
+      }
+
+      .badge {
+        display: inline-block;
+        padding: 2px 8px;
+        font-size: 0.65rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        border-radius: 99px;
+      }
+      .badge--available {
+        background: #9eff0022;
+        color: #9eff00;
+        border: 1px solid #9eff0044;
+      }
+      .badge--soldout {
+        background: #ff444422;
+        color: #ff4444;
+        border: 1px solid #ff444444;
+      }
+      .badge--scheduled {
+        background: #ffaa0022;
+        color: #ffaa00;
+        border: 1px solid #ffaa0044;
+      }
+      .badge--popular {
+        background: #9eff0044;
+        color: #9eff00;
+        border: 1px solid #9eff00;
+        font-size: 0.6rem;
+        margin-left: 4px;
+      }
+
+      .tags-cell {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px;
+        max-width: 200px;
+      }
+      .tag-pill {
+        background: #1a1a1a;
+        border: 1px solid #222;
+        padding: 1px 6px;
+        font-size: 0.65rem;
+        color: #777;
+      }
+
+      .source-threadart {
+        color: #9eff00;
+      }
+      .source-gallery {
+        color: #00cfff;
+      }
+      .price-cell {
+        color: #9eff00;
+      }
+
+      .qty-cell {
+        white-space: nowrap;
+      }
+      .qty-remaining {
+        color: #9eff00;
+      }
+      .qty-total {
+        color: #666;
+      }
+
+      .hash-cell {
+        color: #eee;
+        font-size: 0.65rem;
+      }
+
+      .no-results {
+        text-align: center;
+        padding: 48px;
+        color: #777;
+        font-size: 0.75rem;
+        letter-spacing: 0.1em;
+      }
+
+      /* summary bar */
+      .inv-summary {
+        display: flex;
+        gap: 24px;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+      }
+      .inv-summary-item {
+        font-size: 0.75rem;
+        color: #eeeeee;
+      }
+      .inv-summary-item span {
+        color: #9eff00;
+        margin-left: 6px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="passwordScreen">
+      <h1>[ Inventory Access ]</h1>
+      <input
+        type="password"
+        id="passwordInput"
+        placeholder="enter password"
+        autofocus
+      />
+      <div id="passwordError">incorrect password</div>
+    </div>
+
+    <div id="mainScreen">
+      <div class="inv-header">
+        <h1>[ Inventory ]</h1>
+        <span class="inv-count" id="invCount">— items</span>
+      </div>
+
+      <div class="inv-summary">
+        <div class="inv-summary-item">
+          Total Items <span id="summaryTotal">—</span>
+        </div>
+        <div class="inv-summary-item">
+          Available <span id="summaryAvailable">—</span>
+        </div>
+        <div class="inv-summary-item">
+          Sold Out <span id="summarySoldOut">—</span>
+        </div>
+        <div class="inv-summary-item">
+          Total Sold <span id="summarySold">—</span>
+        </div>
+        <div class="inv-summary-item">
+          Popular <span id="summaryPopular">—</span>
+        </div>
+      </div>
+
+      <div class="inv-filters">
+        <input type="search" id="searchInput" placeholder="SEARCH TITLE..." />
+        <input type="text" id="searchHash" placeholder="SEARCH #HASHTAG..." />
+        <select id="filterSource">
+          <option value="all">All Sources</option>
+          <option value="threadart">Thread Art</option>
+          <option value="gallery">Gallery</option>
+        </select>
+        <select id="filterStatus">
+          <option value="all">All Status</option>
+          <option value="available">Available</option>
+          <option value="sold-out">Sold Out</option>
+          <option value="scheduled">Scheduled</option>
+          <option value="popular">Popular</option>
+        </select>
+        <select id="filterCategory">
+          <option value="all">All Categories</option>
+        </select>
+      </div>
+
+      <div class="inv-table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>IMG</th>
+              <th data-col="title">TITLE</th>
+              <th data-col="source">SOURCE</th>
+              <th data-col="category">CATEGORY</th>
+              <th data-col="subtitle">HASHTAG</th>
+              <th>TAGS</th>
+              <th data-col="status">STATUS</th>
+              <th data-col="remaining">QTY</th>
+              <th data-col="price">PRICE</th>
+              <th data-col="date">DATE</th>
+            </tr>
+          </thead>
+          <tbody id="invBody"></tbody>
+        </table>
+        <div class="no-results" id="noResults" hidden>No items found</div>
+      </div>
+    </div>
+
+    <script>
+      const PASSWORD = "Monte1024"; // ← change this
+      const POPULAR_THRESHOLD = 2; // ← sold >= this = popular
+
+      const passwordInput = document.getElementById("passwordInput");
+      const passwordError = document.getElementById("passwordError");
+      const passwordScreen = document.getElementById("passwordScreen");
+      const mainScreen = document.getElementById("mainScreen");
+
+      passwordInput.addEventListener("keydown", (e) => {
+        if (e.key !== "Enter") return;
+        if (passwordInput.value === PASSWORD) {
+          passwordScreen.style.display = "none";
+          mainScreen.style.display = "block";
+          loadInventory();
+        } else {
+          passwordError.style.display = "block";
+          passwordInput.value = "";
+        }
+      });
+
+      let allItems = [];
+      let sortCol = "date";
+      let sortDir = -1;
+
+      async function loadInventory() {
+        const [threadRes, galleryRes] = await Promise.all([
+          fetch("/THREADART/threadart.json"),
+          fetch("/GALLERY/gallery.json"),
+        ]);
+
+        const threadItems = await threadRes.json();
+        const galleryItems = await galleryRes.json();
+
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+
+        function getStatus(item) {
+          const quantity = item.quantity || 1;
+          const sold = item.sold || 0;
+          const remaining = quantity - sold;
+          if (remaining <= 0 || item.tags?.includes("sold-out"))
+            return "sold-out";
+          if (item.date) {
+            const [dd, mm, yyyy] = item.date.split("-").map(Number);
+            const d = new Date(yyyy, mm - 1, dd);
+            d.setHours(0, 0, 0, 0);
+            if (d > today) return "scheduled";
+          }
+          return "available";
+        }
+
+        allItems = [
+          ...threadItems.map((i) => ({
+            ...i,
+            source: "threadart",
+            status: getStatus(i),
+            quantity: i.quantity || 1,
+            sold: i.sold || 0,
+            remaining: (i.quantity || 1) - (i.sold || 0),
+            isPopular:
+              (i.sold || 0) >= POPULAR_THRESHOLD &&
+              (i.quantity || 1) - (i.sold || 0) > 0,
+          })),
+          ...galleryItems.map((i) => ({
+            ...i,
+            source: "gallery",
+            status: getStatus(i),
+            quantity: i.quantity || 1,
+            sold: i.sold || 0,
+            remaining: (i.quantity || 1) - (i.sold || 0),
+            isPopular:
+              (i.sold || 0) >= POPULAR_THRESHOLD &&
+              (i.quantity || 1) - (i.sold || 0) > 0,
+          })),
+        ];
+
+        // build category filter
+        const cats = [
+          ...new Set(allItems.map((i) => i.category).filter(Boolean)),
+        ].sort();
+        const catSelect = document.getElementById("filterCategory");
+        cats.forEach((c) => {
+          const opt = document.createElement("option");
+          opt.value = c;
+          opt.textContent = c;
+          catSelect.appendChild(opt);
+        });
+
+        updateSummary();
+        renderTable();
+      }
+
+      function updateSummary() {
+        document.getElementById("summaryTotal").textContent = allItems.length;
+        document.getElementById("summaryAvailable").textContent =
+          allItems.filter((i) => i.status === "available").length;
+        document.getElementById("summarySoldOut").textContent = allItems.filter(
+          (i) => i.status === "sold-out",
+        ).length;
+        document.getElementById("summarySold").textContent = allItems.reduce(
+          (a, i) => a + (i.sold || 0),
+          0,
+        );
+        document.getElementById("summaryPopular").textContent = allItems.filter(
+          (i) => i.isPopular,
+        ).length;
+      }
+
+      function renderTable() {
+        const search = document
+          .getElementById("searchInput")
+          .value.trim()
+          .toLowerCase();
+        const hash = document
+          .getElementById("searchHash")
+          .value.trim()
+          .toLowerCase();
+        const source = document.getElementById("filterSource").value;
+        const status = document.getElementById("filterStatus").value;
+        const category = document.getElementById("filterCategory").value;
+
+        let filtered = allItems.filter((item) => {
+          if (search && !item.title?.toLowerCase().includes(search))
+            return false;
+          if (hash && !item.subtitle?.toLowerCase().includes(hash))
+            return false;
+          if (source !== "all" && item.source !== source) return false;
+          if (category !== "all" && item.category !== category) return false;
+          if (status === "popular" && !item.isPopular) return false;
+          if (
+            status !== "all" &&
+            status !== "popular" &&
+            item.status !== status
+          )
+            return false;
+          return true;
+        });
+
+        filtered.sort((a, b) => {
+          let av = a[sortCol] ?? "";
+          let bv = b[sortCol] ?? "";
+          if (sortCol === "price" || sortCol === "remaining") {
+            av = Number(av) || 0;
+            bv = Number(bv) || 0;
+          }
+          if (sortCol === "date") {
+            av = av ? av.split("-").reverse().join("") : "";
+            bv = bv ? bv.split("-").reverse().join("") : "";
+          }
+          return av < bv ? -sortDir : av > bv ? sortDir : 0;
+        });
+
+        const tbody = document.getElementById("invBody");
+        const noResults = document.getElementById("noResults");
+        tbody.innerHTML = "";
+        document.getElementById("invCount").textContent =
+          `${filtered.length} items`;
+
+        if (filtered.length === 0) {
+          noResults.hidden = false;
+          return;
+        }
+        noResults.hidden = true;
+
+        filtered.forEach((item) => {
+          const tr = document.createElement("tr");
+          const img = item.images?.[0] || "";
+
+          const statusBadge =
+            item.status === "sold-out"
+              ? `<span class="badge badge--soldout">Sold Out</span>`
+              : item.status === "scheduled"
+                ? `<span class="badge badge--scheduled">Scheduled</span>`
+                : `<span class="badge badge--available">Available</span>`;
+
+          const popularBadge = item.isPopular
+            ? `<span class="badge badge--popular">Popular</span>`
+            : "";
+
+          const tags = (item.tags || [])
+            .filter((t) => t !== "sold-out")
+            .map((t) => `<span class="tag-pill">${t}</span>`)
+            .join("");
+
+          const price = item.price
+            ? `₹${Number(item.price).toLocaleString("en-IN")}`
+            : `<span style="color:#333">—</span>`;
+
+          const qty =
+            item.quantity > 1
+              ? `<span class="qty-remaining">${item.remaining}</span><span class="qty-total">/${item.quantity}</span>`
+              : `<span class="qty-total">1/1</span>`;
+
+          const subtitle = item.subtitle
+            ? `<span class="hash-cell">${item.subtitle}${item.quantity > 1 ? ` (${item.remaining})` : ""}</span>`
+            : "—";
+
+          tr.innerHTML = `
+        <td>${img ? `<img class="inv-img" src="${img}" alt="${item.title}" />` : "—"}</td>
+        <td>${item.title || "—"} ${popularBadge}</td>
+        <td class="source-${item.source}">${item.source}</td>
+        <td>${item.category || "—"}</td>
+        <td>${subtitle}</td>
+        <td><div class="tags-cell">${tags || "—"}</div></td>
+        <td>${statusBadge}</td>
+        <td class="qty-cell">${qty}</td>
+        <td class="price-cell">${price}</td>
+        <td>${item.date || "—"}</td>
+      `;
+          tbody.appendChild(tr);
+        });
+      }
+
+      document.querySelectorAll("th[data-col]").forEach((th) => {
+        th.addEventListener("click", () => {
+          const col = th.dataset.col;
+          sortDir = sortCol === col ? sortDir * -1 : 1;
+          sortCol = col;
+          document
+            .querySelectorAll("th[data-col]")
+            .forEach((t) => t.classList.remove("sort-asc", "sort-desc"));
+          th.classList.add(sortDir === 1 ? "sort-asc" : "sort-desc");
+          renderTable();
+        });
+      });
+
+      [
+        "searchInput",
+        "searchHash",
+        "filterSource",
+        "filterStatus",
+        "filterCategory",
+      ].forEach((id) => {
+        document.getElementById(id).addEventListener("input", renderTable);
+      });
+    </script>
+  </body>
+</html>

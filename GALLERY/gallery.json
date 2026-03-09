@@ -1,0 +1,28 @@
+[
+  {
+    "id": "model-alpha",
+    "date": "04-03-2026",
+    "copyname": "why",
+    "subtitle": "#05262H7",
+    "quantity": 4,
+    "sold": 1,
+    "price": 2500,
+    "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos. \n\nLorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor.",
+    "links1": "#",
+    "links1Label": "⤷ EMAIL",
+    "links2": "#",
+    "links2Label": "⤷ PDF",
+    "buy": "https://rzp.io/l/your-link",
+    "images": [
+      "/images/Colorful Abstract Bag.jpeg",
+      "https://placehold.co/600x800?text=1\nWorld",
+      "https://placehold.co/600x800?font=lora",
+      "https://placehold.co/600x800?text=2\nWorld",
+      "https://placehold.co/600x800?font=lato",
+      "https://placehold.co/600x800?text=3\nWorld",
+      "https://placehold.co/600x800?font=poppins"
+    ],
+    "title": "Model Alpha",
+    "tags": ["3D Printed", "PLA", "Matte Finish", "2026"]
+  }
+]

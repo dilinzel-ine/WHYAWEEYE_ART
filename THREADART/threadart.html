@@ -6,14 +6,47 @@
     <!-- ─── SEO & Social ─────────────────────────────────────────── -->
     <meta
       name="description"
-      content="WHYAWEEYE Thread Art — intricate handmade thread and textile works."
+      content="WHYAWEEYE Thread Art — intricate handmade thread and embroidery works by whyaweeye. Shop original pieces by why25."
     />
+    <meta
+      name="keywords"
+      content="whyaweeye25, whyaweeye, why25, whyaweeye thread art, whyaweeye embroidery, handmade thread art india, embroidery art india, thread art shop"
+    />
+    <meta name="author" content="WHYAWEEYE" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#121212" />
+    <!-- match your site background -->
+
+    <!-- Open Graph -->
     <meta property="og:title" content="Thread Art — WHYAWEEYE" />
     <meta
       property="og:description"
-      content="Intricate handmade thread art: nature, animals, figures, and more."
+      content="Intricate handmade thread art: nature, animals, figures, and more by whyaweeye25."
     />
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="WHYAWEEYE" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta
+      property="og:image"
+      content="https://your-actual-vercel-url.vercel.app/images/preview.jpg"
+    />
+    <meta
+      property="og:url"
+      content="https://your-actual-vercel-url.vercel.app/THREADART/threadart.html"
+    />
+
+    <!-- Twitter/X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@whyaweeye25" />
+    <meta name="twitter:title" content="Thread Art — WHYAWEEYE" />
+    <meta
+      name="twitter:description"
+      content="Intricate handmade thread art by whyaweeye25. Shop original pieces."
+    />
+    <meta
+      name="twitter:image"
+      content="https://your-actual-vercel-url.vercel.app/images/preview.jpg"
+    />
 
     <title>Thread Art — WHYAWEEYE</title>
 
@@ -78,6 +111,7 @@
     <script src="/Assets/Favicon/icon-ani.js" defer></script>
     <script src="/Assets/footer/site-nav.js" defer></script>
     <script src="/Assets/footer/footer.js" defer></script>
+    <script src="/THREADART/threadart-render.js" defer></script>
     <script src="/THREADART/threadart-script.js" defer></script>
   </head>
   <body id="top">
@@ -210,23 +244,20 @@
               >[Scroll<br />Down ↓]</a
             >
           </div>
-          <div class="search-wrapper">
-            <input
-              type="search"
-              id="searchInput"
-              class="search-input"
-              placeholder="SEARCH by Title, HashCode, Tags, Date..."
-              autocomplete="off"
-              spellcheck="false"
-              aria-label="Search projects"
-            />
-            <button
-              class="search-clear"
-              id="searchClear"
-              aria-label="Clear search"
-            >
-              ✕
-            </button>
+
+          <!-- Search -->
+          <div class="gallery-search-wrapper">
+            <div class="search-input-wrap">
+              <div class="search-tags-row" id="searchTagsRow"></div>
+              <input
+                type="search"
+                id="searchInput"
+                class="gallery-search-input"
+                placeholder="SEARCH TITLE, TAGS..."
+              />
+              <button class="thr-search-clear" id="thr-searchClear">✕</button>
+            </div>
+            <button class="tag-index-btn" id="tagIndexBtn">[TT INDEX]</button>
           </div>
 
           <div class="gallery-count" id="galleryCount">
@@ -236,285 +267,18 @@
           <!-- ═══════════════════════════════════════ -->
           <!-- GRID -->
           <!-- ═══════════════════════════════════════ -->
-          <div
+          <ul
             class="artpage-grid reveal"
             style="--delay: 0.4s"
             id="grid"
             aria-live="polite"
             aria-label="Thread art cards"
           >
-            <!-- 1 -->
-            <!-- data-id= for shareable link -->
-            <!-- data-tags= for nav filter -->
-            <li
-              class="article-card"
-              data-date="05-03-2026"
-              data-id="image-title-here"
-              data-tags="tag-one tag-two"
-              role="listitem"
-              tabindex="0"
-              data-subtitle="#HASHCODE"
-              data-description="Image description goes here."
-              data-links-1=""
-              data-links-2=""
-              data-links-1-label="⤷ EMAIL"
-              data-links-2-label="⤷ PDF"
-              data-images='["/images/coming-soon.webp","/images/coming-soon.webp"]'
-              aria-label="Image Title — press Enter to view details."
-            >
-              <div class="card-number">[01]</div>
-
-              <div class="card-image thread">
-                <div class="card-image-placeholder">
-                  <img
-                    src="/images/coming-soon.webp"
-                    alt="Brief description of image"
-                    width="600"
-                    height="350"
-                    loading="eager"
-                    fetchpriority="high"
-                  />
-                </div>
-              </div>
-
-              <div class="card-info">
-                <div class="card-text">
-                  <div class="card-tag">CATEGORY TAG</div>
-                  <!-- shown above title in grid -->
-                  <div class="card-title">Image Title</div>
-                </div>
-
-                <div class="arrow-overlay">
-                  <div class="arrow-circle">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                      <line x1="5" y1="19" x2="19" y2="5" />
-                      <polyline points="5 5 19 5 19 19" />
-                    </svg>
-                  </div>
-                </div>
-
-                <!-- hidden tags for search/filter — must match data-tags above -->
-                <div class="card2-tag" hidden>tag-one</div>
-                <div class="card2-tag" hidden>tag-two</div>
-              </div>
-            </li>
-            <!-- 2 -->
-            <li
-              class="article-card"
-              data-date="05-03-2026"
-              data-id="image-title-here"
-              data-tags="tag-one tag-two"
-              role="listitem"
-              tabindex="0"
-              data-subtitle="#HASHCODE"
-              data-description="Image description goes here."
-              data-links-1=""
-              data-links-2=""
-              data-links-1-label="⤷ EMAIL"
-              data-links-2-label="⤷ PDF"
-              data-images='["/images/coming-soon.webp","/images/coming-soon.webp"]'
-              aria-label="Image Title — press Enter to view details."
-            >
-              <div class="card-number">[02]</div>
-
-              <div class="card-image thread">
-                <div class="card-image-placeholder">
-                  <img
-                    src="/images/coming-soon.webp"
-                    alt="Brief description of image"
-                    width="600"
-                    height="350"
-                    loading="eager"
-                    fetchpriority="high"
-                  />
-                </div>
-              </div>
-
-              <div class="card-info">
-                <div class="card-text">
-                  <div class="card-tag">CATEGORY TAG</div>
-                  <!-- shown above title in grid -->
-                  <div class="card-title">Image Title</div>
-                </div>
-
-                <div class="arrow-overlay">
-                  <div class="arrow-circle">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                      <line x1="5" y1="19" x2="19" y2="5" />
-                      <polyline points="5 5 19 5 19 19" />
-                    </svg>
-                  </div>
-                </div>
-
-                <!-- hidden tags for search/filter — must match data-tags above -->
-                <div class="card2-tag" hidden>tag-one</div>
-                <div class="card2-tag" hidden>tag-two</div>
-              </div>
-            </li>
-            <!-- 3 -->
-            <li
-              class="article-card"
-              data-date="05-03-2026"
-              data-id="image-title-here"
-              data-tags="tag-one tag-two"
-              role="listitem"
-              tabindex="0"
-              data-subtitle="#HASHCODE"
-              data-description="Image description goes here."
-              data-links-1=""
-              data-links-2=""
-              data-links-1-label="⤷ EMAIL"
-              data-links-2-label="⤷ PDF"
-              data-images='["/images/coming-soon.webp","/images/coming-soon.webp"]'
-              aria-label="Image Title — press Enter to view details."
-            >
-              <div class="card-number">[03]</div>
-
-              <div class="card-image thread">
-                <div class="card-image-placeholder">
-                  <img
-                    src="/images/coming-soon.webp"
-                    alt="Brief description of image"
-                    width="600"
-                    height="350"
-                    loading="eager"
-                    fetchpriority="high"
-                  />
-                </div>
-              </div>
-
-              <div class="card-info">
-                <div class="card-text">
-                  <div class="card-tag">CATEGORY TAG</div>
-                  <!-- shown above title in grid -->
-                  <div class="card-title">Image Title</div>
-                </div>
-
-                <div class="arrow-overlay">
-                  <div class="arrow-circle">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                      <line x1="5" y1="19" x2="19" y2="5" />
-                      <polyline points="5 5 19 5 19 19" />
-                    </svg>
-                  </div>
-                </div>
-
-                <!-- hidden tags for search/filter — must match data-tags above -->
-                <div class="card2-tag" hidden>tag-one</div>
-                <div class="card2-tag" hidden>tag-two</div>
-              </div>
-            </li>
-            <!-- 4 -->
-            <li
-              class="article-card"
-              data-date="05-03-2026"
-              data-id="image-title-here"
-              data-tags="tag-one tag-two"
-              role="listitem"
-              tabindex="0"
-              data-subtitle="#HASHCODE"
-              data-description="Image description goes here."
-              data-links-1=""
-              data-links-2=""
-              data-links-1-label="⤷ EMAIL"
-              data-links-2-label="⤷ PDF"
-              data-images='["/images/coming-soon.webp","/images/coming-soon.webp"]'
-              aria-label="Image Title — press Enter to view details."
-            >
-              <div class="card-number">[04]</div>
-
-              <div class="card-image thread">
-                <div class="card-image-placeholder">
-                  <img
-                    src="/images/coming-soon.webp"
-                    alt="Brief description of image"
-                    width="600"
-                    height="350"
-                    loading="eager"
-                    fetchpriority="high"
-                  />
-                </div>
-              </div>
-
-              <div class="card-info">
-                <div class="card-text">
-                  <div class="card-tag">CATEGORY TAG</div>
-                  <!-- shown above title in grid -->
-                  <div class="card-title">Image Title</div>
-                </div>
-
-                <div class="arrow-overlay">
-                  <div class="arrow-circle">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                      <line x1="5" y1="19" x2="19" y2="5" />
-                      <polyline points="5 5 19 5 19 19" />
-                    </svg>
-                  </div>
-                </div>
-
-                <!-- hidden tags for search/filter — must match data-tags above -->
-                <div class="card2-tag" hidden>tag-one</div>
-                <div class="card2-tag" hidden>tag-two</div>
-              </div>
-            </li>
-            <!-- 5 -->
-            <li
-              class="article-card"
-              data-date="05-03-2026"
-              data-id="image-title-here"
-              data-tags="tag-one tag-two"
-              role="listitem"
-              tabindex="0"
-              data-subtitle="#HASHCODE"
-              data-description="Image description goes here."
-              data-links-1=""
-              data-links-2=""
-              data-links-1-label="⤷ EMAIL"
-              data-links-2-label="⤷ PDF"
-              data-images='["/images/coming-soon.webp","/images/coming-soon.webp"]'
-              aria-label="Image Title — press Enter to view details."
-            >
-              <div class="card-number">[05]</div>
-
-              <div class="card-image thread">
-                <div class="card-image-placeholder">
-                  <img
-                    src="/images/coming-soon.webp"
-                    alt="Brief description of image"
-                    width="600"
-                    height="350"
-                    loading="eager"
-                    fetchpriority="high"
-                  />
-                </div>
-              </div>
-
-              <div class="card-info">
-                <div class="card-text">
-                  <div class="card-tag">CATEGORY TAG</div>
-                  <!-- shown above title in grid -->
-                  <div class="card-title">Image Title</div>
-                </div>
-
-                <div class="arrow-overlay">
-                  <div class="arrow-circle">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                      <line x1="5" y1="19" x2="19" y2="5" />
-                      <polyline points="5 5 19 5 19 19" />
-                    </svg>
-                  </div>
-                </div>
-
-                <!-- hidden tags for search/filter — must match data-tags above -->
-                <div class="card2-tag" hidden>tag-one</div>
-                <div class="card2-tag" hidden>tag-two</div>
-              </div>
-            </li>
-
             <!-- ═══════════════════════════════════════ -->
             <!-- Empty state -->
             <!-- ═══════════════════════════════════════ -->
-            <div
+
+            <li
               class="no-results"
               id="noResults"
               role="status"
@@ -522,8 +286,8 @@
               hidden
             >
               No thread-works in this category
-            </div>
-          </div>
+            </li>
+          </ul>
 
           <div class="end" aria-hidden="true">
             <a href="#top" class="scroll-hint" aria-label="Back to top"
@@ -544,6 +308,16 @@
       <!-- /.section-container -->
     </main>
     <!-- /#threadart -->
+    <div class="tag-drawer-overlay" id="tagDrawerOverlay"></div>
+    <aside class="tag-drawer" id="tagDrawer" aria-label="Tag Index">
+      <div class="tag-drawer-header">
+        <span>Threadart TAG INDEX</span>
+        <button class="tag-drawer-close" id="tagDrawerClose">✕</button>
+      </div>
+      <div class="tag-drawer-body" id="tagDrawerBody">
+        <!-- filled by JS -->
+      </div>
+    </aside>
 
     <!-- ═══════════════════════════════════════ -->
     <!-- MODAL -->
@@ -563,13 +337,44 @@
         </button>
 
         <div class="modal-left">
-          <img id="mainImage" class="modal-main" src="" alt="Detailed View" />
-          <p class="modal-date" id="modalDate"></p>
+          <div class="modal-image-wrap">
+            <div id="mainMediaWrap" class="main-media-wrap">
+              <img
+                id="mainImage"
+                class="modal-main"
+                src=""
+                alt="Detailed View"
+              />
+            </div>
+            <p class="modal-copyname" id="modalCopyName"></p>
+            <p class="modal-date" id="modalDate"></p>
+          </div>
+          <div class="thumbnails-wrap">
+            <!-- <button
+              class="thumb-arrow thumb-arrow-left"
+              aria-label="Scroll left"
+            >
+              ‹
+            </button> -->
+            <div
+              class="thumbnails"
+              id="thumbnails"
+              role="list"
+              aria-label="More images"
+            ></div>
+            <!-- <button
+              class="thumb-arrow thumb-arrow-right"
+              aria-label="Scroll right"
+            >
+              ›
+            </button> -->
+          </div>
         </div>
 
         <div class="modal-right">
-          <h2 id="modalTitle"></h2>
+          <h2 id="modalTitle" class="modal-title"></h2>
           <h5 id="modalSubtitle" class="modal-subtitle"></h5>
+
           <button class="share-btn" id="shareBtn" aria-label="Copy link">
             [ ↗ SHARE ]
           </button>
@@ -593,16 +398,31 @@
               rel="noopener noreferrer"
             ></a>
           </div>
+          <div class="modal-purchase-content">
+            <p id="modalStock" class="modal-stock"></p>
+            <a
+              id="modalBuyBtn"
+              class="modal-buy-btn"
+              href=""
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              ⤷ BUY NOW
+            </a>
+          </div>
           <div id="modalTags" class="modal-tags" aria-label="Tags"></div>
-
-          <div
-            class="thumbnails"
-            id="thumbnails"
-            role="list"
-            aria-label="More images"
-          ></div>
         </div>
       </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════ -->
+    <!-- LIGHT BOX                           -->
+    <!-- ═══════════════════════════════════════ -->
+    <div class="lightbox" id="lightbox">
+      <button class="lightbox-arrow lightbox-prev" id="lightboxPrev">‹</button>
+      <div id="lightboxMedia" class="lightbox-media"></div>
+      <button class="lightbox-arrow lightbox-next" id="lightboxNext">›</button>
+      <button class="lightbox-close" id="lightboxClose">✕</button>
     </div>
 
     <!-- ═══════════════════════════════════════ -->
