@@ -36,6 +36,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     li.setAttribute("data-links-1-label", item.links1Label || "⤷ EMAIL");
     li.setAttribute("data-links-2", item.links2 || "");
     li.setAttribute("data-links-2-label", item.links2Label || "⤷ PDF");
+    li.setAttribute("data-price", item.price || "");
     li.setAttribute("data-buy", item.buy || "");
     li.setAttribute("data-images", JSON.stringify(item.images));
     li.setAttribute(
@@ -57,7 +58,14 @@ document.addEventListener("DOMContentLoaded", async () => {
     <div class="card-text">
       <div class="card-tag">${item.category}</div>
       <div class="card-title">${item.title}</div>
-      ${quantity > 1 ? `<div class="card-subtitle">${item.subtitle} (${remaining}/${quantity})</div>` : `<div class="card-subtitle">${item.subtitle}</div>`}
+      ${
+        item.price
+          ? `<div class="card-price ${isSoldOut ? "card-price--soldout" : ""}">
+      ${isSoldOut ? `<s>₹${Number(item.price).toLocaleString("en-IN")}</s>` : `₹${Number(item.price).toLocaleString("en-IN")}`}
+     </div>`
+          : ""
+      }
+      ${quantity > 1 ? `<div class="card-subtitle" hidden>${item.subtitle} (${remaining}/${quantity})</div>` : `<div class="card-subtitle">${item.subtitle}</div>`}
     </div>
     <div class="arrow-overlay">
       <div class="arrow-circle">

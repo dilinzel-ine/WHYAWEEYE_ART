@@ -11,10 +11,10 @@
   mix-blend-mode: difference;
   transition:
     font-size 0.3s var(--ease-out-expo),
-    /* smooth size change */ opacity 0.3s ease;
+    opacity 0.3s ease;
   will-change: transform;
   pointer-events: none;
-  color: var(--pr-gray);
+  color: var(--color-text);
   font-weight: 100;
   font-size: 80px;
   line-height: 1;
@@ -22,7 +22,6 @@
   user-select: none;
   text-align: center;
   white-space: nowrap;
-  /* already handles fade in/out */
 }
 
 .cursor-homepage {

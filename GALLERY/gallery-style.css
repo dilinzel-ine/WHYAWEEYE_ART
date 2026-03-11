@@ -31,7 +31,7 @@ html::-webkit-scrollbar {
 body {
   background-image: url("../images/noise.svg");
   background-repeat: repeat;
-  background-color: var(--pr-black);
+  background-color: var(--color-bg);
   background-blend-mode: overlay;
   width: 100%;
   min-height: 100dvh;
@@ -83,7 +83,7 @@ a {
 .gallery-container h1 {
   margin-block-start: var(--space-xl);
   margin-block-end: var(--space-xs);
-  color: var(--pr-gray);
+  color: var(--color-text);
   font-weight: var(--weight-medium);
   font-size: var(--text-h1);
   font-family: var(--font-main);
@@ -92,7 +92,7 @@ a {
 
 .gallery-container p {
   margin-block-end: var(--space-xl);
-  color: var(--pr-gray-2);
+  color: var(--color-text-muted);
   font-style: italic;
   font-size: var(--text-body);
   font-family: var(--font-sec);
@@ -146,15 +146,15 @@ a {
   transition: color 0.15s ease;
   /* padding-inline: var(--space-sm); */
   padding-block: var(--space-3xs);
-  color: var(--pr-gray-2);
+  color: var(--color-text-muted);
   font-size: var(--text-ui);
+  font-family: var(--font-mono);
   letter-spacing: var(--tracking-wide);
   text-transform: uppercase;
-  font-family: var(--font-mono);
 }
 
 .tag-index:hover {
-  color: var(--pr-green);
+  color: var(--color-accent);
 }
 
 /* ============================================= */
@@ -162,8 +162,8 @@ a {
 /* ============================================= */
 .gallery-search-wrapper {
   display: flex;
-  flex-wrap: wrap;
   flex-direction: row;
+  flex-wrap: wrap;
   /* align-items: center; */
   gap: var(--space-xs);
   margin-block-end: var(--space-sm);
@@ -171,21 +171,21 @@ a {
 }
 
 .search-input-wrap {
-  position: relative;
   display: flex;
+  position: relative;
+  flex: 1;
   flex-wrap: wrap;
   align-items: center;
   gap: var(--space-2xs);
-  flex: 1;
-  min-width: 0;
-  width: 100%;
-  border-bottom: 1px solid var(--pr-gray-22-trans);
+  border-bottom: 1px solid var(--color-border);
   padding-inline: var(--space-xs);
   padding-block: var(--space-3xs);
+  width: 100%;
+  min-width: 0;
 }
 .search-input-wrap:focus-within {
-  border-bottom-color: var(--pr-green); /* ← border highlights on focus */
   transition: border-color 0.2s ease;
+  border-bottom-color: var(--color-accent);
 }
 .search-tags-row {
   display: contents; /* ← makes children behave as direct flex children of wrapper */
@@ -199,11 +199,11 @@ a {
     background 0.15s ease,
     color 0.15s ease;
   cursor: pointer;
-  border: 1px solid var(--pr-green);
+  border: 1px solid var(--color-accent);
   border-radius: var(--radius-full);
   background: transparent;
   padding: 3px 10px;
-  color: var(--pr-green);
+  color: var(--color-accent);
   font-size: var(--text-fine);
   font-family: var(--font-main);
   letter-spacing: var(--tracking-wide);
@@ -212,8 +212,8 @@ a {
 }
 
 .search-active-tag:hover {
-  background: var(--pr-green);
-  color: var(--pr-black);
+  background: var(--color-accent);
+  color: var(--color-bg);
 }
 
 .search-active-tag .remove-tag {
@@ -223,29 +223,29 @@ a {
 
 .gallery-search-input {
   flex: 1;
-  min-width: 80px;
+  transition: none;
   outline: none;
-  border: none; /* ← remove border, wrapper has it */
+  border: none;
   background: none;
-  padding: 0; /* ← remove padding, wrapper has it */
-  padding-right: 2rem; /* ← keep right padding for clear button */
-  color: var(--pr-gray);
-  caret-color: var(--pr-green);
+  padding: 0;
+  padding-right: 2rem;
+  min-width: 80px;
+  color: var(--color-text);
+  caret-color: var(--color-accent);
   font-size: var(--text-ui);
   font-family: var(--font-main);
   letter-spacing: var(--tracking-wide);
   text-transform: uppercase;
-  transition: none;
 }
 
 .gallery-search-input:focus {
-  border-bottom-color: var(--pr-green);
   outline: none;
+  border-bottom-color: var(--color-accent);
 }
 
 .gallery-search-input::placeholder {
   opacity: 0.8;
-  color: var(--pr-gray-2);
+  color: var(--color-text-muted);
 }
 
 .gallery-search-input:focus::placeholder {
@@ -274,12 +274,12 @@ a {
 
 .search-clear.visible {
   pointer-events: auto;
-  color: var(--pr-gray);
+  color: var(--color-text);
 }
 
 @media (hover: hover) and (pointer: fine) {
   .search-clear.visible:hover {
-    color: var(--pr-green);
+    color: var(--color-accent);
   }
 }
 
@@ -290,7 +290,7 @@ a {
   opacity: 0.6;
   padding-inline: var(--space-2xs);
   padding-block: var(--space-sm) 0;
-  color: var(--pr-green);
+  color: var(--color-accent);
   font-size: var(--text-fine);
   font-family: var(--font-mono);
   letter-spacing: var(--tracking-wide);
@@ -330,7 +330,6 @@ a {
 @media (hover: hover) and (pointer: fine) {
   .card:hover img,
   .card:hover .card2-image {
-    /* fixed: was .card2-image:hover — wrong selector */
     transform: scale(1.05);
     filter: brightness(1);
   }
@@ -347,15 +346,17 @@ a {
     transparent 0%,
     rgba(48, 48, 48, 0.35) 90%
   );
-  padding: 15px 20px 20px;
+  padding-block-start: var(--space-md);
+  padding-block-end: var(--space-sm);
+  padding-inline: var(--space-sm);
 }
 
 .card2-title,
 .card2-title-link {
   margin: 0 0 8px 0;
-  color: whitesmoke;
+  color: var(--color-whitesmoke);
   font-weight: 700;
-  font-size: 1.1rem;
+  font-size: var(--text-body);
   text-decoration: none;
   text-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
 }
@@ -381,7 +382,7 @@ a {
   border-radius: 20px;
   background: rgba(184, 184, 184, 0.5);
   padding: 5px 12px;
-  color: whitesmoke;
+  color: var(--color-whitesmoke);
   font-size: 0.6rem;
 }
 
@@ -396,9 +397,9 @@ a {
 
   .card2-tag:hover,
   .card2-tag.active-filter {
-    border-color: var(--pr-green);
+    border-color: var(--color-accent);
     background: rgba(158, 255, 0, 0.15);
-    color: var(--pr-green);
+    color: var(--color-accent);
   }
 }
 

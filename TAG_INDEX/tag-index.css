@@ -25,13 +25,13 @@ html::-webkit-scrollbar {
 }
 
 body {
-  background-color: var(--pr-black);
+  background-color: var(--color-bg);
   background-image: url("../images/noise.svg");
   background-repeat: repeat;
   background-blend-mode: overlay;
   min-height: 100dvh;
   font-family: var(--font-main);
-  color: var(--pr-gray);
+  color: var(--color-text);
   padding-block-start: 55px;
 }
 a {
@@ -50,13 +50,13 @@ a {
 .tag-index-header h1 {
   font-size: var(--text-h1);
   font-weight: var(--weight-medium);
-  color: var(--pr-gray);
+  color: var(--color-text);
   line-height: 1.1;
   margin-block-end: var(--space-sm);
 }
 
 .tag-index-header p {
-  color: var(--pr-gray-2);
+  color: var(--color-text-muted);
   font-size: var(--text-body-sm);
   font-family: var(--font-sec);
   font-style: italic;
@@ -70,7 +70,8 @@ a {
 .tag-index-container {
   /* max-width: var(--content-max-width); */
   margin: 0 auto;
-  padding-block-end: calc(var(--bottom-nav-height) + var(--space-2xl));
+  padding-block-end: var(--space-4xl);
+  padding-inline: var(--space-md);
 }
 
 /* ============================================= */
@@ -79,7 +80,7 @@ a {
 .tag-section {
   padding-inline: var(--page-padding-x);
   padding-block: var(--space-xl);
-  border-bottom: 1px solid #1a1a1a;
+  border-bottom: 1px solid var(--color-bg-elevated);
 }
 
 .tag-section-title {
@@ -87,7 +88,7 @@ a {
   font-weight: var(--weight-medium);
   letter-spacing: var(--tracking-widest);
   text-transform: uppercase;
-  color: var(--pr-green);
+  color: var(--color-accent);
   margin-block-end: var(--space-md);
 }
 
@@ -109,11 +110,11 @@ a {
 .tag-pill {
   display: inline-flex;
   align-items: center;
-  border: 1px solid #333;
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-full);
   padding-block: var(--tag-padding-y);
   padding-inline: var(--tag-padding-x);
-  color: var(--pr-gray);
+  color: var(--color-text);
   font-size: var(--text-tag);
   font-family: var(--font-main);
   letter-spacing: var(--tracking-wide);
@@ -128,14 +129,14 @@ a {
 
 @media (hover: hover) and (pointer: fine) {
   .tag-pill:hover {
-    border-color: var(--pr-green);
-    color: var(--pr-green);
-    background: rgba(158, 255, 0, 0.05);
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+    background: var(--color-border);
   }
 }
 
 .tag-pill:focus-visible {
-  outline: 2px solid var(--pr-green);
+  outline: 2px solid var(--color-accent);
   outline-offset: 3px;
 }
 

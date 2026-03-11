@@ -104,6 +104,7 @@
     />
 
     <!-- ─── Scripts: deferred so they never block parsing ────────── -->
+    <script src="/Assets/fx/theme.js" defer></script>
     <script src="/Assets/fx/curcus.js" defer></script>
     <script src="/Assets/sections/modal.js" defer></script>
     <script src="/Assets/fx/transition.js" defer></script>
@@ -111,6 +112,7 @@
     <script src="/Assets/Favicon/icon-ani.js" defer></script>
     <script src="/Assets/footer/site-nav.js" defer></script>
     <script src="/Assets/footer/footer.js" defer></script>
+    <script src="/Assets/fx/quick-filter.js"></script>
     <script src="/THREADART/threadart-render.js" defer></script>
     <script src="/THREADART/threadart-script.js" defer></script>
   </head>
@@ -260,10 +262,47 @@
             <button class="tag-index-btn" id="tagIndexBtn">[TT INDEX]</button>
           </div>
 
-          <div class="gallery-count" id="galleryCount">
-            Active Works: <span id="countNumber">0</span>
+          <div class="count-and-filter">
+            <div class="gallery-count" id="galleryCount">
+              Active Works: <span id="countNumber">0</span>
+            </div>
+            <div class="quick-filters">
+              <label class="quick-filter-item">
+                <input type="checkbox" class="qf-check" data-qf="new" checked />
+                <span>New</span>
+              </label>
+              <label class="quick-filter-item">
+                <input
+                  type="checkbox"
+                  class="qf-check"
+                  data-qf="popular"
+                  checked
+                />
+                <span>Popular</span>
+              </label>
+              <label class="quick-filter-item">
+                <input
+                  type="checkbox"
+                  class="qf-check"
+                  data-qf="soldout"
+                  checked
+                />
+                <span>Sold Out</span>
+              </label>
+              <label class="quick-filter-item">
+                <input
+                  type="checkbox"
+                  class="qf-check"
+                  data-qf="other"
+                  checked
+                />
+                <span>Other</span>
+              </label>
+              <button class="qf-reset" id="qfReset" title="Reset filters">
+                ✕
+              </button>
+            </div>
           </div>
-
           <!-- ═══════════════════════════════════════ -->
           <!-- GRID -->
           <!-- ═══════════════════════════════════════ -->
@@ -350,24 +389,12 @@
             <p class="modal-date" id="modalDate"></p>
           </div>
           <div class="thumbnails-wrap">
-            <!-- <button
-              class="thumb-arrow thumb-arrow-left"
-              aria-label="Scroll left"
-            >
-              ‹
-            </button> -->
             <div
               class="thumbnails"
               id="thumbnails"
               role="list"
               aria-label="More images"
             ></div>
-            <!-- <button
-              class="thumb-arrow thumb-arrow-right"
-              aria-label="Scroll right"
-            >
-              ›
-            </button> -->
           </div>
         </div>
 
@@ -400,6 +427,7 @@
           </div>
           <div class="modal-purchase-content">
             <p id="modalStock" class="modal-stock"></p>
+            <p id="modalPrice" class="modal-price"></p>
             <a
               id="modalBuyBtn"
               class="modal-buy-btn"

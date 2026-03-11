@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const [dd, mm, yyyy] = raw.split("-").map(Number);
     const cardDate = new Date(yyyy, mm - 1, dd);
     cardDate.setHours(0, 0, 0, 0);
-    if (cardDate > today) card.classList.add("hidden");
+    if (cardDate > today) card.classList.add("hidden", "scheduled-hidden");
   });
 
   /* ── MEDIA HELPERS ── */
@@ -340,7 +340,7 @@ document.addEventListener("DOMContentLoaded", () => {
           remaining > 0 ? `${remaining} / ${quantity} remaining` : "Sold Out";
         stockEl.style.display = "";
         stockEl.style.color =
-          remaining > 0 ? "var(--pr-gray)" : "var(--pr-red)";
+          remaining > 0 ? "var(--color-text)" : "var(--color-danger)";
       } else {
         stockEl.style.display = "none";
       }
@@ -376,6 +376,22 @@ document.addEventListener("DOMContentLoaded", () => {
       el.textContent = label || `[⤷ LINK ${i + 1}]`;
       el.style.display = val ? "" : "none";
     });
+
+    const priceEl = document.getElementById("modalPrice");
+    if (priceEl) {
+      const price = card.getAttribute("data-price") || "";
+      const isSoldOut = remaining <= 0 && quantity > 1;
+      if (price) {
+        priceEl.innerHTML = isSoldOut
+          ? `<s>₹${Number(price).toLocaleString("en-IN")}</s>`
+          : `₹${Number(price).toLocaleString("en-IN")}`;
+        priceEl.style.display = "";
+        priceEl.style.opacity = isSoldOut ? "0.4" : "1";
+      } else {
+        priceEl.style.display = "none";
+      }
+    }
+
     // buy button
     const buyBtn = document.getElementById("modalBuyBtn");
     if (buyBtn) {
@@ -401,9 +417,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (modalTags) {
       modalTags.innerHTML = "";
+      const seen = new Set();
       card.querySelectorAll(".card2-tag, .card2-filter-tag").forEach((tag) => {
-        const span = document.createElement("span");
-        span.textContent = tag.textContent.trim();
+        const text = tag.textContent.trim(); // ← declare text first
+        if (!text || seen.has(text)) return;
+        seen.add(text);
+        const span = document.createElement("span"); // ← then span
+        span.textContent = text;
         modalTags.appendChild(span);
       });
     }

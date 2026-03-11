@@ -1,0 +1,191 @@
+/* ============================================= */
+/* HOME SECTION                                  */
+/* ============================================= */
+
+.container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  padding: 0 2rem;
+  width: 100%;
+  height: calc(100dvh - 60px);
+  overflow: hidden;
+}
+
+/* ── left column ── */
+.left {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-block: var(--space-xl);
+}
+
+.phrase {
+  position: relative;
+}
+
+.phrase h6 {
+  font-weight: 500;
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
+  color: var(--color-text);
+}
+
+.phrase div {
+  position: relative;
+  height: 1.2em;
+  overflow: hidden;
+}
+
+.phrase span {
+  display: block;
+  transform: translateY(0);
+  transition: transform 1s var(--ease-out-expo);
+}
+
+.phrase div::after {
+  content: attr(data-content);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  color: var(--color-text);
+  transition: transform 1s var(--ease-out-expo);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .phrase div:hover span,
+  .phrase div:hover::after {
+    transform: translateY(-100%);
+  }
+}
+
+.logo img {
+  display: block;
+  width: 3rem;
+  height: 3rem;
+  transition: filter 0.3s ease-in-out;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .logo img:hover {
+    filter: grayscale(1);
+  }
+}
+
+/* ── main title ── */
+.main-content {
+  position: absolute;
+  top: 46%;
+  right: 2rem;
+  transform: translateY(-50%);
+}
+
+.main-content h1 {
+  position: relative;
+  font-weight: 700;
+  font-size: 15rem;
+  line-height: 0.8;
+  letter-spacing: -21px;
+  text-align: right;
+  -webkit-text-stroke: var(--title-stroke);
+  color: var(--title-fill);
+}
+
+.main-content h1::after {
+  content: attr(data-content);
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  pointer-events: none;
+  color: transparent;
+  -webkit-text-stroke: var(--title-stroke);
+  transition:
+    filter 1s ease-in-out,
+    opacity 1s ease-in-out;
+}
+
+.main-content h1 .word {
+  display: block;
+  transition:
+    filter 1s ease-in-out,
+    opacity 1s ease-in-out;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .main-content h1:hover::after,
+  .main-content h1 .word:hover {
+    opacity: 0.1;
+    filter: blur(20px);
+  }
+}
+
+.word--underline {
+  text-decoration: underline;
+  text-decoration-color: var(--title-underline);
+}
+
+/* ── scroll hint ── */
+.scroll-hint {
+  position: absolute;
+  right: clamp(1.5rem, 5vw, 5rem);
+  bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-text);
+  transition: opacity 0.5s ease;
+}
+
+.scroll-hint svg {
+  animation: nudge 1.8s ease-in-out infinite;
+}
+
+@keyframes nudge {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(7px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-hint svg {
+    animation: none;
+  }
+}
+
+/* ── abstract image ── */
+.abstract {
+  position: absolute;
+  top: 5%;
+  right: 6em;
+  bottom: 0;
+  z-index: 2;
+  width: 100%;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  mix-blend-mode: multiply;
+  transform: scale(0.9);
+  transition: transform 1s ease-in-out;
+  will-change: transform;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .abstract:hover {
+    transform: scale(1.1);
+  }
+}

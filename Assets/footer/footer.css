@@ -63,7 +63,7 @@ footer {
   flex-direction: column;
   justify-content: flex-start;
   opacity: 0.95;
-  background: var(--pr-black);
+  background: var(--color-bg);
   padding: 56px 60px 0;
 }
 .left-top-content {
@@ -93,7 +93,7 @@ footer {
     color 0.2s ease,
     opacity 0.2s ease;
   /* margin-bottom: 18px; */
-  color: var(--pr-gray);
+  color: var(--color-text);
   font-weight: 200;
   font-size: 11px;
   letter-spacing: 0.2em;
@@ -101,7 +101,7 @@ footer {
 }
 @media (hover: hover) and (pointer: fine) {
   .small-label:hover {
-    color: var(--pr-green);
+    color: var(--color-accent);
     opacity: 1;
   }
 }
@@ -115,13 +115,13 @@ footer {
   justify-content: space-between;
   align-items: center;
   opacity: 0.95;
-  background: var(--pr-black);
+  background: var(--color-bg);
   padding: 56px 52px 40px;
 }
 
 .section-label {
   margin-bottom: 18px;
-  color: var(--pr-gray-2);
+  color: var(--color-text-muted);
   font-weight: 700;
   font-size: 9px;
   letter-spacing: 0.24em;
@@ -145,7 +145,7 @@ footer {
   cursor: pointer;
   width: var(--book-w);
   height: var(--book-h);
-  filter: drop-shadow(16px 12px 24px rgb(0, 0, 0));
+  filter: drop-shadow(16px 12px 24px var(--color-strong-theme));
 }
 
 /* Inner wrapper that holds the 3D object — this is what transforms */
@@ -168,7 +168,7 @@ footer {
   backface-visibility: hidden;
   inset: 0;
   border-radius: 1px 4px 4px 1px;
-  background: var(--pr-black);
+  background: var(--color-bg);
   overflow: hidden;
 }
 
@@ -234,7 +234,7 @@ footer {
 }
 
 .book-title {
-  color: var(--pr-white);
+  color: var(--color-text);
   font-weight: 700;
   font-size: 12px;
   line-height: 1.4;
@@ -243,7 +243,7 @@ footer {
 }
 
 .book-author {
-  color: var(--pr-gray-2);
+  color: var(--color-text-muted);
   font-size: 10px;
   letter-spacing: 0.08em;
 }
@@ -255,9 +255,9 @@ footer {
   transition:
     gap 0.2s ease,
     border-color 0.2s ease;
-  border-bottom: 1px solid #6eff004d;
+  border-bottom: 1px solid var(--color-accent);
   padding-bottom: 2px;
-  color: var(--pr-green);
+  color: var(--color-accent);
   font-weight: 700;
   font-size: 10px;
   font-family: var(--font-main);
@@ -267,7 +267,7 @@ footer {
 @media (hover: hover) and (pointer: fine) {
   .book-link:hover {
     gap: 8px;
-    border-color: var(--pr-green);
+    border-color: var(--color-accent);
   }
 }
 /* Hover instruction */
@@ -293,7 +293,7 @@ footer {
   }
   .v1:hover .book-inner {
     transform: rotateY(-22deg) rotateX(6deg) translateY(-12px) scale(1.05);
-    filter: drop-shadow(14px 28px 40px rgba(0, 0, 0, 0.8));
+    filter: drop-shadow(14px 28px 40px rgba(255, 255, 255, 0.8));
   }
   /* ════════════════════════════════════
          VARIANT 2 — "Open Invitation"
@@ -307,7 +307,7 @@ footer {
   }
   .v2:hover .book-inner {
     transform: rotateY(-35deg) rotateX(0deg) translateX(8px);
-    filter: drop-shadow(18px 20px 35px rgba(0, 0, 0, 0.75));
+    filter: drop-shadow(18px 20px 35px var(--color-strong-theme));
   }
   /* ════════════════════════════════════
          VARIANT 3 — "Slow Reveal"
@@ -321,7 +321,7 @@ footer {
   }
   .v3:hover .book-inner {
     transform: rotateY(-28deg) rotateX(4deg) translateY(-6px);
-    filter: drop-shadow(16px 24px 44px rgba(0, 0, 0, 0.85));
+    filter: drop-shadow(16px 24px 44px var(--color-strong-theme));
   }
 
   /* ════════════════════════════════════
@@ -336,7 +336,7 @@ footer {
   }
   .v4:hover .book-inner {
     transform: rotateY(-26deg) rotateX(5deg) translateY(-8px) scale(1.04);
-    filter: drop-shadow(12px 22px 36px rgba(0, 0, 0, 0.8));
+    filter: drop-shadow(12px 22px 36px var(--color-strong-theme));
   }
 
   /* ════════════════════════════════════
@@ -351,7 +351,7 @@ footer {
   }
   .v5:hover .book-inner {
     transform: rotateY(-18deg) rotateX(8deg) translateY(-14px);
-    filter: drop-shadow(10px 30px 50px rgba(0, 0, 0, 0.9));
+    filter: drop-shadow(10px 30px 50px var(--color-strong-theme));
     animation: breathe 2.5s ease-in-out infinite;
   }
 
@@ -368,7 +368,7 @@ footer {
   }
   .v6:hover .book-inner {
     transform: rotateY(-20deg) rotateX(0deg) rotateZ(0deg) translateY(-8px);
-    filter: drop-shadow(12px 20px 38px rgba(0, 0, 0, 0.8));
+    filter: drop-shadow(12px 20px 38px var(--color-strong-theme));
   }
 }
 /* on touch — reset all books to neutral resting state */
@@ -397,7 +397,7 @@ footer {
 
 .link-group-title {
   margin-bottom: 2px;
-  color: var(--pr-gray-2);
+  color: var(--color-text-muted);
   font-weight: 700;
   font-size: 12px;
   letter-spacing: 0.22em;
@@ -408,7 +408,7 @@ footer {
   transition:
     color 0.2s ease,
     opacity 0.2s ease;
-  color: var(--pr-gray);
+  color: var(--color-text);
   font-weight: 700;
   font-size: 11px;
   letter-spacing: 0.12em;
@@ -416,7 +416,7 @@ footer {
 }
 @media (hover: hover) and (pointer: fine) {
   .nav-link:hover {
-    color: var(--pr-green);
+    color: var(--color-accent);
     opacity: 1;
   }
 }
@@ -436,12 +436,12 @@ footer {
 .bottom-left {
   display: flex;
   align-items: center;
-  background: var(--pr-black);
+  background: var(--color-bg);
   padding: 18px 60px;
 }
 
 .footer-copy {
-  color: var(--pr-gray-2);
+  color: var(--color-text-muted);
   font-size: clamp(0.75rem, 0.5vw, 1rem);
   line-height: 1;
   letter-spacing: 0.14em;
@@ -451,12 +451,12 @@ footer {
 .bottom-right {
   display: flex;
   justify-content: center;
-  background: var(--pr-black);
+  background: var(--color-bg);
   padding: 18px 52px;
 }
 
 .footer-tagline {
-  color: var(--pr-gray-2);
+  color: var(--color-text-muted);
   font-size: 0.7rem;
   line-height: 1.85;
   letter-spacing: 0.1em;
@@ -571,6 +571,6 @@ footer {
 
   .bottom-left,
   .bottom-right {
-    padding: 14px 20px; /* merged: identical rules combined */
+    padding-block: var(--space-xl);
   }
 }

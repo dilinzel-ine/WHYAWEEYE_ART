@@ -1,16 +1,42 @@
 /* --pr-green: #63c13d; */
+*,
+*::before,
+*::after {
+  transition:
+    background-color 0.7s ease,
+    color 0.7s ease,
+    border-color 0.3s ease;
+}
+
 :root {
   /* ============================================= */
   /* COLORS                                        */
   /* ============================================= */
-  --pr-green: #9eff00;
-  --pr-red: #ff4444;
-  --pr-black: #121212;
-  --pr-gray: #cacaca;
-  --pr-black-2: #272727;
-  --pr-gray-2: #777;
-  --pr-gray-22-trans: #cacaca22;
-  --pr-white: #fff;
+  /* ── BACKGROUNDS ── */
+  --color-bg: #121212; /* was --pr-black */
+  --color-bg-elevated: #1c1c1c; /* was --pr-gray-3 */
+  --color-bg-subtle: #272727; /* was --pr-black-2 */
+
+  /* ── TEXT ── */
+  --color-text: #cacaca; /* was --pr-gray */
+  --color-text-muted: #777; /* was --pr-gray-2 */
+  --color-text-inverse: #fff; /* was --pr-white */
+
+  /* ── BORDERS ── */
+  --color-border: #cacaca22; /* was --pr-gray-22-trans */
+
+  /* ── ACCENTS ── */
+  --color-accent: #9eff00; /* was --pr-green */
+  --color-complementary: #6100ff;
+  --color-danger: #ff4444; /* was --pr-red */
+  --color-strong-theme: #000;
+
+  --color-gradient-black: #222;
+  --color-whitesmoke: #f5f5f5;
+
+  --title-stroke: 1px var(--color-text);
+  --title-fill: var(--color-text);
+  --title-underline: var(--color-text);
 
   /* ============================================= */
   /* TYPOGRAPHY — FONTS                            */
@@ -20,7 +46,6 @@
   --font-sec: "Cormorant", serif;
   --font-mono: "Space Mono", monospace;
   --font-fancy: "Ballet", cursive;
-  --font-slim-BS: "Big Shoulders", sans-serif;
   --font-slim-BN: "Bebas Neue", sans-serif;
 
   /* ============================================= */
@@ -38,6 +63,7 @@
   --text-display: clamp(3rem, 8vw, 7rem); /* desktop ≈ 112px */
 
   /* Headings                                     */
+  --text-h1-plus: clamp(3rem, 6vw, 5.5rem); /* desktop ≈  72px */
   --text-h1: clamp(2.2rem, 5vw, 4.5rem); /* desktop ≈  72px */
   --text-h2: clamp(1.8rem, 4vw, 3rem); /* desktop ≈  48px */
   --text-h3: clamp(1.4rem, 3vw, 2rem); /* desktop ≈  32px */
@@ -96,26 +122,29 @@
   /* ============================================= */
   /* BASE SPACING SCALE                            */
   /* ============================================= */
-  --space-3xs: clamp(0.25rem, 0.5vw, 0.25rem); /* desktop ≈  4px */
-  --space-2xs: clamp(0.25rem, 0.5vw, 0.5rem); /* desktop ≈  8px */
-  --space-xs: clamp(0.5rem, 1vw, 0.75rem); /* desktop ≈ 12px */
-  --space-sm: clamp(0.75rem, 1.5vw, 1rem); /* desktop ≈ 16px */
-  --space-md: clamp(1rem, 2vw, 1.5rem); /* desktop ≈ 24px */
-  --space-lg: clamp(1.5rem, 3vw, 2rem); /* desktop ≈ 32px */
-  --space-xl: clamp(2rem, 4vw, 3rem); /* desktop ≈ 48px */
-  --space-2xl: clamp(3rem, 6vw, 5rem); /* desktop ≈ 80px */
-  --space-3xl: clamp(4rem, 8vw, 8rem); /* desktop ≈ 128px */
-  --space-4xl: clamp(6rem, 12vw, 12rem); /* desktop ≈ 192px */
+  --space-3xs: clamp(0.25rem, 0.5vw, 0.25rem); /* 4px → (~0–19px) → 4px */
+  --space-2xs: clamp(0.25rem, 0.5vw, 0.5rem); /* 4px → (~0–19px) → 8px */
+  --space-xs: clamp(0.5rem, 1vw, 0.75rem); /* 8px → (~0–38px) → 12px */
+  --space-sm: clamp(0.75rem, 1.5vw, 1rem); /* 12px → (~0–58px) → 16px */
+  --space-md: clamp(1rem, 2vw, 1.5rem); /* 16px → (~0–77px) → 24px */
+  --space-lg: clamp(1.5rem, 3vw, 2rem); /* 24px → (~0–115px) → 32px */
+  --space-xl: clamp(2rem, 4vw, 3rem); /* 32px → (~0–154px) → 48px */
+  --space-2xl: clamp(3rem, 6vw, 5rem); /* 48px → (~0–230px) → 80px */
+  --space-3xl: clamp(4rem, 8vw, 8rem); /* 64px → (~0–307px) → 128px */
+  --space-4xl: clamp(6rem, 12vw, 12rem); /* 96px → (~0–461px) → 192px */
 
   /* ============================================= */
   /* SEMANTIC SPACING                              */
   /* ============================================= */
 
   /* Page layout                                  */
-  --page-padding-x: clamp(1.5rem, 5vw, 6rem); /* desktop ≈  96px */
-  --page-padding-y: clamp(2rem, 6vw, 6rem); /* desktop ≈  96px */
-  --content-max-width: min(90rem, 100%); /* desktop ≈ 1440px */
-  --text-max-width: min(65ch, 100%); /* ≈ 65 characters  */
+  --page-padding-x: clamp(1.5rem, 5vw, 6rem); /* 24px → fluid → 96px */
+  --page-padding-y: clamp(2rem, 6vw, 6rem); /* 32px → fluid → 96px */
+  --content-max-width: min(90rem, 100%); /* max 1440px */
+  --text-max-width: min(
+    65ch,
+    100%
+  ); /* ≈520–650px depending on font (≈65 characters) */
 
   /* Nav                                          */
   --nav-height: clamp(3.5rem, 6vw, 4.5rem); /* desktop ≈  72px */
@@ -152,4 +181,34 @@
   /* ============================================= */
   --book-w: 160px;
   --book-h: 220px;
+}
+
+/* ── LIGHT MODE ── */
+
+[data-theme="light"] {
+  --color-bg: #f6f6f6;
+  --color-bg-elevated: #e4e4e4;
+  --color-bg-subtle: #fdf1ee;
+  --color-text: #270f00;
+  --color-text-muted: #826e6a;
+  --color-text-inverse: #b13214;
+  --color-border: #b1321422;
+  --color-accent: #ff6100;
+  --color-complementary: #009eff;
+  --color-danger: #ff4444;
+  --color-strong-theme: #fff;
+
+  --color-gradient-black: #222;
+  --color-whitesmoke: #f5f5f5;
+
+  --title-stroke: 1px var(--color-text);
+  --title-fill: transparent;
+}
+/* ── disable bg image in light mode ── */
+[data-theme="light"] body {
+  background-image: none;
+}
+
+[data-theme="light"] .word--underline {
+  text-decoration-color: var(--color-text);
 }

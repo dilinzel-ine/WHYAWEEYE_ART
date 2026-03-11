@@ -4,7 +4,7 @@
 .changing {
   position: relative;
   padding-left: min(2rem, 1px);
-  color: var(--pr-gray);
+  color: var(--color-text);
   line-height: 1.1;
   text-transform: uppercase;
   transition: color 0.2s ease;
@@ -16,7 +16,7 @@
   width: 100%;
   opacity: 0;
   content: attr(data-text);
-  color: var(--pr-gray);
+  color: var(--color-text);
   font-weight: 100;
   font-size: var(--text-h1);
   font-family: var(--font-alt);
@@ -44,7 +44,7 @@
   .changing,
   .changing:hover,
   .changing:active {
-    color: var(--pr-gray);
+    color: var(--color-text);
     opacity: 1;
     transform: none;
     transition: none;

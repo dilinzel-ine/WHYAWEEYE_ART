@@ -29,7 +29,7 @@ html::-webkit-scrollbar {
 body {
   background-image: url("/images/noise.svg");
   background-repeat: repeat;
-  background-color: var(--pr-black);
+  background-color: var(--color-bg);
   background-blend-mode: overlay;
   width: 100%;
   min-height: 100dvh;

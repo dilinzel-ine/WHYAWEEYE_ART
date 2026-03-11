@@ -1,54 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
   /* ═══════════════════════════════════════════════
-     CURSOR FOLLOW
-  ═══════════════════════════════════════════════ */
-
-  const cursor = document.querySelector(".cursor-letter");
-
-  if (cursor) {
-    let mouseX = 0,
-      mouseY = 0,
-      x = 0,
-      y = 0;
-    let initialized = false;
-    let rafId = null;
-
-    cursor.style.opacity = "0";
-
-    document.addEventListener("mousemove", (e) => {
-      mouseX = e.clientX;
-      mouseY = e.clientY;
-
-      if (!initialized) {
-        x = mouseX;
-        y = mouseY;
-        initialized = true;
-        cursor.style.opacity = "1";
-      }
-    });
-
-    function animateCursor() {
-      x += (mouseX - x) * 0.3;
-      y += (mouseY - y) * 0.3;
-      cursor.style.transform = `translate(${x}px, ${y}px) translate(-60%, -65%)`;
-      rafId = requestAnimationFrame(animateCursor);
-    }
-
-    animateCursor();
-
-    window.addEventListener("pagetransitionstart", () => {
-      cancelAnimationFrame(rafId);
-      cursor.style.opacity = "0";
-    });
-  }
-
-  /* ═══════════════════════════════════════════════
      NAV + FILTER
   ═══════════════════════════════════════════════ */
 
   const nav = document.querySelector(".artpage-nav");
-  const sections = nav.querySelectorAll(".nav-section");
-  const allLinks = [...nav.querySelectorAll(".nav-link")];
+  const sections = nav.querySelectorAll(".artpage-nav-section");
+  const allLinks = [...nav.querySelectorAll(".artpage-nav-link")];
 
   // Separate "all" from the rest
   const pinnedAll = allLinks.find((l) => l.dataset.filter === "all");
@@ -59,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Clear both sections but keep labels
   sections.forEach((section) => {
-    const label = section.querySelector(".nav-label");
+    const label = section.querySelector(".artpage-nav-label");
     section.innerHTML = "";
     if (label) section.appendChild(label);
   });
@@ -72,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Filter functionality
-  const links = nav.querySelectorAll(".nav-link");
+  const links = nav.querySelectorAll(".artpage-nav-link");
   const cards = document.querySelectorAll(".article-card");
   const noResults = document.getElementById("noResults");
 

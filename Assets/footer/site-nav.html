@@ -31,17 +31,39 @@
             ><span>ABOUT</span></a
           >
         </li>
+        <li>
+          <button
+            class="theme-toggle"
+            id="themeToggle"
+            aria-label="Toggle light/dark mode"
+            title="Switch to light mode"
+          >
+            ☽
+          </button>
+        </li>
       </ul>
       <button class="site-nav-burger" aria-label="Open menu">
         <span></span><span></span><span></span>
       </button>
     </nav>
 
+    <!-- ============================================= -->
+    <!-- Mobile -->
+    <!-- ============================================= -->
     <div class="site-nav-mobile" role="dialog" aria-modal="true">
       <div class="mobile-menu-top">
         <a href="/index.html" class="site-nav-logo"
           >WH<span class="nav-y">Y</span></a
         >
+
+        <button
+          class="theme-toggle"
+          id="themeToggleMobile"
+          aria-label="Toggle light/dark mode"
+        >
+          ☽
+        </button>
+
         <button class="mobile-menu-close">[ CLOSE ]</button>
       </div>
       <ul class="mobile-menu-links" role="list">
@@ -59,7 +81,11 @@
         </li>
         <br />
         <br />
-        <li>
+      </ul>
+      <p class="mobile-menu-tagline">Time to explore my art →</p>
+    </div>
+
+    <!-- <li>
           <a
             href="https://whyaweeyesocials.vercel.app/"
             target="_blank"
@@ -74,9 +100,6 @@
             rel="noopener noreferrer"
             >⋕ contact</a
           >
-        </li>
-      </ul>
-      <p class="mobile-menu-tagline">Time to explore my art →</p>
-    </div>
+        </li> -->
   </body>
 </html>

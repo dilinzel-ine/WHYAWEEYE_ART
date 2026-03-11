@@ -36,7 +36,6 @@ document.addEventListener("cardsReady", () => {
   if (nav) {
     const sections = nav.querySelectorAll(".artpage-nav-section");
     const allLinks = [...nav.querySelectorAll(".artpage-nav-link")];
-
     const pinnedOrder = ["all", "featured"];
     const pinned = allLinks.filter((l) =>
       pinnedOrder.includes(l.dataset.filter),
@@ -44,6 +43,7 @@ document.addEventListener("cardsReady", () => {
     const rest = allLinks.filter(
       (l) => !pinnedOrder.includes(l.dataset.filter),
     );
+
     rest.sort((a, b) =>
       a.textContent.trim().localeCompare(b.textContent.trim()),
     );
@@ -64,33 +64,16 @@ document.addEventListener("cardsReady", () => {
       (i < midpoint ? sections[0] : sections[1])?.appendChild(link),
     );
 
-    allLinks.forEach((link) => {
+    // ← use correct class name
+    const links = nav.querySelectorAll(".artpage-nav-link");
+    links.forEach((link) => {
       link.addEventListener("click", () => {
-        allLinks.forEach((l) => l.classList.remove("active"));
+        links.forEach((l) => l.classList.remove("active"));
         link.classList.add("active");
-        if (searchInput) searchInput.value = "";
-
-        const filter = link.dataset.filter;
-        let visible = 0;
-
-        cards.forEach((card) => {
-          if (isCardScheduled(card)) {
-            card.classList.add("hidden");
-            return;
-          }
-          const show =
-            filter === "all" || (card.dataset.tags || "").includes(filter);
-          card.classList.toggle("hidden", !show);
-          if (show) visible++;
-        });
-
-        if (noResults)
-          noResults.style.display = visible === 0 ? "block" : "none";
-        updateCount();
+        // filtering now handled by quick-filter.js
       });
     });
   }
-
   /* ── SEARCH ── */
   if (searchInput) {
     searchInput.addEventListener("input", () => {
