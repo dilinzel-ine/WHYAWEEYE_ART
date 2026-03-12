@@ -34,6 +34,10 @@ document.addEventListener("DOMContentLoaded", async () => {
     li.setAttribute("data-links-2", item.links2 || "");
     li.setAttribute("data-links-2-label", item.links2Label || "⤷ PDF");
     li.setAttribute("data-images", JSON.stringify(item.images));
+    li.setAttribute("data-price", item.price || "");
+    li.setAttribute("data-quantity", item.quantity || 1);
+    li.setAttribute("data-sold", item.sold || 0);
+    li.setAttribute("data-buy", item.buy || "");
     li.setAttribute("aria-label", `${item.title} — open for details`);
 
     li.innerHTML = `

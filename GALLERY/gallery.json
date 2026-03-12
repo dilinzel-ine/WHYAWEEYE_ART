@@ -4,15 +4,15 @@
     "date": "04-03-2026",
     "copyname": "why",
     "subtitle": "#05262H7",
-    "quantity": 4,
-    "sold": 1,
-    "price": 2500,
+    "quantity": "",
+    "sold": "",
+    "price": "",
     "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos. \n\nLorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor.",
     "links1": "#",
     "links1Label": "⤷ EMAIL",
     "links2": "#",
     "links2Label": "⤷ PDF",
-    "buy": "https://rzp.io/l/your-link",
+    "buy": "",
     "images": [
       "/images/Colorful Abstract Bag.jpeg",
       "https://placehold.co/600x800?text=1\nWorld",
@@ -24,5 +24,31 @@
     ],
     "title": "Model Alpha",
     "tags": ["3D Printed", "PLA", "Matte Finish", "2026"]
+  },
+  {
+    "id": "Mandala",
+    "date": "11-03-2026",
+    "copyname": "why",
+    "subtitle": "#mandala",
+    "quantity": 1,
+    "sold": "",
+    "price": 2500,
+    "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos. \n\nLorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor.",
+    "links1": "#",
+    "links1Label": "⤷ EMAIL",
+    "links2": "#",
+    "links2Label": "⤷ PDF",
+    "buy": "https://rzp.io/l/your-link",
+    "images": [
+      "/images/Gallery Images/Mandala/om/OM-Mandala.jpg",
+      "/images/Gallery Images/Mandala/om/om-thumbs (1).jpg",
+      "/images/Gallery Images/Mandala/om/om-thumbs (2).jpg",
+      "/images/Gallery Images/Mandala/om/om-thumbs (3).jpg",
+      "https://placehold.co/600x800?font=lato",
+      "https://placehold.co/600x800?text=3\nWorld",
+      "https://placehold.co/600x800?font=poppins"
+    ],
+    "title": "OM Mandala",
+    "tags": ["mandala dotting", "circle mandala", "spiritual", "2021"]
   }
 ]

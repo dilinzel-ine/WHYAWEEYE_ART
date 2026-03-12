@@ -23,7 +23,7 @@ html::-webkit-scrollbar {
 body {
   background-image: url("/images/noise.svg");
   background-repeat: repeat;
-  background-color: var(--pr-black);
+  background-color: var(--color-bg);
   background-blend-mode: overlay;
   width: 100%;
   min-height: 100dvh;
@@ -31,6 +31,7 @@ body {
   /* Prevent font-size inflation on mobile */
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
+  user-select: none;
 }
 img {
   -webkit-user-drag: none;
@@ -82,12 +83,19 @@ img {
   position: absolute;
   z-index: 1;
   inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(10, 9, 8, 0.9) 0%,
-    rgba(10, 9, 8, 0.48) 45%,
-    rgba(10, 9, 8, 0.18) 100%
-  );
+  background:
+    linear-gradient(
+      to top,
+      color-mix(in srgb, var(--color-bg) 99%, transparent) 0%,
+      color-mix(in srgb, var(--color-bg) 70%, transparent) 45%,
+      color-mix(in srgb, var(--color-bg) 0%, transparent) 100%
+    ),
+    linear-gradient(
+      to bottom,
+      color-mix(in srgb, var(--color-bg) 88%, transparent) 0%,
+      color-mix(in srgb, var(--color-bg) 0%, transparent) 45%,
+      color-mix(in srgb, var(--color-bg) 0%, transparent) 100%
+    );
   pointer-events: none;
 }
 
@@ -99,14 +107,14 @@ img {
   position: relative;
   grid-template-columns: 1fr 1fr;
   align-items: end;
-  gap: 90px;
+  gap: 12rem;
   z-index: 2;
-  border-bottom: 1px solid var(--pr-gray-22-trans);
+  border-bottom: 1px solid var(--color-border);
   padding-inline: var(--section-padding-x);
   padding-block-start: var(--space-2xl);
   padding-block-end: var(--space-xl);
   width: 100%;
-  color: var(--pr-gray);
+  color: var(--color-text);
   font-family: var(--font-main);
 }
 
@@ -116,39 +124,61 @@ img {
 .about-left {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   height: 100%;
 }
 
 .about-tag {
   opacity: 0.6;
-  margin-bottom: var(--space-md);
+  /* margin-bottom: var(--space-md); */
   font-size: var(--text-fine);
   letter-spacing: var(--tracking-wider);
   text-transform: uppercase;
-  color: var(--pr-gray-2);
+  color: var(--color-text-muted);
 }
 .about-name span {
   display: inline-block;
   transition: opacity 0.3s ease;
   cursor: default;
   font-weight: var(--weight-black);
-  font-size: var(--text-display);
+  font-size: var(--text-h4);
   line-height: var(--leading-tight);
-  font-family: var(--font-main);
   letter-spacing: var(--tracking-tighter);
+  padding-block-end: var(--space-md);
 }
 /* Hover — mouse only */
 @media (hover: hover) and (pointer: fine) {
   .about-name span:hover {
     opacity: 0.7;
-    color: var(--pr-green);
+    color: var(--color-accent);
+  }
+}
+.about-description {
+  transition: color 0.3s ease;
+  font-weight: var(--weight-normal);
+  font-size: var(--text-eyebrow);
+  line-height: var(--leading-loose);
+  letter-spacing: var(--tracking-snug);
+  color: var(--color-text);
+}
+.about-description a {
+  text-decoration: none;
+  font-weight: var(--weight-bold);
+  color: var(--color-triadic-left);
+}
+@media (hover: hover) and (pointer: fine) {
+  .about-description:hover b {
+    color: var(--color-accent);
+  }
+  .about-description:hover a {
+    color: var(--color-triadic-left);
   }
 }
 
 .about-role {
   opacity: 0.3;
   margin-top: 24px;
-  color: var(--pr-gray-2);
+  color: var(--color-text-muted);
   font-weight: var(--weight-light);
   font-size: var(--text-fine);
   letter-spacing: var(--tracking-wide);
@@ -177,7 +207,7 @@ img {
   font-size: var(--text-fine);
   letter-spacing: var(--tracking-wider);
   text-transform: uppercase;
-  color: var(--pr-gray-2);
+  color: var(--color-text-muted);
 }
 
 .about-block-text {
@@ -185,7 +215,7 @@ img {
   position: relative;
   opacity: 0.5;
   transition: opacity 0.3s ease;
-  color: var(--pr-gray);
+  color: var(--color-text);
   font-weight: var(--weight-normal);
   font-size: var(--text-h4);
   line-height: var(--leading-normal);
@@ -194,7 +224,7 @@ img {
 }
 
 .about-block-text:focus-visible {
-  outline: 2px solid var(--pr-green);
+  outline: 2px solid var(--color-accent);
 }
 
 /* ─── Animated brackets ─── */
@@ -227,7 +257,7 @@ img {
 
   .about-block-text:hover {
     opacity: 1;
-    color: var(--pr-green);
+    color: var(--color-accent);
   }
   .about-block-text:hover::before {
     opacity: 1;
@@ -267,10 +297,10 @@ img {
   justify-content: space-between;
   align-items: center;
   z-index: 3;
-  border-bottom: 1px solid var(--pr-gray-22-trans);
+  border-bottom: 1px solid var(--color-border);
   padding: 18px 64px;
   width: 100%;
-  color: var(--pr-gray);
+  color: var(--color-text);
 }
 
 .about-strip-loc {
@@ -292,7 +322,7 @@ img {
   opacity: 0.7;
   transition: opacity 0.25s ease;
   overflow: hidden;
-  color: var(--pr-gray);
+  color: var(--color-text);
   font-size: 11px;
   letter-spacing: 0.14em;
   text-decoration: none;
@@ -311,7 +341,7 @@ img {
   transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1);
   width: 100%;
   content: attr(data-content);
-  color: var(--pr-gray);
+  color: var(--color-text);
 }
 
 @media (hover: hover) and (pointer: fine) {

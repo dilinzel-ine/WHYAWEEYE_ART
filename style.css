@@ -2,9 +2,10 @@
 /* IMPORTS                                       */
 /* ============================================= */
 @import url("/Assets/fx/variables.css");
+@import url("/Assets/sections/hhv2.css");
 @import url("/Assets/fx/loader.css");
 @import url("/Assets/fx/curcus.css");
-@import url("/Assets/sections/homehero.css");
+/* @import url("/Assets/sections/homehero.css"); */
 @import url("/Assets/sections/changing.css");
 @import url("/Assets/sections/buttons-slider.css");
 @import url("/Assets/sections/editorial.css");
@@ -138,17 +139,20 @@ section {
 }
 
 #art h1,
-#latest h1 {
+#latest h1,
+#custom h1 {
   font-size: var(--text-h1);
 }
 
 #art a,
-#latest a {
+#latest a,
+#custom a {
   text-decoration: none;
 }
 
 #art p,
-#latest p {
+#latest p,
+#custom p {
   margin-block-start: var(--space-xs);
   margin-block-end: var(--space-xl);
   font-style: italic;

@@ -192,44 +192,70 @@
 
     <!-- ── MAIN CONTENT ── -->
     <main id="content" style="display: none">
-      <!-- HOME -->
-      <section id="home" aria-label="Home">
-        <div class="container">
-          <div class="left">
-            <div class="phrase">
-              <h6>
-                <div data-content="Bringing"><span>Bringing</span></div>
-                <div data-content="imagination"><span>imagination</span></div>
-                <div data-content="to"><span>to</span></div>
-                <div data-content="life."><span>life.</span></div>
-              </h6>
-            </div>
-            <div class="logo">
+      <section class="hero" aria-label="Home">
+        <!-- ── LEFT ── -->
+        <div class="hero-left">
+          <h1 class="hero-title">
+            <span>why</span>
+            <span>a</span>
+            <span>we</span>
+            <span>eye</span>
+          </h1>
+
+          <div class="hero-tagline">
+            <p class="hero-tagline-main">
+              Where Threads, Paper, And Letters<br />Become Art.
+            </p>
+            <p class="hero-tagline-sub">
+              Realistic Handcrafted Artworks And A Growing Art Archive.
+            </p>
+          </div>
+
+          <div class="hero-logo">
+            <!-- logo -->
+            <img
+              src="https://placehold.co/48x48/9eff00/121212?text=Y"
+              alt="WHYAWEEYE logo"
+              width="48"
+              height="48"
+            />
+          </div>
+        </div>
+
+        <!-- ── RIGHT ── -->
+        <div class="hero-right">
+          <!--  small group -->
+          <div class="hero-group-small">
+            <p class="hero-arrival-label">
+              New<br /><span>Art</span><br />Arrival
+            </p>
+            <div class="hero-img-wrap hero-img-wrap--small" id="imgSmall">
               <img
-                src="/images/webp/y-logo-green-trans-96.webp"
-                srcset="
-                  /images/webp/y-logo-green-trans-48.webp 48w,
-                  /images/webp/y-logo-green-trans-60.webp 60w,
-                  /images/webp/y-logo-green-trans-96.webp 96w
-                "
-                sizes="(max-width: 600px) 48px, (max-width: 900px) 60px, 96px"
-                alt="WHYAWEEYE logo"
-                width="96"
-                height="96"
-                loading="eager"
-                fetchpriority="high"
+                src="/images/small-group-1.webp"
+                alt="New arrival 1"
+                class="active"
               />
+              <img src="/images/small-group-2.webp" alt="New arrival 2" />
+              <img src="/images/small-group-3.webp" alt="New arrival 3" />
             </div>
           </div>
 
-          <div class="main-content">
-            <h1 data-content="why a we eye">
-              <span class="word">why</span>
-              <span class="word">a</span>
-              <span class="word">we</span>
-              <span class="word word--underline">eye</span>
-            </h1>
-            <div class="abstract" aria-hidden="true"></div>
+          <!-- large group -->
+          <div class="hero-group-large">
+            <div class="hero-img-wrap hero-img-wrap--large" id="imgLarge">
+              <img
+                src="/images/large-group-1.webp"
+                alt="Artwork 1"
+                class="active"
+              />
+              <img src="/images/large-group-2.webp" alt="Artwork 2" />
+              <img src="/images/large-group-3.webp" alt="Artwork 3" />
+            </div>
+            <!-- col 2, row 2 — discover text -->
+            <p class="hero-discover">
+              Discover <span>•</span> Admire <span>•</span> Collect
+              <span>•</span> Cherish
+            </p>
           </div>
         </div>
       </section>
@@ -240,15 +266,19 @@
       <!-- ART CHOICE -->
       <section id="art" aria-labelledby="art-heading">
         <div class="section-container">
-          <h1 class="changing autoShow" data-text="Art Choice.">Art Choice.</h1>
-          <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
+          <h1 class="changing autoShow" data-text="Art Forms.">Art Forms.</h1>
+          <p>
+            Explore different forms of my creative practice through threads &
+            words.
+          </p>
 
           <div class="editorial autoShow">
             <a href="/THREADART/threadart.html" class="editorial-card">
               <div class="editorial-card-text">
                 <h2 class="editorial-card-title">Thread<br />Art</h2>
                 <span class="editorial-card-sub"
-                  >A body of work defined by stillness and intent.</span
+                  >Thread-based artworks created slowly with care &
+                  attention.</span
                 >
               </div>
               <div class="editorial-card-image">
@@ -267,7 +297,8 @@
               <div class="editorial-card-text">
                 <h2 class="editorial-card-title">Word<br />Art</h2>
                 <span class="editorial-card-sub"
-                  >Where history folds into the present moment.</span
+                  >Words shaped into poems & stories from observation &
+                  imagination.</span
                 >
               </div>
               <div class="editorial-card-image">
@@ -287,35 +318,69 @@
 
       <p class="scroll-down">↓ Scroll down ↓</p>
 
-      <!-- FANCY HERO -->
-      <div class="section-container">
-        <div class="page-section fancy">
-          <div class="fancy-hero">
-            <h2><em>Exploring</em> the world<br />of <em>my&nbsp;</em> art</h2>
-            <div class="image-wrapper">
+      <!-- CUSTOM (FEATURED IN)THREADS SLIDER -->
+      <section id="custom" aria-labelledby="custom-heading">
+        <div class="section-container">
+          <h1 class="changing autoShow" data-text="ThreadWorks.">
+            ThreadWorks.
+          </h1>
+          <p>
+            A featured selection of carefully crafted embroidery works
+            highlighting intricate artistry and detail.
+          </p>
+          <div class="custom-slider" aria-label="Featured project slider">
+            <div class="custom-left">
+              <div class="title-wrap">
+                <h3 id="custom-title">Pastel Paradigm</h3>
+                <span id="custom-description"
+                  >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                  irure dolor in reprehenderit in voluptate velit esse cillum
+                  dolore eu fugiat nulla pariatur.<br />Excepteur sint occaecat
+                  cupidatat non proident, sunt in culpa qui officia deserunt
+                  mollit anim id est laborum.</span
+                >
+                <span id="custom-price"></span>
+                <a id="custom-view-link" class="see-more" href="#" class="btn"
+                  >[View Details ↗]</a
+                >
+              </div>
+
+              <div class="custom-controls">
+                <button id="prevBtn" aria-label="Previous project">←</button>
+                <button id="nextBtn" aria-label="Next project">→</button>
+              </div>
+            </div>
+            <div class="custom-right">
               <img
-                src="/images/abstract-vibrant-bg.webp"
-                alt="Abstract vibrant background"
-                aria-hidden="true"
-                width="1300"
-                height="867"
+                id="custom-slide-image"
+                src="/images/slider-image-2.png"
+                alt="Pastel Paradigm project image"
+                width="450"
+                height="550"
                 loading="lazy"
               />
             </div>
           </div>
-          <p>
-            Transform your space with bespoke handmade art pieces that reflect
-            your unique style.
-          </p>
         </div>
-      </div>
+      </section>
+
+      <!-- GIFTS SECTION -->
+      <section></section>
 
       <!-- GALLERY SECTION -->
       <section id="latest" aria-labelledby="latest-heading">
         <div class="section-container">
-          <h1 class="changing autoShow" data-text="Why Gala.">Why Gala.</h1>
+          <h1 class="changing autoShow" data-text="Gallery Picks.">
+            Gallery Picks.
+          </h1>
           <div class="para-link">
-            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
+            <p>
+              Discover selected artworks from my evolving practice across
+              various art forms.
+            </p>
             <a
               href="/GALLERY/gallery.html"
               target="_blank"
@@ -420,34 +485,6 @@
               </div>
             </div>
           </section>
-        </div>
-      </section>
-
-      <!-- CUSTOM PROJECT SLIDER -->
-      <section id="custom" aria-labelledby="custom-heading">
-        <div class="section-container">
-          <div class="custom-slider" aria-label="Featured project slider">
-            <div class="custom-left">
-              <div class="title-wrap">
-                <h3 id="custom-title">Pastel Paradigm</h3>
-                <span id="custom-description">(Feb 26)</span>
-              </div>
-              <div class="custom-controls">
-                <button id="prevBtn" aria-label="Previous project">←</button>
-                <button id="nextBtn" aria-label="Next project">→</button>
-              </div>
-            </div>
-            <div class="custom-right">
-              <img
-                id="custom-slide-image"
-                src="/images/slider-image-2.png"
-                alt="Pastel Paradigm project image"
-                width="450"
-                height="550"
-                loading="lazy"
-              />
-            </div>
-          </div>
         </div>
       </section>
 

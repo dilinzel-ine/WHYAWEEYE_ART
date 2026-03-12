@@ -6,6 +6,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: 0 auto;
   gap: 6px;
   margin-block-end: var(--space-4xl);
 }
@@ -46,12 +47,16 @@
 .title-wrap {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  gap: 0rem; /* space between items */
+  min-height: 400px; /* or however tall you want */
+  user-select: none;
 }
 
 #custom-title {
   position: relative;
   display: inline-block;
-  font-size: clamp(1rem, 2vw, 2rem);
+  font-size: var(--text-h3);
   color: var(--color-text);
 }
 
@@ -75,9 +80,22 @@
 }
 
 #custom-description {
-  margin-top: 8px;
-  font-size: clamp(0.7rem, 3.5vw, 1rem);
+  margin-block: var(--space-xs);
+  font-size: var(--text-body-sm);
   color: var(--color-text-muted);
+  line-height: var(--leading-normal);
+}
+
+#custom-price {
+  padding-block-start: var(--space-xl);
+  padding-block-end: var(--space-xs);
+  margin-top: auto;
+  font-weight: var(--weight-bold);
+  color: var(--color-complementary);
+  font-size: var(--text-h3);
+}
+#custom-view-link {
+  margin: auto;
 }
 
 /* ── controls ── */

@@ -1,20 +1,24 @@
-// Only on real pointer/hover devices — not touch
+// =================================================
+// ABOUT
+// =================================================
+// hover background swap — desktop only
 if (window.matchMedia("(hover: hover)").matches) {
-  const blocks = document.querySelectorAll(".about-block-text[data-trigger]");
-  const nameSpans = document.querySelectorAll(".about-name span[data-trigger]");
+  // elements that trigger bg swap on hover
+  const triggers = document.querySelectorAll("[data-trigger]");
   const hoverBgs = document.querySelectorAll(".bg-img--hover");
   const defaultBg = document.querySelector(".bg-img--default");
 
-  [...blocks, ...nameSpans].forEach((el) => {
-    const key = el.dataset.trigger;
-
+  triggers.forEach((el) => {
+    // on enter — hide default, show matching bg
     el.addEventListener("mouseenter", () => {
       defaultBg.style.opacity = "0";
       hoverBgs.forEach((bg) => (bg.style.opacity = "0"));
-      const target = document.querySelector(`.bg-img--hover[data-bg="${key}"]`);
-      if (target) target.style.opacity = "1";
+      document
+        .querySelector(`.bg-img--hover[data-bg="${el.dataset.trigger}"]`)
+        ?.style.setProperty("opacity", "1");
     });
 
+    // on leave — restore default bg
     el.addEventListener("mouseleave", () => {
       hoverBgs.forEach((bg) => (bg.style.opacity = "0"));
       defaultBg.style.opacity = "1";

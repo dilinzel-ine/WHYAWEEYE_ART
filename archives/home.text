@@ -1,0 +1,139 @@
+
+=====================
+homepage html - hero section
+===============
+
+<!-- HOME -->
+      <section id="home" aria-label="Home">
+        <div class="container">
+          <div class="left">
+            <div class="phrase">
+              <h6>
+                <div data-content="Bringing"><span>Bringing</span></div>
+                <div data-content="imagination"><span>imagination</span></div>
+                <div data-content="to"><span>to</span></div>
+                <div data-content="life."><span>life.</span></div>
+              </h6>
+            </div>
+            <div class="logo">
+              <img
+                src="/images/webp/y-logo-green-trans-96.webp"
+                srcset="
+                  /images/webp/y-logo-green-trans-48.webp 48w,
+                  /images/webp/y-logo-green-trans-60.webp 60w,
+                  /images/webp/y-logo-green-trans-96.webp 96w
+                "
+                sizes="(max-width: 600px) 48px, (max-width: 900px) 60px, 96px"
+                alt="WHYAWEEYE logo"
+                width="96"
+                height="96"
+                loading="eager"
+                fetchpriority="high"
+              />
+            </div>
+          </div>
+
+          <div class="main-content">
+            <h1 data-content="why a we eye">
+              <span class="word">why</span>
+              <span class="word">a</span>
+              <span class="word">we</span>
+              <span class="word word--underline">eye</span>
+            </h1>
+            <div class="abstract" aria-hidden="true"></div>
+          </div>
+        </div>
+      </section>
+
+======================
+home html - fancy hero section
+======================
+
+<!-- FANCY HERO -->
+      <div class="section-container">
+        <div class="page-section fancy">
+          <div class="fancy-hero">
+            <h2><em>Exploring</em> the world<br />of <em>my&nbsp;</em> art</h2>
+            <div class="image-wrapper">
+              <img
+                src="/images/abstract-vibrant-bg.webp"
+                alt="Abstract vibrant background"
+                aria-hidden="true"
+                width="1300"
+                height="867"
+                loading="lazy"
+              />
+            </div>
+          </div>
+          <p>
+            Transform your space with bespoke handmade art pieces that reflect
+            your unique style.
+          </p>
+        </div>
+      </div>
+
+
+=====================
+homepage js - hero images change section
+=====================
+/* ═══════════════════════════════════════════════
+     RANDOM ABSTRACT IMAGE
+  ═══════════════════════════════════════════════ */
+
+  const abstractEl = document.querySelector(".abstract");
+
+  const allImages = [
+    "images/webp/why-a-we-eye1.webp",
+    "images/webp/3d-ren-1.webp",
+    "images/webp/3d-ren-2.webp",
+    "images/webp/3d-ren-3.webp",
+    "images/webp/3d-ren-4.webp",
+    "images/webp/3d-ren-5.webp",
+    "images/webp/3d-ren-6.webp",
+    "images/webp/3d-ren-7.webp",
+    "images/webp/3d-ren-8.webp",
+    "images/webp/3d-ren-9.webp",
+    "images/webp/3d-ren-10.webp",
+    "images/webp/3d-ren-11.webp",
+    "images/webp/3d-ren-12.webp",
+    "images/webp/3d-ren-15.webp",
+    "images/webp/3d-ren-16.webp",
+    "images/webp/3d-ren-17.webp",
+    "images/webp/3d-ren-18.webp",
+    "images/webp/3d-ren-21.webp",
+    "images/webp/3d-ren-22.webp",
+    "images/webp/3d-ren-24.webp",
+    "images/webp/3d-ren-25.webp",
+    "images/webp/3d-ren-26.webp",
+    "images/webp/3d-ren-27.webp",
+    "images/webp/3d-ren-28.webp",
+    "images/webp/3d-ren-29.webp",
+    "images/webp/3d-ren-30.webp",
+    "images/webp/3d-ren-31.webp",
+    "images/webp/3d-ren-32.webp",
+    "images/webp/3d-ren-33.webp",
+    "images/webp/3d-ren-34.webp",
+    "images/webp/3d-ren-35.webp",
+    "images/webp/3d-ren-36.webp",
+    "images/webp/3d-ren-37.webp",
+    "images/webp/3d-ren-38.webp",
+    "images/webp/3d-ren-39.webp",
+    "images/webp/3d-ren-40.webp",
+    "images/webp/3d-ren-41.webp",
+    "images/webp/3d-ren-42.webp",
+    "images/webp/3d-ren-43.webp",
+    "images/webp/3d-ren-44.webp",
+    "images/webp/3d-ren-46.webp",
+    "images/webp/3d-ren-47.webp",
+    "images/webp/3d-ren-48.webp",
+    "images/webp/3d-ren-49.webp",
+    "images/webp/3d-ren-50.webp",
+    "images/webp/3d-ren-51.webp",
+    "images/webp/3d-ren-52.webp",
+    "images/webp/3d-ren-53.webp",
+  ];
+
+  if (abstractEl && allImages.length) {
+    const randomImage = allImages[Math.floor(Math.random() * allImages.length)];
+    abstractEl.style.backgroundImage = `url('${randomImage}')`;
+  }

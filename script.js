@@ -39,226 +39,81 @@ document.addEventListener("DOMContentLoaded", () => {
   /* ═══════════════════════════════════════════════
      LATEST WORKS
   ═══════════════════════════════════════════════ */
+  // ── fetch featured threadart items and build slider ──
+  fetch("/THREADART/threadart.json")
+    .then((res) => res.json())
+    .then((items) => {
+      // filter featured, sort by top value 1-6
+      const slides = items
+        .filter((item) => item.featured && item.top >= 1 && item.top <= 6)
+        .sort((a, b) => a.top - b.top);
 
-  const slides = [
-    {
-      image: "images/slider-image-1.png",
-      title: "Pastel Paradigm",
-      description: "[Feb 26]",
-    },
-    {
-      image: "images/slider-image-2.png",
-      title: "Golden Horizon",
-      description: "A serene blend of warm tones.",
-    },
-    {
-      image: "images/slider-image-3.png",
-      title: "Midnight Bloom",
-      description: "Dark elegance with vibrant contrast.",
-    },
-    {
-      image: "images/slider-image-4.png",
-      title: "Midnight Bloom",
-      description: "Dark elegance with vibrant contrast.",
-    },
-    {
-      image: "images/slider-image-5.png",
-      title: "Midnight Bloom",
-      description: "Dark elegance with vibrant contrast.",
-    },
-    {
-      image: "images/slider-image-6.png",
-      title: "Midnight Bloom",
-      description: "Dark elegance with vibrant contrast.",
-    },
-  ];
+      if (!slides.length) return;
 
-  let current = 0;
+      let current = 0;
 
-  function showSlide(index) {
-    const slide = slides[index];
-    document.getElementById("custom-slide-image").src = slide.image;
-    document.getElementById("custom-title").textContent = slide.title;
-    document.getElementById("custom-description").textContent =
-      slide.description;
-  }
+      function showSlide(index) {
+        const slide = slides[index];
+        document.getElementById("custom-slide-image").src = slide.images[0];
+        document.getElementById("custom-slide-image").alt = slide.title;
+        document.getElementById("custom-title").textContent = slide.title;
 
-  function nextSlide() {
-    current = (current + 1) % slides.length;
-    showSlide(current);
-  }
-
-  function prevSlide() {
-    current = (current - 1 + slides.length) % slides.length;
-    showSlide(current);
-  }
-
-  document.getElementById("nextBtn").addEventListener("click", nextSlide);
-  document.getElementById("prevBtn").addEventListener("click", prevSlide);
-
-  showSlide(current);
-
-  /* ═══════════════════════════════════════════════
-     MODAL
-  ═══════════════════════════════════════════════ */
-
-  const cards = document.querySelectorAll(".card");
-  const modal = document.getElementById("modal");
-  const mainImage = document.getElementById("mainImage");
-  const thumbnailsContainer = document.getElementById("thumbnails");
-  const closeBtn = document.getElementById("closeBtn");
-  const modalTitle = document.getElementById("modalTitle");
-  const modalTags = document.getElementById("modalTags");
-  const modalSubtitle = document.getElementById("modalSubtitle");
-  const modalDescription = document.getElementById("modalDescription");
-  const modalLinks = document.getElementById("modalLinks");
-
-  let currentActiveThumb = null;
-
-  function closeModal() {
-    if (!modal) return;
-    modal.style.display = "none";
-    if (mainImage) mainImage.src = "";
-    if (thumbnailsContainer) thumbnailsContainer.innerHTML = "";
-    currentActiveThumb = null;
-  }
-
-  cards.forEach((card) => {
-    card.addEventListener("click", () => {
-      if (!modal || !mainImage || !thumbnailsContainer) return;
-
-      let images = [];
-      try {
-        images = JSON.parse(card.getAttribute("data-images") || "[]");
-      } catch (err) {
-        console.error("Invalid JSON in data-images");
-        return;
-      }
-
-      if (!images.length) return;
-
-      if (modalTitle)
-        modalTitle.textContent =
-          card.querySelector(".card-text")?.textContent || "";
-
-      if (modalSubtitle)
-        modalSubtitle.textContent = card.getAttribute("data-subtitle") || "";
-
-      if (modalDescription)
-        modalDescription.textContent =
-          card.getAttribute("data-description") || "";
-
-      if (modalLinks)
-        modalLinks.textContent = card.getAttribute("data-links") || "";
-
-      if (modalTags) {
-        modalTags.innerHTML = "";
-        card.querySelectorAll(".card2-tag").forEach((tag) => {
-          const span = document.createElement("span");
-          span.textContent = tag.textContent;
-          modalTags.appendChild(span);
-        });
-      }
-
-      modal.style.display = "flex";
-      mainImage.src = images[0];
-      thumbnailsContainer.innerHTML = "";
-
-      images.forEach((src, i) => {
-        const thumb = document.createElement("img");
-        thumb.src = src;
-
-        if (i === 0) {
-          thumb.classList.add("active");
-          currentActiveThumb = thumb;
+        // price
+        const priceEl = document.getElementById("custom-price");
+        if (priceEl) {
+          priceEl.textContent = slide.price
+            ? `₹${Number(slide.price).toLocaleString("en-IN")}`
+            : "";
         }
+        // view details link
+        const linkEl = document.getElementById("custom-view-link");
+        if (linkEl) {
+          linkEl.href = `/THREADART/threadart.html#${slide.id}`;
+        }
+      }
 
-        thumb.addEventListener("click", (e) => {
-          e.stopPropagation();
-          mainImage.src = src;
-
-          if (currentActiveThumb) currentActiveThumb.classList.remove("active");
-
-          thumb.classList.add("active");
-          currentActiveThumb = thumb;
-        });
-
-        thumbnailsContainer.appendChild(thumb);
+      document.getElementById("nextBtn").addEventListener("click", () => {
+        current = (current + 1) % slides.length;
+        showSlide(current);
       });
+
+      document.getElementById("prevBtn").addEventListener("click", () => {
+        current = (current - 1 + slides.length) % slides.length;
+        showSlide(current);
+      });
+
+      showSlide(0);
     });
-  });
 
-  if (closeBtn) closeBtn.addEventListener("click", closeModal);
+  // ── image cycling on hover ──
+  function initCycler(wrapId) {
+    const wrap = document.getElementById(wrapId);
+    if (!wrap) return;
 
-  window.addEventListener("click", (e) => {
-    if (e.target === modal) closeModal();
-  });
+    const imgs = [...wrap.querySelectorAll("img")];
+    let current = 0;
+    let cycling = false;
 
-  window.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && modal?.style.display === "flex") {
-      closeModal();
-    }
-  });
+    wrap.addEventListener("mouseenter", () => {
+      if (cycling) return;
+      cycling = true;
 
-  /* ═══════════════════════════════════════════════
-     RANDOM ABSTRACT IMAGE
-  ═══════════════════════════════════════════════ */
+      // fade out current
+      imgs[current].classList.remove("active");
 
-  const abstractEl = document.querySelector(".abstract");
+      // advance to next
+      current = (current + 1) % imgs.length;
 
-  const allImages = [
-    "images/webp/why-a-we-eye1.webp",
-    "images/webp/3d-ren-1.webp",
-    "images/webp/3d-ren-2.webp",
-    "images/webp/3d-ren-3.webp",
-    "images/webp/3d-ren-4.webp",
-    "images/webp/3d-ren-5.webp",
-    "images/webp/3d-ren-6.webp",
-    "images/webp/3d-ren-7.webp",
-    "images/webp/3d-ren-8.webp",
-    "images/webp/3d-ren-9.webp",
-    "images/webp/3d-ren-10.webp",
-    "images/webp/3d-ren-11.webp",
-    "images/webp/3d-ren-12.webp",
-    "images/webp/3d-ren-15.webp",
-    "images/webp/3d-ren-16.webp",
-    "images/webp/3d-ren-17.webp",
-    "images/webp/3d-ren-18.webp",
-    "images/webp/3d-ren-21.webp",
-    "images/webp/3d-ren-22.webp",
-    "images/webp/3d-ren-24.webp",
-    "images/webp/3d-ren-25.webp",
-    "images/webp/3d-ren-26.webp",
-    "images/webp/3d-ren-27.webp",
-    "images/webp/3d-ren-28.webp",
-    "images/webp/3d-ren-29.webp",
-    "images/webp/3d-ren-30.webp",
-    "images/webp/3d-ren-31.webp",
-    "images/webp/3d-ren-32.webp",
-    "images/webp/3d-ren-33.webp",
-    "images/webp/3d-ren-34.webp",
-    "images/webp/3d-ren-35.webp",
-    "images/webp/3d-ren-36.webp",
-    "images/webp/3d-ren-37.webp",
-    "images/webp/3d-ren-38.webp",
-    "images/webp/3d-ren-39.webp",
-    "images/webp/3d-ren-40.webp",
-    "images/webp/3d-ren-41.webp",
-    "images/webp/3d-ren-42.webp",
-    "images/webp/3d-ren-43.webp",
-    "images/webp/3d-ren-44.webp",
-    "images/webp/3d-ren-46.webp",
-    "images/webp/3d-ren-47.webp",
-    "images/webp/3d-ren-48.webp",
-    "images/webp/3d-ren-49.webp",
-    "images/webp/3d-ren-50.webp",
-    "images/webp/3d-ren-51.webp",
-    "images/webp/3d-ren-52.webp",
-    "images/webp/3d-ren-53.webp",
-  ];
+      // fade in next
+      imgs[current].classList.add("active");
 
-  if (abstractEl && allImages.length) {
-    const randomImage = allImages[Math.floor(Math.random() * allImages.length)];
-    abstractEl.style.backgroundImage = `url('${randomImage}')`;
+      // reset lock after transition
+      setTimeout(() => {
+        cycling = false;
+      }, 700);
+    });
   }
+
+  initCycler("imgLarge");
+  initCycler("imgSmall");
 });
