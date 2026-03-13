@@ -8,17 +8,17 @@ document.addEventListener("cardsReady", () => {
   const today = new Date();
   today.setHours(0, 0, 0, 0);
 
-  /* ── SCHEDULED CHECK ── */
-  function isCardScheduled(card) {
+  // ── is card scheduled for future? ──
+  function isScheduled(card) {
     const raw = card.getAttribute("data-date") || "";
     if (!raw) return false;
     const [dd, mm, yyyy] = raw.split("-").map(Number);
-    const cardDate = new Date(yyyy, mm - 1, dd);
-    cardDate.setHours(0, 0, 0, 0);
-    return cardDate > today;
+    const date = new Date(yyyy, mm - 1, dd);
+    date.setHours(0, 0, 0, 0);
+    return date > today;
   }
 
-  /* ── COUNT ── */
+  // ── update visible card count ──
   function updateCount() {
     const visible = [...cards].filter(
       (c) => !c.classList.contains("hidden"),
@@ -26,12 +26,17 @@ document.addEventListener("cardsReady", () => {
     if (countNumber) countNumber.textContent = visible;
   }
 
-  /* ── HIDE SCHEDULED ── */
+  // ── hide scheduled cards on load ──
   cards.forEach((card) => {
-    if (isCardScheduled(card)) card.classList.add("hidden");
+    if (isScheduled(card)) card.classList.add("hidden");
   });
 
-  /* ── NAV FILTER ── */
+  // ── recount when quick-filter dropdown changes ──
+  document.addEventListener("qfApplied", updateCount);
+
+  // ══════════════════════════════════════
+  // NAV FILTER
+  // ══════════════════════════════════════
   const nav = document.querySelector(".artpage-nav");
   if (nav) {
     const sections = nav.querySelectorAll(".artpage-nav-section");
@@ -44,58 +49,68 @@ document.addEventListener("cardsReady", () => {
       (l) => !pinnedOrder.includes(l.dataset.filter),
     );
 
+    // sort non-pinned links alphabetically
     rest.sort((a, b) =>
       a.textContent.trim().localeCompare(b.textContent.trim()),
     );
 
+    // clear sections before rebuilding
     sections.forEach((section) => {
       const label = section.querySelector(".artpage-nav-label");
       section.innerHTML = "";
       if (label) section.appendChild(label);
     });
 
+    // add pinned links to first section
     pinnedOrder.forEach((filter) => {
       const link = pinned.find((l) => l.dataset.filter === filter);
       if (link) sections[0]?.appendChild(link);
     });
 
+    // split rest across two sections
     const midpoint = Math.ceil(rest.length / 2);
     rest.forEach((link, i) =>
       (i < midpoint ? sections[0] : sections[1])?.appendChild(link),
     );
 
-    // ← use correct class name
-    const links = nav.querySelectorAll(".artpage-nav-link");
-    links.forEach((link) => {
+    // active state on nav click — filtering handled by quick-filter.js
+    allLinks.forEach((link) => {
       link.addEventListener("click", () => {
-        links.forEach((l) => l.classList.remove("active"));
+        allLinks.forEach((l) => l.classList.remove("active"));
         link.classList.add("active");
-        // filtering now handled by quick-filter.js
       });
     });
   }
-  /* ── SEARCH ── */
+
+  // ══════════════════════════════════════
+  // SEARCH
+  // ══════════════════════════════════════
+  function resetNavToAll() {
+    const links = document.querySelectorAll(".artpage-nav-link");
+    links.forEach((l) => l.classList.remove("active"));
+    document
+      .querySelector(".artpage-nav-link[data-filter='all']")
+      ?.classList.add("active");
+  }
+
   if (searchInput) {
     searchInput.addEventListener("input", () => {
       const query = searchInput.value.trim().toLowerCase();
       const hasPill = document.querySelector(".search-tag-pill");
+
+      // show clear button when typing without a tag pill active
       if (searchClear)
         searchClear.classList.toggle(
           "visible",
           searchInput.value.length > 0 && !hasPill,
         );
 
-      const nav = document.querySelector(".artpage-nav");
-      const allLinks = nav
-        ? [...nav.querySelectorAll(".artpage-nav-link")]
-        : [];
-      allLinks.forEach((l) => l.classList.remove("active"));
-      const allLink = allLinks.find((l) => l.dataset.filter === "all");
-      if (allLink) allLink.classList.add("active");
+      // reset nav to "all" when searching
+      resetNavToAll();
 
       let visible = 0;
       cards.forEach((card) => {
-        if (isCardScheduled(card)) {
+        if (isScheduled(card)) {
           card.classList.add("hidden");
           return;
         }
@@ -117,23 +132,16 @@ document.addEventListener("cardsReady", () => {
     });
   }
 
-  /* ── CLEAR ── */
+  // ── clear search ──
   if (searchClear) {
     searchClear.addEventListener("click", () => {
       if (searchInput) searchInput.value = "";
       searchClear.classList.remove("visible");
-
-      const nav = document.querySelector(".artpage-nav");
-      const allLinks = nav
-        ? [...nav.querySelectorAll(".artpage-nav-link")]
-        : [];
-      allLinks.forEach((l) => l.classList.remove("active"));
-      const allLink = allLinks.find((l) => l.dataset.filter === "all");
-      if (allLink) allLink.classList.add("active");
+      resetNavToAll();
 
       let visible = 0;
       cards.forEach((card) => {
-        if (isCardScheduled(card)) {
+        if (isScheduled(card)) {
           card.classList.add("hidden");
           return;
         }
@@ -148,13 +156,17 @@ document.addEventListener("cardsReady", () => {
 
   updateCount();
 
-  /* ── TAG DRAWER ── */ // ← now outside nav guard, always runs
+  // ══════════════════════════════════════
+  // TAG DRAWER
+  // ══════════════════════════════════════
   const tagDrawer = document.getElementById("tagDrawer");
   const tagDrawerOverlay = document.getElementById("tagDrawerOverlay");
   const tagDrawerClose = document.getElementById("tagDrawerClose");
   const tagIndexBtn = document.getElementById("tagIndexBtn");
   const tagDrawerBody = document.getElementById("tagDrawerBody");
+  const searchTagsRow = document.getElementById("searchTagsRow");
 
+  // ── open / close drawer ──
   function openDrawer() {
     tagDrawer?.classList.add("open");
     tagDrawerOverlay?.classList.add("open");
@@ -174,8 +186,11 @@ document.addEventListener("cardsReady", () => {
     if (e.key === "Escape") closeDrawer();
   });
 
+  // ── build tag drawer from card tags ──
   function buildDrawer() {
     if (!tagDrawerBody) return;
+
+    // collect all unique tags
     const tagMap = {};
     document.querySelectorAll(".article-card").forEach((card) => {
       card.querySelectorAll(".card2-tag").forEach((t) => {
@@ -184,21 +199,25 @@ document.addEventListener("cardsReady", () => {
       });
     });
 
-    const allTags = Object.keys(tagMap).sort();
+    // group tags by first letter
     const groups = {};
-    allTags.forEach((tag) => {
-      const letter = tag[0].toUpperCase();
-      if (!groups[letter]) groups[letter] = [];
-      groups[letter].push(tag);
-    });
+    Object.keys(tagMap)
+      .sort()
+      .forEach((tag) => {
+        const letter = tag[0].toUpperCase();
+        if (!groups[letter]) groups[letter] = [];
+        groups[letter].push(tag);
+      });
 
     tagDrawerBody.innerHTML = "";
 
+    // "ALL" pill always first
     const allSection = document.createElement("div");
     allSection.className = "tag-drawer-section";
     allSection.innerHTML = `<div class="tag-drawer-pills"><button class="tag-drawer-pill active" data-filter="all">ALL</button></div>`;
     tagDrawerBody.appendChild(allSection);
 
+    // alphabetical sections
     Object.keys(groups)
       .sort()
       .forEach((letter) => {
@@ -213,8 +232,10 @@ document.addEventListener("cardsReady", () => {
         tagDrawerBody.appendChild(section);
       });
 
+    // ── pill click — filter cards by tag ──
     tagDrawerBody.querySelectorAll(".tag-drawer-pill").forEach((pill) => {
       pill.addEventListener("click", () => {
+        // set active pill
         tagDrawerBody
           .querySelectorAll(".tag-drawer-pill")
           .forEach((p) => p.classList.remove("active"));
@@ -222,6 +243,7 @@ document.addEventListener("cardsReady", () => {
 
         const filter = pill.dataset.filter;
         let visible = 0;
+
         document.querySelectorAll(".article-card").forEach((card) => {
           const show =
             filter === "all" || (card.dataset.tags || "").includes(filter);
@@ -234,9 +256,7 @@ document.addEventListener("cardsReady", () => {
         updateCount();
         closeDrawer();
 
-        const searchInput = document.getElementById("searchInput");
-        const searchTagsRow = document.getElementById("searchTagsRow");
-
+        // show active tag pill in search row
         if (searchTagsRow) {
           searchTagsRow.innerHTML = "";
           if (filter !== "all") {
@@ -244,6 +264,7 @@ document.addEventListener("cardsReady", () => {
             tag.className = "search-tag-pill";
             tag.textContent = pill.textContent;
 
+            // remove pill → reset to all
             const x = document.createElement("button");
             x.className = "search-tag-remove";
             x.textContent = "✕";
@@ -253,22 +274,16 @@ document.addEventListener("cardsReady", () => {
               if (searchInput)
                 searchInput.placeholder = "SEARCH TITLE, TAGS...";
               if (searchClear) searchClear.classList.remove("visible");
-              // reset to all
-              // reset respecting scheduled cards
-              document.querySelectorAll(".article-card").forEach((c) => {
-                if (isCardScheduled(c)) {
-                  // ← check scheduled
-                  c.classList.add("hidden");
-                } else {
-                  c.classList.remove("hidden");
-                }
+              cards.forEach((c) => {
+                isScheduled(c)
+                  ? c.classList.add("hidden")
+                  : c.classList.remove("hidden");
               });
               updateCount();
-              // reset active pill in drawer
-              document
+              tagDrawerBody
                 .querySelectorAll(".tag-drawer-pill")
                 .forEach((p) => p.classList.remove("active"));
-              document
+              tagDrawerBody
                 .querySelector(".tag-drawer-pill[data-filter='all']")
                 ?.classList.add("active");
             });
@@ -285,4 +300,14 @@ document.addEventListener("cardsReady", () => {
   }
 
   buildDrawer();
+
+  // ── auto-apply filter from URL param ──
+  const urlFilter = new URLSearchParams(window.location.search).get("filter");
+  if (urlFilter) {
+    const dropdown = document.getElementById("qfDropdown");
+    if (dropdown) {
+      dropdown.value = urlFilter;
+      dropdown.dispatchEvent(new Event("change"));
+    }
+  }
 });

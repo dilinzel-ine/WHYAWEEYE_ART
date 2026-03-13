@@ -5,7 +5,7 @@
 @import url("/Assets/sections/hhv2.css");
 @import url("/Assets/fx/loader.css");
 @import url("/Assets/fx/curcus.css");
-/* @import url("/Assets/sections/homehero.css"); */
+@import url("/Assets/sections/gifts.css");
 @import url("/Assets/sections/changing.css");
 @import url("/Assets/sections/buttons-slider.css");
 @import url("/Assets/sections/editorial.css");
@@ -135,18 +135,21 @@ section {
 .section-container {
   align-items: flex-start;
   padding: min(2rem, 5vw);
+  margin-block-end: var(--space-4xl);
   width: 100%;
 }
 
 #art h1,
 #latest h1,
-#custom h1 {
+#custom h1,
+#gifts h1 {
   font-size: var(--text-h1);
 }
 
 #art a,
 #latest a,
-#custom a {
+#custom a,
+#gifts a {
   text-decoration: none;
 }
 

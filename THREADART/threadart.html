@@ -112,7 +112,7 @@
     <script src="/Assets/Favicon/icon-ani.js" defer></script>
     <script src="/Assets/footer/site-nav.js" defer></script>
     <script src="/Assets/footer/footer.js" defer></script>
-    <script src="/Assets/fx/quick-filter.js"></script>
+    <script src="/THREADART/quick-filter.js"></script>
     <script src="/THREADART/threadart-render.js" defer></script>
     <script src="/THREADART/threadart-script.js" defer></script>
   </head>
@@ -266,41 +266,15 @@
             <div class="gallery-count" id="galleryCount">
               Active Works: <span id="countNumber">0</span>
             </div>
+            <!-- Quick Filter -->
             <div class="quick-filters">
-              <label class="quick-filter-item">
-                <input type="checkbox" class="qf-check" data-qf="new" checked />
-                <span>New</span>
-              </label>
-              <label class="quick-filter-item">
-                <input
-                  type="checkbox"
-                  class="qf-check"
-                  data-qf="popular"
-                  checked
-                />
-                <span>Popular</span>
-              </label>
-              <label class="quick-filter-item">
-                <input
-                  type="checkbox"
-                  class="qf-check"
-                  data-qf="soldout"
-                  checked
-                />
-                <span>Sold Out</span>
-              </label>
-              <label class="quick-filter-item">
-                <input
-                  type="checkbox"
-                  class="qf-check"
-                  data-qf="other"
-                  checked
-                />
-                <span>Other</span>
-              </label>
-              <button class="qf-reset" id="qfReset" title="Reset filters">
-                ✕
-              </button>
+              <select class="qf-dropdown" id="qfDropdown">
+                <option value="all">All</option>
+                <option value="new">New</option>
+                <option value="popular">Popular</option>
+                <option value="soldout">Sold Out</option>
+                <option value="gift">Gift</option>
+              </select>
             </div>
           </div>
           <!-- ═══════════════════════════════════════ -->

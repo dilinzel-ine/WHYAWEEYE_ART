@@ -1,0 +1,27 @@
+.quick-filters {
+  display: flex;
+  align-items: center;
+}
+
+.qf-dropdown {
+  appearance: none;
+  -webkit-appearance: none;
+  background: transparent;
+  border: 1px solid var(--color-text-muted);
+  color: var(--color-text);
+  font-family: var(--font-mono);
+  font-size: var(--text-tag);
+  padding-block: var(--space-3xs);
+  padding-inline: var(--space-xs);
+  cursor: pointer;
+  outline: none;
+}
+
+.qf-dropdown:focus {
+  border-color: var(--color-accent);
+}
+
+option {
+  background: var(--color-bg);
+  color: var(--color-text);
+}

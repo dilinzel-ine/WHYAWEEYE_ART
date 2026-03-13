@@ -8,7 +8,6 @@
   align-items: center;
   margin: 0 auto;
   gap: 6px;
-  margin-block-end: var(--space-4xl);
 }
 
 .custom-left {
@@ -91,11 +90,11 @@
   padding-block-end: var(--space-xs);
   margin-top: auto;
   font-weight: var(--weight-bold);
-  color: var(--color-complementary);
+  color: var(--color-accent);
   font-size: var(--text-h3);
 }
 #custom-view-link {
-  margin: auto;
+  /* margin: auto; */
 }
 
 /* ── controls ── */
@@ -147,6 +146,9 @@ button:focus-visible {
 
   .custom-right {
     order: -1;
+  }
+  #custom-view-link {
+    margin: auto;
   }
 
   .custom-right img {

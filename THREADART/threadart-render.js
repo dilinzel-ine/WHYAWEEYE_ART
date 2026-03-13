@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", async () => {
      </div>`
           : ""
       }
-      ${quantity > 1 ? `<div class="card-subtitle" hidden>${item.subtitle} (${remaining}/${quantity})</div>` : `<div class="card-subtitle">${item.subtitle}</div>`}
+      ${quantity > 1 ? `<div class="card-subtitle" hidden>${item.subtitle} (${remaining}/${quantity})</div>` : `<div class="card-subtitle" hidden>${item.subtitle}</div>`}
     </div>
     <div class="arrow-overlay">
       <div class="arrow-circle">

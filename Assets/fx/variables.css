@@ -28,8 +28,8 @@
   /* ── ACCENTS ── */
   --color-accent: #9eff00; /* was --pr-green */
   --color-complementary: #6100ff;
-  --color-triadic-left: #ff009e;
-  --color-triadic-right: #009eff;
+  --color-split-c-left: #e100ff;
+  --color-split-c-right: #001fff;
   --color-danger: #ff4444; /* was --pr-red */
   --color-strong-theme: #000;
 
@@ -197,8 +197,8 @@
   --color-border: #b1321422;
   --color-accent: #ff6100;
   --color-complementary: #009eff;
-  --color-triadic-left: #6100ff;
-  --color-triadic-right: #00ff61;
+  --color-split-c-left: #001fff;
+  --color-split-c-right: #00ffe1;
 
   --color-danger: #ff4444;
   --color-strong-theme: #fff;
