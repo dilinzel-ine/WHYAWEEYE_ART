@@ -6,9 +6,12 @@
 .qf-dropdown {
   appearance: none;
   -webkit-appearance: none;
-  background: transparent;
-  border: 1px solid var(--color-text-muted);
-  color: var(--color-text);
+  background: transparent
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%239eff00'/%3E%3C/svg%3E")
+    no-repeat right 8px center;
+  /* border: 1px solid var(--color-text-muted); */
+  border: none;
+  color: var(--color-accent);
   font-family: var(--font-mono);
   font-size: var(--text-tag);
   padding-block: var(--space-3xs);
@@ -16,12 +19,23 @@
   cursor: pointer;
   outline: none;
 }
+/* light mode arrow */
+[data-theme="light"] .qf-dropdown {
+  background: transparent
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23ff6100'/%3E%3C/svg%3E")
+    no-repeat right 8px center;
+}
 
 .qf-dropdown:focus {
-  border-color: var(--color-accent);
+  /* border-color: var(--color-accent); */
 }
 
 option {
   background: var(--color-bg);
   color: var(--color-text);
+  border: none;
+  outline: none;
+}
+option:hover {
+  background: var(--color-accent);
 }

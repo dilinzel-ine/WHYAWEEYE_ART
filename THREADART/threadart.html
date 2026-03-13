@@ -106,15 +106,16 @@
     <!-- ─── Scripts: deferred so they never block parsing ────────── -->
     <script src="/Assets/fx/theme.js" defer></script>
     <script src="/Assets/fx/curcus.js" defer></script>
-    <script src="/Assets/sections/modal.js" defer></script>
     <script src="/Assets/fx/transition.js" defer></script>
     <script src="/Assets/fx/enter.js" defer></script>
     <script src="/Assets/Favicon/icon-ani.js" defer></script>
     <script src="/Assets/footer/site-nav.js" defer></script>
     <script src="/Assets/footer/footer.js" defer></script>
-    <script src="/THREADART/quick-filter.js"></script>
+    <script src="/Assets/fx/page-state.js"></script>
+    <script src="/THREADART/filter-drawer.js"></script>
     <script src="/THREADART/threadart-render.js" defer></script>
     <script src="/THREADART/threadart-script.js" defer></script>
+    <script src="/Assets/sections/modal.js" defer></script>
   </head>
   <body id="top">
     <!-- ═══════════════════════════════════════ -->
@@ -161,7 +162,7 @@
                 <button
                   class="artpage-nav-link reveal"
                   style="--delay: 0.33s"
-                  data-filter="ode"
+                  data-filter="nature"
                   aria-pressed="false"
                 >
                   Nature Pool
@@ -170,7 +171,7 @@
                 <button
                   class="artpage-nav-link reveal"
                   style="--delay: 0.34s"
-                  data-filter="horizon"
+                  data-filter="animals"
                   aria-pressed="false"
                 >
                   Animals &amp; Creatures
@@ -179,7 +180,7 @@
                 <button
                   class="artpage-nav-link reveal"
                   style="--delay: 0.35s"
-                  data-filter="longing"
+                  data-filter="people"
                   aria-pressed="false"
                 >
                   People &amp; Figures
@@ -188,7 +189,7 @@
                 <button
                   class="artpage-nav-link reveal"
                   style="--delay: 0.36s"
-                  data-filter="narr"
+                  data-filter="style"
                   aria-pressed="false"
                 >
                   Style-Based
@@ -203,7 +204,7 @@
                 <button
                   class="artpage-nav-link reveal"
                   style="--delay: 0.38s"
-                  data-filter="animals"
+                  data-filter="pattern"
                   aria-pressed="false"
                 >
                   Pattern &amp; Decorative
@@ -212,7 +213,7 @@
                 <button
                   class="artpage-nav-link reveal"
                   style="--delay: 0.39s"
-                  data-filter="objects"
+                  data-filter="typography"
                   aria-pressed="false"
                 >
                   Typography
@@ -221,7 +222,7 @@
                 <button
                   class="artpage-nav-link reveal"
                   style="--delay: 0.4s"
-                  data-filter="interior"
+                  data-filter="abstract"
                   aria-pressed="false"
                 >
                   Abstract &amp; Conceptual
@@ -230,7 +231,7 @@
                 <button
                   class="artpage-nav-link reveal"
                   style="--delay: 0.41s"
-                  data-filter="patterns"
+                  data-filter="technique"
                   aria-pressed="false"
                 >
                   Technique-Based
@@ -259,23 +260,274 @@
               />
               <button class="thr-search-clear" id="thr-searchClear">✕</button>
             </div>
-            <button class="tag-index-btn" id="tagIndexBtn">[TT INDEX]</button>
+            <!-- <button class="tag-index-btn" id="tagIndexBtn">[TT INDEX]</button> -->
           </div>
 
           <div class="count-and-filter">
             <div class="gallery-count" id="galleryCount">
               Active Works: <span id="countNumber">0</span>
             </div>
-            <!-- Quick Filter -->
-            <div class="quick-filters">
-              <select class="qf-dropdown" id="qfDropdown">
-                <option value="all">All</option>
-                <option value="new">New</option>
-                <option value="popular">Popular</option>
-                <option value="soldout">Sold Out</option>
-                <option value="gift">Gift</option>
-              </select>
-            </div>
+            <!-- ═══════════════════════════════════════════════ -->
+            <!-- FILTER BUTTON   -->
+            <!-- ═══════════════════════════════════════════════  -->
+            <button
+              class="filter-icon-btn"
+              id="filterDrawerBtn"
+              aria-label="Open filters"
+            >
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                aria-hidden="true"
+              >
+                <line x1="4" y1="6" x2="20" y2="6" />
+                <line x1="8" y1="12" x2="20" y2="12" />
+                <line x1="12" y1="18" x2="20" y2="18" />
+              </svg>
+              <span>Filter</span>
+              <!-- active filter count badge -->
+              <span class="filter-badge" id="filterBadge" hidden>0</span>
+            </button>
+
+            <!-- FILTER DRAWER  -->
+
+            <div
+              class="filter-overlay"
+              id="filterOverlay"
+              aria-hidden="true"
+            ></div>
+
+            <aside
+              class="filter-drawer"
+              id="filterDrawer"
+              aria-label="Filter artworks"
+              role="dialog"
+            >
+              <!-- header -->
+              <div class="filter-drawer-header">
+                <span class="filter-drawer-title">Filters</span>
+                <button
+                  class="filter-drawer-close"
+                  id="filterDrawerClose"
+                  aria-label="Close filters"
+                >
+                  ✕
+                </button>
+              </div>
+
+              <!-- scrollable body -->
+              <div class="filter-drawer-body" id="filterDrawerBody">
+                <!-- ── STATUS ── -->
+                <div class="filter-section">
+                  <button class="filter-section-toggle" aria-expanded="true">
+                    <span>Status</span>
+                    <svg
+                      class="filter-chevron"
+                      width="12"
+                      height="12"
+                      viewBox="0 0 12 12"
+                    >
+                      <polyline
+                        points="2 4 6 8 10 4"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                      />
+                    </svg>
+                  </button>
+                  <div class="filter-section-body">
+                    <div
+                      class="filter-pills"
+                      data-group="status"
+                      data-mode="single"
+                    >
+                      <button class="filter-pill active" data-value="all">
+                        All
+                      </button>
+                      <button class="filter-pill" data-value="available">
+                        Available
+                      </button>
+                      <button class="filter-pill" data-value="new">New</button>
+                      <button class="filter-pill" data-value="popular">
+                        Popular
+                      </button>
+                      <button class="filter-pill" data-value="soldout">
+                        Sold Out
+                      </button>
+                      <button class="filter-pill" data-value="gift">
+                        Gift
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- ── SIZE ── -->
+                <div class="filter-section">
+                  <button class="filter-section-toggle" aria-expanded="true">
+                    <span>Size</span>
+                    <svg
+                      class="filter-chevron"
+                      width="12"
+                      height="12"
+                      viewBox="0 0 12 12"
+                    >
+                      <polyline
+                        points="2 4 6 8 10 4"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                      />
+                    </svg>
+                  </button>
+                  <div class="filter-section-body">
+                    <div
+                      class="filter-pills"
+                      data-group="size"
+                      data-mode="multi"
+                    >
+                      <button class="filter-pill" data-value="small">
+                        Small
+                      </button>
+                      <button class="filter-pill" data-value="medium">
+                        Medium
+                      </button>
+                      <button class="filter-pill" data-value="large">
+                        Large
+                      </button>
+                      <button class="filter-pill" data-value="extra-large">
+                        Extra Large
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- ── SHAPE ── -->
+                <div class="filter-section">
+                  <button class="filter-section-toggle" aria-expanded="true">
+                    <span>Shape</span>
+                    <svg
+                      class="filter-chevron"
+                      width="12"
+                      height="12"
+                      viewBox="0 0 12 12"
+                    >
+                      <polyline
+                        points="2 4 6 8 10 4"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                      />
+                    </svg>
+                  </button>
+                  <div class="filter-section-body">
+                    <div
+                      class="filter-pills"
+                      data-group="shape"
+                      data-mode="multi"
+                    >
+                      <button class="filter-pill" data-value="rectangle">
+                        Rectangle
+                      </button>
+                      <button class="filter-pill" data-value="circle">
+                        Circle
+                      </button>
+                      <button class="filter-pill" data-value="square">
+                        Square
+                      </button>
+                      <button class="filter-pill" data-value="oval">
+                        Oval
+                      </button>
+                      <button class="filter-pill" data-value="custom">
+                        Custom
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- ── PRICE ── -->
+                <div class="filter-section">
+                  <button class="filter-section-toggle" aria-expanded="true">
+                    <span>Price</span>
+                    <svg
+                      class="filter-chevron"
+                      width="12"
+                      height="12"
+                      viewBox="0 0 12 12"
+                    >
+                      <polyline
+                        points="2 4 6 8 10 4"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                      />
+                    </svg>
+                  </button>
+                  <div class="filter-section-body">
+                    <div class="filter-price-wrap">
+                      <div class="filter-price-label">
+                        <span>Up to</span>
+                        <span id="priceDisplay">₹50,000</span>
+                      </div>
+                      <input
+                        type="range"
+                        id="priceSlider"
+                        class="filter-price-slider"
+                        min="0"
+                        max="50000"
+                        step="500"
+                        value="50000"
+                      />
+                      <div class="filter-price-ends">
+                        <span>₹0</span>
+                        <span>₹50,000</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- ── TAGS ── -->
+                <div class="filter-section">
+                  <button class="filter-section-toggle" aria-expanded="false">
+                    <span>Tag Index</span>
+                    <svg
+                      class="filter-chevron"
+                      width="12"
+                      height="12"
+                      viewBox="0 0 12 12"
+                    >
+                      <polyline
+                        points="2 4 6 8 10 4"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                      />
+                    </svg>
+                  </button>
+                  <div class="filter-section-body" hidden>
+                    <div
+                      id="tagDrawerBody"
+                      class="filter-pills"
+                      data-group="tag"
+                      data-mode="single"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- footer -->
+              <div class="filter-drawer-footer">
+                <button class="filter-clear-btn" id="filterClearBtn">
+                  Clear All
+                </button>
+                <button class="filter-apply-btn" id="filterApplyBtn">
+                  Apply Filters
+                </button>
+              </div>
+            </aside>
           </div>
           <!-- ═══════════════════════════════════════ -->
           <!-- GRID -->
@@ -321,16 +573,16 @@
       <!-- /.section-container -->
     </main>
     <!-- /#threadart -->
-    <div class="tag-drawer-overlay" id="tagDrawerOverlay"></div>
+    <!-- <div class="tag-drawer-overlay" id="tagDrawerOverlay"></div>
     <aside class="tag-drawer" id="tagDrawer" aria-label="Tag Index">
       <div class="tag-drawer-header">
         <span>Threadart TAG INDEX</span>
         <button class="tag-drawer-close" id="tagDrawerClose">✕</button>
       </div>
       <div class="tag-drawer-body" id="tagDrawerBody">
-        <!-- filled by JS -->
+         filled by JS 
       </div>
-    </aside>
+    </aside> -->
 
     <!-- ═══════════════════════════════════════ -->
     <!-- MODAL -->

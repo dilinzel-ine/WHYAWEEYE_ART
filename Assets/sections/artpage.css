@@ -303,7 +303,7 @@
     filter: grayscale(0%);
   }
   .article-card:hover .card-title {
-    color: var(--pr-white);
+    color: var(--color-split-c-left);
   }
   .article-card:hover .arrow-overlay {
     opacity: 1;

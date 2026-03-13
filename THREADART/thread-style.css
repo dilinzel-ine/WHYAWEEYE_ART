@@ -1,7 +1,7 @@
 /* Imports */
 @import url("/Assets/fx/variables.css");
 @import url("/Assets/fx/curcus.css");
-@import url("/THREADART/quick-filter.css");
+@import url("/THREADART/filter-drawer.css");
 @import url("/Assets/sections/changing.css");
 @import url("/Assets/sections/artpage.css");
 @import url("/Assets/sections/modal.css");
@@ -59,14 +59,15 @@ button {
   justify-content: space-between;
   align-items: center;
   padding-inline: var(--page-padding-x);
-  padding-block: var(--space-sm);
+  padding-block-start: var(--space-3xs);
+  padding-block-end: var(--space-sm);
 }
 
 .gallery-count {
   opacity: 0.9;
   /* padding-inline: var(--page-padding-x); */
   color: var(--color-accent);
-  font-size: var(--text-fine);
+  font-size: var(--text-tag);
   font-family: var(--font-mono);
   letter-spacing: var(--tracking-wide);
   text-transform: uppercase;
@@ -78,8 +79,8 @@ button {
   align-items: center;
   gap: var(--space-xs);
   padding-inline: var(--page-padding-x);
-  padding-block: var(--space-sm);
-  /* border-bottom: 1px solid var(--color-border);   */
+  padding-block-start: var(--space-sm);
+  padding-block-end: var(--space-3xs);
 }
 
 .search-input-wrap {
@@ -88,7 +89,7 @@ button {
   flex: 1;
   align-items: center;
   border-bottom: 1px solid var(--color-border);
-  padding-inline: var(--space-md);
+  padding-inline-end: var(--space-md);
   padding-block: var(--space-xs);
   min-width: 0;
 }

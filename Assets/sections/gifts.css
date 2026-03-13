@@ -50,14 +50,14 @@
 .gifts-give {
   font-size: var(--text-h4);
   font-weight: 700;
-  color: var(--color-text-inverse);
+  color: var(--color-accent);
   line-height: 1.2;
   margin-bottom: var(--space-md);
 }
 
 .gifts-desc {
   font-size: var(--text-eyebrow);
-  color: var(--color-text-muted);
+  color: var(--color-text);
   line-height: 1.8;
   margin-bottom: var(--space-md);
 }
