@@ -8,7 +8,7 @@
   margin: 0 auto;
   max-width: 1300px;
   padding-block: var(--space-lg);
-  height: 90dvh;
+  min-height: 90dvh;
   user-select: none;
 }
 
@@ -231,6 +231,8 @@
   .hero {
     gap: 2rem;
     padding: 1.5rem 1.25rem;
+    min-height: 100%;
+    height: auto;
   }
 
   .hero-title {
