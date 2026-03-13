@@ -9,7 +9,7 @@
   font-family: var(--font-alt);
   width: 99%;
   margin-inline: auto;
-  min-height: 20vh;
+  height: 20vh;
   user-select: none;
 }
 .slider {

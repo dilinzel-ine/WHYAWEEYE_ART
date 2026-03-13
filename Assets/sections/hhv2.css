@@ -8,7 +8,7 @@
   margin: 0 auto;
   max-width: 1300px;
   padding-block: var(--space-lg);
-  height: calc(100dvh - 60px);
+  height: 90dvh;
   user-select: none;
 }
 
