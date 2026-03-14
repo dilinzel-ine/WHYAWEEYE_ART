@@ -379,6 +379,7 @@ u {
 
 .modal-purchase-content {
   margin-top: auto;
+  margin-block-end: var(--space-sm);
 }
 
 .modal-buy-btn {
